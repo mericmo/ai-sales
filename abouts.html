@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>关于我们 | AI零售决策专家 - 让数据智能驱动零售增长</title>
+    <!-- Tailwind + 图标库 + 字体 (全站统一科技风格) -->
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 209, 178, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 8px 20px -6px rgba(0, 209, 178, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 209, 178, 0.4);
+        }
+
+        .milestone-dot {
+            width: 12px;
+            height: 12px;
+            background: #00D1B2;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.2);
+        }
+
+        .value-card {
+            transition: all 0.25s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            background: rgba(0, 209, 178, 0.05);
+            border-color: rgba(0, 209, 178, 0.3);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1a2f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00D1B2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- 导航栏 (统一风格，高亮"关于我们") -->
+    <nav-component></nav-component>
+
+    <!-- Hero 区域：公司使命 -->
+    <section class="relative pt-44 pb-24 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,#002B44,transparent_80%)] -z-10"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <iconify-icon class="text-[#00D1B2]" icon="mdi:flag-variant"></iconify-icon>
+                <span class="text-xs font-medium text-gray-300 tracking-wider">使命驱动 · 技术向实</span>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                用AI重塑<span class="text-gradient"> 零售决策</span>的每一个环节
+            </h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                我们相信，数据与算法的价值在于解决真实商业难题。RedGecko AI 致力于将领先的时序预测、价格弹性模型与行业深度结合，让每一家门店的库存更精准，每一份折扣更聪明。
+            </p>
+        </div>
+    </section>
+
+    <!-- 公司简介 + 核心数据 -->
+    <section class="py-12 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 lg:p-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-[#00D1B2] text-sm font-semibold uppercase tracking-wider">关于 RedGecko AI</span>
+                    <h2 class="text-3xl font-bold mt-2 mb-5">领先的零售决策智能平台</h2>
+                    <p class="text-gray-300 leading-relaxed mb-5">RedGecko AI
+                        成立于2020年，总部位于上海，并在深圳、新加坡设有研发中心。核心团队来自阿里达摩院、京东零售、联合利华等一线科技与零售企业，拥有超过10年的时序预测、运筹优化与零售实战经验。</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        我们已服务全球超过3000家零售门店，涵盖生鲜、便利店、时尚、餐饮等多个领域，通过自研的AI销量预测引擎与动态定价系统，累计为客户降低库存损耗超数亿元，提升毛利率超过12%。</p>
+                    <div class="flex gap-6 mt-8">
+                        <div>
+                            <div class="text-2xl font-bold text-[#00D1B2]">2020</div>
+                            <div class="text-xs text-gray-500">公司成立</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-[#00D1B2]">3,000+</div>
+                            <div class="text-xs text-gray-500">服务门店数</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-[#00D1B2]">98%</div>
+                            <div class="text-xs text-gray-500">客户续约率</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -top-6 -right-6 w-40 h-40 bg-[#00D1B2]/20 blur-[60px] rounded-full"></div>
+                    <div class="glass-card p-1 rounded-2xl relative z-10">
+                        <img src="https://placehold.co/600x400/0A1A2F/00D1B2?text=RedGecko+AI+Office" alt="RedGecko AI Office"
+                            class="rounded-2xl w-full object-cover opacity-90">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术实力与研发投入 -->
+    <section class="py-20 bg-[#0A1525]/40">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">硬核技术驱动</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-16">持续投入时序预测与运筹优化算法，构建零售行业最懂业务的数据智能基础设施</p>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-4xl font-extrabold text-[#00D1B2]">50+</div>
+                    <div class="text-sm text-gray-400 mt-2">AI 专利与软著</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold text-[#00D1B2]">200+</div>
+                    <div class="text-sm text-gray-400 mt-2">零售特征工程库</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold text-[#00D1B2]">15+</div>
+                    <div class="text-sm text-gray-400 mt-2">顶会论文(ICML/NeurIPS)</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold text-[#00D1B2]">99.95%</div>
+                    <div class="text-sm text-gray-400 mt-2">API 可用性 SLA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展里程碑 (时间线) -->
+    <section class="py-20 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl font-bold mb-3">发展历程</h2>
+            <p class="text-gray-400">从创业团队到行业领先者，每一步都坚实有力</p>
+        </div>
+        <div class="relative">
+            <!-- 时间线装饰线 -->
+            <div
+                class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#00D1B2]/20 via-[#00D1B2] to-[#00D1B2]/20 hidden md:block">
+            </div>
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 md:text-right">
+                        <div class="glass-card p-6 rounded-2xl inline-block w-full md:mr-8">
+                            <div class="text-[#00D1B2] font-bold text-lg">2020 · 启航</div>
+                            <p class="text-gray-300 text-sm mt-2">RedGecko AI 在上海成立，获得天使轮融资，聚焦零售时序预测底层技术研发。</p>
+                        </div>
+                    </div>
+                    <div class="milestone-dot hidden md:block"></div>
+                    <div class="md:w-1/2"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 order-2 md:order-1"></div>
+                    <div class="milestone-dot hidden md:block order-1"></div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="glass-card p-6 rounded-2xl inline-block w-full md:ml-8">
+                            <div class="text-[#00D1B2] font-bold text-lg">2021 · 产品化</div>
+                            <p class="text-gray-300 text-sm mt-2">发布销量预测 SaaS 平台，签约首批 10 家区域零售连锁，预测准确率行业领先。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 md:text-right">
+                        <div class="glass-card p-6 rounded-2xl inline-block w-full md:mr-8">
+                            <div class="text-[#00D1B2] font-bold text-lg">2022 · 动态定价引擎上线</div>
+                            <p class="text-gray-300 text-sm mt-2">推出智能定价与阶梯折扣模块，与天气数据 API 深度融合，客户门店数突破 1000 家。</p>
+                        </div>
+                    </div>
+                    <div class="milestone-dot hidden md:block"></div>
+                    <div class="md:w-1/2"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 order-2 md:order-1"></div>
+                    <div class="milestone-dot hidden md:block order-1"></div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="glass-card p-6 rounded-2xl inline-block w-full md:ml-8">
+                            <div class="text-[#00D1B2] font-bold text-lg">2023 · A 轮融资 & 出海</div>
+                            <p class="text-gray-300 text-sm mt-2">完成数千万美元 A 轮融资，成立新加坡办公室，服务东南亚零售品牌。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 md:text-right">
+                        <div class="glass-card p-6 rounded-2xl inline-block w-full md:mr-8">
+                            <div class="text-[#00D1B2] font-bold text-lg">2025 · 全链路决策平台</div>
+                            <p class="text-gray-300 text-sm mt-2">发布 RedGecko AI 4.0，覆盖预测-定价-采购-补货闭环，服务全球 3000+ 门店。</p>
+                        </div>
+                    </div>
+                    <div class="milestone-dot hidden md:block"></div>
+                    <div class="md:w-1/2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心团队 (部分展示) -->
+    <section class="py-20 bg-[#0A1525] border-y border-white/5">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">汇聚顶尖智慧</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12">核心团队来自零售、算法与工程领域的资深专家，驱动产品持续创新</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div
+                        class="w-28 h-28 rounded-full bg-gradient-to-br from-[#00D1B2]/30 to-blue-500/30 mx-auto flex items-center justify-center text-3xl font-bold">
+                        张</div>
+                    <h3 class="text-xl font-bold mt-4">张睿</h3>
+                    <p class="text-[#00D1B2] text-sm">创始人 & CEO</p>
+                    <p class="text-gray-400 text-xs mt-3">前阿里达摩院资深算法专家，曾主导千万级零售预测系统，拥有 15 年 AI 从业经验。</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div
+                        class="w-28 h-28 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 mx-auto flex items-center justify-center text-3xl font-bold">
+                        陈</div>
+                    <h3 class="text-xl font-bold mt-4">陈思远</h3>
+                    <p class="text-[#00D1B2] text-sm">CTO</p>
+                    <p class="text-gray-400 text-xs mt-3">前京东零售技术负责人，时序预测与运筹优化领域专家，多项专利发明人。</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div
+                        class="w-28 h-28 rounded-full bg-gradient-to-br from-amber-500/30 to-orange-500/30 mx-auto flex items-center justify-center text-3xl font-bold">
+                        李</div>
+                    <h3 class="text-xl font-bold mt-4">李敏</h3>
+                    <p class="text-[#00D1B2] text-sm">CPO</p>
+                    <p class="text-gray-400 text-xs mt-3">原联合利华品类管理负责人，深谙零售供应链与定价策略，驱动产品与业务深度融合。</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center"><button
+                    class="text-sm text-[#00D1B2] border border-[#00D1B2]/30 px-6 py-2 rounded-full hover:bg-[#00D1B2]/10 transition">查看完整管理团队
+                    →</button></div>
+        </div>
+    </section>
+
+    <!-- 企业文化与价值观 -->
+    <section class="py-20 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-3">价值观驱动成长</h2>
+            <p class="text-gray-400">客户第一 · 数据求真 · 开放协作 · 长期主义</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="value-card glass-card p-6 rounded-2xl text-center border border-white/5">
+                <iconify-icon icon="mdi:store" class="text-4xl text-[#00D1B2] mx-auto mb-3"></iconify-icon>
+                <h4 class="font-bold text-lg">客户至上</h4>
+                <p class="text-gray-400 text-sm mt-2">深度理解零售场景，与客户共创价值</p>
+            </div>
+            <div class="value-card glass-card p-6 rounded-2xl text-center border border-white/5">
+                <iconify-icon icon="mdi:database" class="text-4xl text-[#00D1B2] mx-auto mb-3"></iconify-icon>
+                <h4 class="font-bold text-lg">数据驱动</h4>
+                <p class="text-gray-400 text-sm mt-2">每一个决策都有数据支撑，可衡量可优化</p>
+            </div>
+            <div class="value-card glass-card p-6 rounded-2xl text-center border border-white/5">
+                <iconify-icon icon="mdi:handshake" class="text-4xl text-[#00D1B2] mx-auto mb-3"></iconify-icon>
+                <h4 class="font-bold text-lg">开放共赢</h4>
+                <p class="text-gray-400 text-sm mt-2">与合作伙伴共建零售AI生态</p>
+            </div>
+            <div class="value-card glass-card p-6 rounded-2xl text-center border border-white/5">
+                <iconify-icon icon="mdi:rocket" class="text-4xl text-[#00D1B2] mx-auto mb-3"></iconify-icon>
+                <h4 class="font-bold text-lg">追求极致</h4>
+                <p class="text-gray-400 text-sm mt-2">持续迭代算法，挑战预测准确率上限</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 加入我们 / 招聘 banner -->
+    <section class="py-20 bg-gradient-to-r from-[#001F3F] to-[#002845]">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <iconify-icon icon="mdi:rocket-launch" class="text-5xl text-[#00D1B2] mx-auto mb-4"></iconify-icon>
+            <h2 class="text-3xl font-bold mb-3">加入 RedGecko AI，共创未来</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8">算法、工程、零售咨询等岗位开放中，一起用技术改变零售行业</p>
+            <button class="btn-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 mx-auto">
+                <iconify-icon icon="mdi:briefcase-outline"></iconify-icon> 查看热招职位
+            </button>
+        </div>
+    </section>
+
+    <!-- 媒体与资质 及 全球布局 -->
+    <section class="py-20 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div class="glass-card p-8 rounded-3xl">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><iconify-icon icon="mdi:newspaper"
+                        class="text-[#00D1B2]"></iconify-icon> 媒体与荣誉</h3>
+                <ul class="space-y-3 text-gray-300 text-sm">
+                    <li class="flex items-center gap-3"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-sm"></iconify-icon> 2025 福布斯中国 AI 50 强</li>
+                    <li class="flex items-center gap-3"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-sm"></iconify-icon> 中国零售数字化创新 Top 10</li>
+                    <li class="flex items-center gap-3"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-sm"></iconify-icon> 入选 Gartner 零售 AI 推荐供应商</li>
+                    <li class="flex items-center gap-3"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-sm"></iconify-icon> 36氪「WISE2025 商业之王」</li>
+                </ul>
+            </div>
+            <div class="glass-card p-8 rounded-3xl">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><iconify-icon icon="mdi:map-marker"
+                        class="text-[#00D1B2]"></iconify-icon> 全球布局</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm text-gray-300">
+                    <div>📍 上海（全球总部）</div>
+                    <div>📍 深圳（研发中心）</div>
+                    <div>📍 新加坡（亚太总部）</div>
+                    <div>📍 东京（办事处）</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10">
+                    <p class="text-xs text-gray-400">服务网络覆盖大中华区、东南亚及日本市场，24小时技术支持。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系与投资/合作咨询 -->
+    <section class="pb-24 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 lg:p-12 text-center bg-gradient-to-br from-[#001F3F]/50 to-[#001220]">
+            <iconify-icon icon="mdi:email-newsletter" class="text-5xl text-[#00D1B2] mx-auto mb-4"></iconify-icon>
+            <h3 class="text-2xl font-bold mb-3">商务合作与媒体垂询</h3>
+            <p class="text-gray-400 max-w-xl mx-auto mb-6">期待与您共同探索零售智能决策的无限可能</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="flex items-center gap-2 bg-white/5 px-5 py-2 rounded-full"><iconify-icon icon="mdi:email"
+                        class="text-[#00D1B2]"></iconify-icon> partner@retailai.com</div>
+                <div class="flex items-center gap-2 bg-white/5 px-5 py-2 rounded-full"><iconify-icon icon="mdi:phone"
+                        class="text-[#00D1B2]"></iconify-icon> 400-888-2026</div>
+                <button class="btn-primary px-6 py-2 rounded-full text-sm font-bold">预约高层会谈 →</button>
+            </div>
+        </div>
+    </section>
+   <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+</body>
+
+</html>

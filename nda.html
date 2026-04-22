@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>保密承诺（NDA） | RedGecko AI - 零售智能决策专家</title>
+    <!-- Tailwind + 图标库 + 字体 -->
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 8px 20px -6px rgba(0, 209, 178, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 209, 178, 0.4);
+        }
+
+        .nda-section {
+            scroll-margin-top: 100px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1a2f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00D1B2;
+            border-radius: 10px;
+        }
+
+        .highlight-box {
+            background: rgba(0, 209, 178, 0.08);
+            border-left: 3px solid #00D1B2;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+        }
+
+        .seal-stamp {
+            border: 1px dashed rgba(0, 209, 178, 0.5);
+            background: rgba(0, 209, 178, 0.02);
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- 导航栏 (统一风格) -->
+    <nav-component></nav-component>
+
+    <!-- Hero 区域 -->
+    <section class="relative pt-44 pb-16 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,#002B44,transparent_80%)] -z-10"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <iconify-icon class="text-[#00D1B2]" icon="mdi:file-lock"></iconify-icon>
+                <span class="text-xs font-medium text-gray-300 tracking-wider">双向保密 · 法律约束力</span>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                保密承诺书
+            </h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                本保密协议（NDA）适用于 RedGecko AI 与客户/合作伙伴之间的商务洽谈、POC试跑、API对接及任何涉及商业秘密披露的场景。签署本协议即表示双方同意对保密信息承担无限期的保护义务。
+            </p>
+            <div class="flex justify-center gap-6 mt-8 text-sm text-gray-500">
+                <span>📅 版本：v2.0 (企业级)</span>
+                <span>⚖️ 最后更新：2026年4月17日</span>
+                <span>✅ 适用于所有 B2B 合作及技术对接</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 目录导航 -->
+    <section class="py-6 sticky top-20 z-40 glass-card border-y border-white/10 backdrop-blur-md">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 flex flex-wrap justify-center gap-3 text-sm">
+            <a href="#definitions" class="hover:text-[#00D1B2] transition-colors">保密信息定义</a>
+            <span class="text-gray-600">•</span>
+            <a href="#obligations" class="hover:text-[#00D1B2] transition-colors">保密义务</a>
+            <span class="text-gray-600">•</span>
+            <a href="#exclusions" class="hover:text-[#00D1B2] transition-colors">例外情形</a>
+            <span class="text-gray-600">•</span>
+            <a href="#term" class="hover:text-[#00D1B2] transition-colors">保密期限</a>
+            <span class="text-gray-600">•</span>
+            <a href="#disposal" class="hover:text-[#00D1B2] transition-colors">信息处置</a>
+            <span class="text-gray-600">•</span>
+            <a href="#breach" class="hover:text-[#00D1B2] transition-colors">违约责任</a>
+            <span class="text-gray-600">•</span>
+            <a href="#governance" class="hover:text-[#00D1B2] transition-colors">管辖法律</a>
+            <span class="text-gray-600">•</span>
+            <a href="#execution" class="hover:text-[#00D1B2] transition-colors">签署页</a>
+        </div>
+    </section>
+
+    <!-- 主体内容 -->
+    <section class="py-16 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 lg:p-12">
+
+            <!-- 协议引言 -->
+            <div class="mb-10 text-center pb-6 border-b border-white/10">
+                <p class="text-gray-300 italic">本保密承诺书（以下简称“本协议”）由以下双方共同缔结：</p>
+                <div class="grid md:grid-cols-2 gap-6 mt-6 text-left">
+                    <div class="bg-white/5 p-4 rounded-xl">
+                        <p class="font-bold text-[#00D1B2]">披露方</p>
+                        <p class="text-sm mt-1">RedGecko AI 及其关联公司<br>（红壁虎科技（上海）有限公司）</p>
+                        <p class="text-xs text-gray-500 mt-2">统一社会信用代码：91310000MA1H123456</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl">
+                        <p class="font-bold text-[#00D1B2]">接收方</p>
+                        <p class="text-sm mt-1">申请使用 RedGecko AI 服务的企业客户、合作伙伴<br>（以下简称“客户”或“接收方”）</p>
+                        <p class="text-xs text-gray-500 mt-2">通过注册/提交合作申请即视为同意本协议</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm mt-6">鉴于双方可能在商务洽谈、POC试跑、API对接、技术咨询等过程中相互披露商业秘密，为保护双方的合法权益，达成如下约定：</p>
+            </div>
+
+            <!-- 1. 保密信息定义 -->
+            <div id="definitions" class="nda-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:information-outline" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">1. 保密信息的定义</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    “保密信息”指一方（“披露方”）以口头、书面、电子或其他可感知形式向另一方（“接收方”）披露的、未公开的、具有商业价值或秘密性的信息，无论是否明确标记为“保密”。包括但不限于：</p>
+                <div class="grid md:grid-cols-2 gap-5 mt-2">
+                    <div class="highlight-box">
+                        <p class="font-semibold text-[#00D1B2] flex items-center gap-2"><iconify-icon
+                                icon="mdi:store"></iconify-icon> 客户向 RedGecko AI 披露</p>
+                        <ul class="list-disc list-inside text-sm text-gray-300 mt-2 space-y-1">
+                            <li>历史交易数据、门店经营数据（销量、库存、客单价等）</li>
+                            <li>商品价格、成本结构、采购策略</li>
+                            <li>供应链计划、品类管理策略</li>
+                            <li>预测模型反馈数据、定价策略内部评估</li>
+                            <li>客户名单、供应商信息及未公开的业务规划</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box">
+                        <p class="font-semibold text-[#00D1B2] flex items-center gap-2"><iconify-icon
+                                icon="mdi:robot-industrial"></iconify-icon> RedGecko AI 向客户披露</p>
+                        <ul class="list-disc list-inside text-sm text-gray-300 mt-2 space-y-1">
+                            <li>算法模型细节、预测逻辑、特征工程方法论</li>
+                            <li>预测结果、定价建议、阶梯折扣策略</li>
+                            <li>API 接口文档、技术架构、源代码片段</li>
+                            <li>产品路线图、未发布的实验性功能</li>
+                            <li>商业报价、合同条款、定价策略</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">* 无论是否标记为“保密”，理性人应当认识到属于商业秘密的信息均受本协议保护。</p>
+            </div>
+
+            <!-- 2. 保密义务 -->
+            <div id="obligations" class="nda-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:shield-key" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">2. 保密义务</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p><span class="text-[#00D1B2] font-semibold">2.1
+                            限制使用：</span>接收方仅可将保密信息用于双方约定的合作目的（如：POC效果验证、API集成开发、联合解决方案设计），不得用于任何其他商业目的。</p>
+                    <p><span class="text-[#00D1B2] font-semibold">2.2
+                            限制披露：</span>接收方不得向任何第三方披露保密信息，除非该第三方为履行合作而有必要知悉，且已签署不低于本协议标准的保密协议。</p>
+                    <p><span class="text-[#00D1B2] font-semibold">2.3
+                            保护措施：</span>接收方应采取至少不低于保护自身同类保密信息的谨慎程度（但不得低于合理标准）保护保密信息，包括但不限于：访问控制、加密存储、内部培训等。</p>
+                    <p><span class="text-[#00D1B2] font-semibold">2.4
+                            复制限制：</span>未经披露方书面同意，不得复制、反向工程、反编译或试图推导保密信息中的算法逻辑。</p>
+                    <div class="highlight-box mt-2">
+                        <p class="text-sm"><iconify-icon icon="mdi:alert-circle"
+                                class="text-[#00D1B2] inline mr-1"></iconify-icon> 特别注意：API
+                            密钥、预测模型参数、定价弹性系数属于核心商业秘密，泄露可能导致严重损失，接收方应将其列为最高保密等级。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 例外情形 -->
+            <div id="exclusions" class="nda-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:shield-off" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">3. 例外情形</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-4">保密信息不包含以下情形，接收方无需承担保密义务：</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3 bg-white/5 p-4 rounded-xl">
+                        <iconify-icon icon="mdi:check-circle" class="text-[#00D1B2] text-xl mt-0.5"></iconify-icon>
+                        <div>
+                            <p class="font-medium">已公开信息</p>
+                            <p class="text-sm text-gray-400">披露时已公开或之后非因接收方过错而公开的信息</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white/5 p-4 rounded-xl">
+                        <iconify-icon icon="mdi:check-circle" class="text-[#00D1B2] text-xl mt-0.5"></iconify-icon>
+                        <div>
+                            <p class="font-medium">事先持有证明</p>
+                            <p class="text-sm text-gray-400">接收方能以书面证据证明在披露前已合法持有且无保密义务</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white/5 p-4 rounded-xl">
+                        <iconify-icon icon="mdi:check-circle" class="text-[#00D1B2] text-xl mt-0.5"></iconify-icon>
+                        <div>
+                            <p class="font-medium">第三方合法获取</p>
+                            <p class="text-sm text-gray-400">从第三方合法获取且该第三方无保密义务</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white/5 p-4 rounded-xl">
+                        <iconify-icon icon="mdi:check-circle" class="text-[#00D1B2] text-xl mt-0.5"></iconify-icon>
+                        <div>
+                            <p class="font-medium">法律强制披露</p>
+                            <p class="text-sm text-gray-400">根据法律、法规或司法/行政命令必须披露（但应提前通知披露方）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. 保密期限 -->
+            <div id="term" class="nda-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:calendar-clock" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">4. 保密期限</h2>
+                </div>
+                <div class="space-y-3 text-gray-300 leading-relaxed">
+                    <p>4.1 本协议自双方达成合作关系之日起（包括但不限于提交合作申请、注册账户、签署线下NDA、开始POC试跑等）生效。</p>
+                    <p>4.2 保密义务的存续期限为 <span class="text-[#00D1B2] font-bold">自本协议生效之日起至合作关系终止后 5 年</span>。</p>
+                    <p>4.3 对于构成核心商业秘密的信息（包括但不限于算法模型、API密钥体系、定价弹性数据库），保密义务持续至该信息不再构成商业秘密为止，最长不超过披露后15年。</p>
+                    <div class="highlight-box">
+                        <p class="text-sm"><iconify-icon icon="mdi:clock-outline"
+                                class="text-[#00D1B2] inline mr-1"></iconify-icon>
+                            注意：即使未签署纸质版NDA，双方实际发生的保密信息披露行为亦受本协议约束。口头披露的保密信息应在披露后15日内以书面形式确认。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. 信息处置 -->
+            <div id="disposal" class="nda-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:delete-off" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">5. 信息处置与返还</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>5.1 在披露方提出书面要求后，或合作目的完成/终止后30日内，接收方应：</p>
+                    <ul class="list-disc list-inside ml-6 space-y-2 text-gray-400">
+                        <li>返还所有包含保密信息的物理/电子文件、存储介质及副本；</li>
+                        <li>或提供经披露方认可的书面销毁证明（对于已无法物理返还的服务器日志、备份等，确保无法单独识别保密信息）。</li>
+                    </ul>
+                    <p>5.2 接收方可为遵守法律法规或内部合规存档要求而保留一份保密信息副本，但该副本仍需继续遵守本协议的保密义务。</p>
+                </div>
+            </div>
+
+            <!-- 6. 违约责任 -->
+            <div id="breach" class="nda-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:gavel" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">6. 违约责任</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>6.1 若接收方违反本协议约定，应赔偿披露方因此遭受的全部直接及间接损失，包括但不限于：</p>
+                    <ul class="list-disc list-inside ml-6 space-y-1 text-gray-400">
+                        <li>为调查违约行为及补救所支出的合理费用；</li>
+                        <li>律师费、诉讼费、仲裁费、保全费、鉴定费等法律费用；</li>
+                        <li>因商业秘密泄露导致的商业机会损失、客户流失、声誉损害等（按行业合理标准估算）。</li>
+                    </ul>
+                    <p>6.2 接收方违反保密义务的行为将给披露方造成难以弥补的损害，披露方有权在寻求金钱赔偿的同时申请禁令救济（包括临时禁令及永久禁令），无需提供担保。</p>
+                    <p>6.3 如接收方为机构，其员工或 subcontractor 的违约行为视为接收方违约。</p>
+                    <div class="highlight-box bg-red-500/5 border-red-500/30">
+                        <p class="text-sm text-red-300"><iconify-icon icon="mdi:warning"
+                                class="inline mr-1"></iconify-icon> 特别声明：恶意泄露保密信息可能同时构成刑事犯罪（如侵犯商业秘密罪），我方保留向公安机关举报的权利。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. 管辖法律 -->
+            <div id="governance" class="nda-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:balance-scale" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">7. 管辖法律与争议解决</h2>
+                </div>
+                <div class="space-y-3 text-gray-300 leading-relaxed">
+                    <p>7.1 本协议的订立、效力、解释、履行及争议解决均适用中华人民共和国法律（不包括其冲突法规则）。</p>
+                    <p>7.2 因本协议引起的或与本协议有关的任何争议，双方应首先通过友好协商解决。协商不成的，任何一方可将争议提交至 <span
+                            class="text-[#00D1B2] font-semibold">披露方所在地有管辖权的人民法院</span> 诉讼解决。</p>
+                    <p>7.3 本协议条款部分无效的，不影响其他条款的效力。</p>
+                </div>
+            </div>
+
+            <!-- 8. 签署与生效 -->
+            <div id="execution" class="nda-section">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:file-sign" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">8. 签署与生效</h2>
+                </div>
+                <div class="seal-stamp rounded-2xl p-6">
+                    <p class="text-gray-300 mb-6 text-center">以下无正文，为双方保密承诺书签署页。</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="font-bold text-[#00D1B2] mb-2">RedGecko AI（披露方）</p>
+                            <p class="text-sm">公司名称：深圳红壁虎科技有限公司</p>
+                            <p class="text-sm">授权代表（签字）：_________________</p>
+                            <p class="text-sm">日期：________ 年 ____ 月 ____ 日</p>
+                            <div class="mt-4 pt-3 border-t border-white/10 text-xs text-gray-500">（线上协议：访问并使用服务即视为签署）
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-bold text-[#00D1B2] mb-2">客户 / 合作伙伴（接收方）</p>
+                            <p class="text-sm">公司名称：_________________</p>
+                            <p class="text-sm">授权代表（签字）：_________________</p>
+                            <p class="text-sm">日期：________ 年 ____ 月 ____ 日</p>
+                            <div class="mt-4 pt-3 border-t border-white/10 text-xs text-gray-500">（盖章/签字后扫描回传至
+                                legal@redgecko.ai）</div>
+                        </div>
+                    </div>
+                    <div class="mt-8 p-4 bg-white/5 rounded-xl text-center">
+                        <p class="text-sm text-gray-300"><iconify-icon icon="mdi:checkbox-marked-circle"
+                                class="text-[#00D1B2] inline mr-1"></iconify-icon>
+                            通过提交合作申请、注册账户或参与POC，即视为接收方已阅读、理解并同意本保密承诺书的全部条款。</p>
+                        <p class="text-xs text-gray-500 mt-2">如需签署纸质版NDA，请联系 legal@redgecko.ai 获取标准模板。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 补充说明 -->
+            <div class="mt-10 pt-6 border-t border-white/10 text-center text-xs text-gray-500">
+                <p>RedGecko AI 保留随时更新本保密承诺书条款的权利。更新版本将在官网公布，并适用于更新后发生的保密信息披露行为。</p>
+                <p class="mt-1">© 2026 RedGecko AI. 本协议受中华人民共和国法律保护。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

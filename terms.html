@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>服务协议 | RedGecko AI - 零售智能决策专家</title>
+    <!-- Tailwind + 图标库 + 字体 -->
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 8px 20px -6px rgba(0, 209, 178, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 209, 178, 0.4);
+        }
+
+        .policy-section {
+            scroll-margin-top: 100px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1a2f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00D1B2;
+            border-radius: 10px;
+        }
+
+        .terms-highlight {
+            background: rgba(0, 209, 178, 0.08);
+            border-left: 3px solid #00D1B2;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- 导航栏 (统一风格) -->
+    <nav-component></nav-component>
+
+    <!-- Hero 区域 -->
+    <section class="relative pt-44 pb-16 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,#002B44,transparent_80%)] -z-10"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <iconify-icon class="text-[#00D1B2]" icon="mdi:file-document-outline"></iconify-icon>
+                <span class="text-xs font-medium text-gray-300 tracking-wider">具有法律约束力的协议</span>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                服务协议
+            </h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                本协议构成您与 RedGecko AI 之间就使用销量预测、智能定价、天气API等服务的完整法律约定。请仔细阅读。
+            </p>
+            <div class="flex justify-center gap-6 mt-8 text-sm text-gray-500">
+                <span>📅 版本：v2.1</span>
+                <span>⚖️ 最后更新：2026年4月17日</span>
+                <span>✅ 适用于所有企业客户及API用户</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 目录导航 (快速跳转) -->
+    <section class="py-6 sticky top-20 z-40 glass-card border-y border-white/10 backdrop-blur-md">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 flex flex-wrap justify-center gap-3 text-sm">
+            <a href="#acceptance" class="hover:text-[#00D1B2] transition-colors">协议接受</a>
+            <span class="text-gray-600">•</span>
+            <a href="#services" class="hover:text-[#00D1B2] transition-colors">服务范围</a>
+            <span class="text-gray-600">•</span>
+            <a href="#accounts" class="hover:text-[#00D1B2] transition-colors">账户管理</a>
+            <span class="text-gray-600">•</span>
+            <a href="#payment" class="hover:text-[#00D1B2] transition-colors">费用与支付</a>
+            <span class="text-gray-600">•</span>
+            <a href="#usage" class="hover:text-[#00D1B2] transition-colors">使用规范</a>
+            <span class="text-gray-600">•</span>
+            <a href="#ip" class="hover:text-[#00D1B2] transition-colors">知识产权</a>
+            <span class="text-gray-600">•</span>
+            <a href="#liability" class="hover:text-[#00D1B2] transition-colors">免责条款</a>
+            <span class="text-gray-600">•</span>
+            <a href="#termination" class="hover:text-[#00D1B2] transition-colors">协议终止</a>
+            <span class="text-gray-600">•</span>
+            <a href="#govlaw" class="hover:text-[#00D1B2] transition-colors">管辖法律</a>
+        </div>
+    </section>
+
+    <!-- 主体内容 -->
+    <section class="py-16 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 lg:p-12">
+
+            <!-- 1. 协议接受 -->
+            <div id="acceptance" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:handshake" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">1. 协议的接受与修改</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-4">1.1 本协议是 RedGecko AI（以下简称“我方”或“平台”）与您（以下简称“用户”或“企业客户”）之间就使用我方提供的零售AI决策服务（包括但不限于销量预测、智能定价、天气数据API、SaaS看板等）所订立的具有法律约束力的协议。</p>
+                <p class="text-gray-300 leading-relaxed mb-4">1.2 通过注册、登录、访问或使用我们的服务，即表示您已阅读、理解并同意受本协议所有条款的约束。如果您代表一家企业或其他法律实体，您声明并保证您已获得该实体的充分授权。</p>
+                <div class="terms-highlight">
+                    <p class="text-sm text-gray-200">⚠️ 重要提示：如您不同意本协议的任何条款，请立即停止使用我们的服务。我们保留随时修改本协议的权利，修改后的协议将在网站公布或通过站内信通知。继续使用服务即视为接受修改。</p>
+                </div>
+            </div>
+
+            <!-- 2. 服务范围 -->
+            <div id="services" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:apps" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">2. 服务范围与交付</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p><span class="text-[#00D1B2] font-semibold">2.1 核心服务：</span>我方提供以下服务类型（具体以订购时选定的方案为准）：</p>
+                    <ul class="list-disc list-inside ml-6 space-y-2 text-gray-400">
+                        <li><strong class="text-white">精准销量预测</strong> — 基于历史交易、天气、节假日等多维特征的时序预测，输出单店/单SKU小时级或天级预测结果。</li>
+                        <li><strong class="text-white">智能动态定价</strong> — 基于价格弹性矩阵与库存深度，输出阶梯折扣建议及毛利预测。</li>
+                        <li><strong class="text-white">天气数据API</strong> — 提供实时/预报气象数据及零售专属指数，支持第三方付费调用。</li>
+                        <li><strong class="text-white">SaaS管理看板</strong> — 提供可视化报表、预测结果导出及采购建议。</li>
+                    </ul>
+                    <p class="mt-3"><span class="text-[#00D1B2] font-semibold">2.2 服务级别承诺（SLA）：</span>API服务可用性不低于99.95%，预测看板可用性不低于99.9%。具体补偿标准以双方签订的《服务水平协议》为准。</p>
+                    <p><span class="text-[#00D1B2] font-semibold">2.3 服务变更：</span>我方保留根据技术进步或业务调整更新服务功能的权利，但需提前15个自然日通知付费用户。重大变更（如停止某类API）需提前30日通知。</p>
+                </div>
+            </div>
+
+            <!-- 3. 账户管理 -->
+            <div id="accounts" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:account-key" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">3. 账户注册与安全</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>3.1 用户须提供真实、准确、完整的企业信息（包括公司名称、联系人、联系电话、邮箱等）。如信息发生变更，应在7个工作日内更新。</p>
+                    <p>3.2 用户对账户下的所有活动（包括API调用、数据上传、定价策略确认等）承担全部责任。API密钥须妥善保管，如泄露应立即通知我方。</p>
+                    <p>3.3 禁止账户共享或转售。如发现多企业共用同一账户，我方有权暂停服务并追究违约责任。</p>
+                    <div class="terms-highlight">
+                        <p class="text-sm">🔐 安全建议：启用多因素认证（MFA），定期更换API密钥。我方不会以任何理由向您索要密码或API密钥。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. 费用与支付 -->
+            <div id="payment" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:cash-multiple" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">4. 费用与支付条款</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>4.1 服务费用以官网公示价格或双方签署的《报价单》/《订单》为准。我方保留调整价格的权利，但调整前将提前30日通知付费用户。</p>
+                    <p>4.2 付费方式支持：对公转账、支付宝企业支付、线上信用卡（Stripe）。订阅类服务按周期（月度/年度）自动续费，用户可在到期前至少3个工作日取消自动续订。</p>
+                    <p>4.3 逾期未支付费用的，我方有权暂停服务。逾期超过30日的，视为根本违约，我方有权终止协议并保留追索欠款及违约金的权利（按日万分之五计算）。</p>
+                    <p>4.4 免费试用期或POC（概念验证）阶段，我方按约定提供有限服务。试用期结束后如需继续使用，须签署正式订阅协议。</p>
+                </div>
+            </div>
+
+            <!-- 5. 使用规范与数据合规 -->
+            <div id="usage" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:gavel" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">5. 使用规范与数据合规</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>5.1 用户承诺上传至平台的历史交易数据、商品信息等均为合法取得，不侵犯任何第三方知识产权或商业秘密。用户应遵守《个人信息保护法》，如涉及消费者个人信息的，须已获得合法授权。</p>
+                    <p>5.2 禁止使用本服务从事以下行为：</p>
+                    <ul class="list-disc list-inside ml-6 space-y-1 text-gray-400">
+                        <li>逆向工程、反编译或试图提取我方算法模型源码；</li>
+                        <li>利用API进行超出合理频次的压力测试或攻击行为；</li>
+                        <li>将预测结果、定价建议用于非法目的（如价格垄断、欺诈）；</li>
+                        <li>转售API访问权限或预测报告给第三方（经书面许可的合作除外）。</li>
+                    </ul>
+                    <p>5.3 我方有权对异常调用行为（如短时间内请求频率远超正常商业场景）进行限流或封禁，并提前通知用户。</p>
+                    <p>5.4 用户使用天气数据API时，须在应用场景中注明数据来源“Powered by RedGecko AI”。</p>
+                </div>
+            </div>
+
+            <!-- 6. 知识产权 -->
+            <div id="ip" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:copyright" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">6. 知识产权</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>6.1 我方保留所有与服务相关的软件、算法、模型、API接口、文档、商标、Logo等知识产权（包括但不限于专利、著作权、商业秘密）。用户仅获得本协议约定的使用权，而非所有权。</p>
+                    <p>6.2 用户上传至平台的历史交易数据、商品信息等，其所有权仍归用户所有。用户授予我方在服务期间内非独占、免许可费的使用权，仅用于提供预测、定价及优化模型之目的。服务终止后，我方将按约定删除或匿名化处理用户数据。</p>
+                    <p>6.3 用户在使用过程中产生的预测结果、定价建议报告，用户可自主用于内部经营决策；未经我方书面同意，不得对外公开发布或作为商业主张的依据。</p>
+                </div>
+            </div>
+
+            <!-- 7. 数据安全与保密 -->
+            <div class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:shield-lock" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">7. 数据安全与保密义务</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>7.1 我方采用符合行业标准的安全措施（包括传输加密、存储加密、访问控制、审计日志等）保护用户数据安全。具体技术措施详见《隐私条款》第3条。</p>
+                    <p>7.2 双方均应对在合作中获知的对方商业秘密（包括但不限于预测模型参数、客户交易数据、定价策略、API密钥）承担保密义务，保密期限自协议终止后持续3年。</p>
+                    <p>7.3 如发生数据安全事件（如未经授权的访问或泄露），我方将在法律要求的时限内（不超过48小时）通知用户，并配合进行应急响应和调查。</p>
+                </div>
+            </div>
+
+            <!-- 8. 免责条款 -->
+            <div id="liability" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:shield-off" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">8. 免责条款</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>8.1 我方不保证预测结果的绝对准确性。销量预测、定价建议基于历史数据和算法模型生成，仅供参考决策，用户应结合自身实际情况做出最终商业判断。我方不对因使用预测结果或定价建议导致的直接或间接损失承担责任（包括但不限于库存积压、利润损失、机会成本）。</p>
+                    <p>8.2 因以下原因导致服务中断或数据丢失，我方不承担责任：</p>
+                    <ul class="list-disc list-inside ml-6 space-y-1 text-gray-400">
+                        <li>用户自身网络、设备或软件故障；</li>
+                        <li>第三方云服务提供商（如阿里云、腾讯云）的基础设施故障；</li>
+                        <li>自然灾害、战争、罢工、政府行为等不可抗力事件；</li>
+                        <li>用户API密钥泄露或误操作导致的数据问题。</li>
+                    </ul>
+                    <p>8.3 在任何情况下，我方对用户的累计赔偿责任总额不超过用户在过去12个月内向我方支付的服务费用总额。</p>
+                </div>
+            </div>
+
+            <!-- 9. 协议终止 -->
+            <div id="termination" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:exit-run" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">9. 协议终止</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>9.1 用户可随时停止使用服务，并发送邮件至 support@redgecko.ai 申请注销账户。注销后，我方将根据《隐私条款》保留期限处理用户数据。</p>
+                    <p>9.2 如用户违反本协议任何实质性条款（如未支付费用、滥用API、侵犯知识产权），我方有权在不提前通知的情况下暂停或终止服务，并保留追究法律责任的权利。</p>
+                    <p>9.3 协议终止后，用户应立即停止使用所有服务，删除我方提供的API密钥、预测报告及任何保密信息。用户已支付的费用不予退还（除非因我方根本违约导致终止）。</p>
+                </div>
+            </div>
+
+            <!-- 10. 管辖法律与争议解决 -->
+            <div id="govlaw" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:gavel" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">10. 管辖法律与争议解决</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>10.1 本协议的订立、效力、解释、履行及争议解决均适用中华人民共和国法律（不包括其冲突法规则）。</p>
+                    <p>10.2 因本协议引起的或与本协议有关的任何争议，双方应首先通过友好协商解决。协商不成的，任何一方可将争议提交至我方所在地（上海市浦东新区）有管辖权的人民法院诉讼解决。</p>
+                    <p>10.3 本协议条款部分无效的，不影响其他条款的效力。</p>
+                </div>
+            </div>
+
+            <!-- 11. 其他条款 -->
+            <div class="policy-section">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:file-multiple" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">11. 其他条款</h2>
+                </div>
+                <div class="space-y-3 text-gray-300 leading-relaxed">
+                    <p>11.1 本协议构成双方就所述服务达成的完整协议，取代此前所有口头或书面的沟通、提议及陈述。</p>
+                    <p>11.2 我方未行使或执行本协议的任何权利，不构成对该权利的放弃。</p>
+                    <p>11.3 如有任何疑问，请联系我们的商务团队：<span class="text-[#00D1B2]">legal@redgecko.ai</span> 或拨打 400-888-2026。</p>
+                </div>
+                <div class="mt-8 p-5 bg-white/5 rounded-xl text-center text-sm text-gray-400 border border-white/5">
+                    <iconify-icon icon="mdi:checkbox-marked-circle-outline" class="text-2xl text-[#00D1B2] mx-auto mb-2"></iconify-icon>
+                    <p>通过注册账户或使用 RedGecko AI 服务，即表示您确认已阅读、理解并同意受本服务协议约束。</p>
+                    <p class="mt-2">最后更新：2026年4月17日 | RedGecko AI 保留最终解释权</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

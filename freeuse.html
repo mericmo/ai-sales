@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>免费试用 | RedGecko AI - 7天验证AI降本效果</title>
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(0, 209, 178, 0.25);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 10px 26px -10px rgba(0, 209, 178, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px -12px rgba(0, 209, 178, 0.45);
+        }
+
+        .hero-wave {
+            background: radial-gradient(circle at 50% 20%, rgba(0, 209, 178, 0.14), transparent 35%),
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.12), transparent 28%),
+                linear-gradient(180deg, #00172f 0%, #000a16 100%);
+        }
+
+        .step-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .tag-select {
+            transition: all 0.2s ease;
+        }
+
+        .tag-select.active {
+            background: rgba(0, 209, 178, 0.2);
+            border-color: #00D1B2;
+            color: #00D1B2;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .faq-question:hover {
+            color: #00D1B2;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- 导航栏 -->
+    <nav-component></nav-component>
+
+    <!-- Hero 区域 -->
+    <section class="relative pt-36 pb-16 hero-wave overflow-hidden">
+        <div class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top,_rgba(0,209,178,0.18),transparent_28%)]"></div>
+        <div class="max-w-[1320px] mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                        <iconify-icon class="text-[#00D1B2]" icon="mdi:rocket-launch"></iconify-icon>
+                        <span class="text-xs font-medium text-gray-300 tracking-wider uppercase">7天免费试用 · 验证降本效果</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        用真实数据验证<span class="text-gradient"> AI 降本效果</span>
+                    </h1>
+                    <p class="max-w-xl text-lg text-gray-300 leading-relaxed mb-8">
+                        提交申请 → 24小时顾问对接 → 7天真实数据试用 → 获取专属降本报告
+                    </p>
+                    <div class="grid gap-4 sm:grid-cols-2 mb-8">
+                        <div class="glass-card p-5 rounded-3xl border-white/10">
+                            <h3 class="font-semibold text-white mb-2">🎯 适合谁试用</h3>
+                            <p class="text-sm text-gray-400">连锁零售、生鲜餐饮、快消品、服饰、电子零售企业</p>
+                        </div>
+                        <div class="glass-card p-5 rounded-3xl border-white/10">
+                            <h3 class="font-semibold text-white mb-2">⚡ 试用权益</h3>
+                            <p class="text-sm text-gray-400">专属顾问1对1服务 + 7天真实环境体验 + 专属降本报告</p>
+                        </div>
+                    </div>
+                    <!-- 社会证明 -->
+                    <div class="flex items-center gap-6 text-sm text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="mdi:check-circle" class="text-[#00D1B2] text-base"></iconify-icon>
+                            <span>已服务 3,000+ 零售门店</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="mdi:check-circle" class="text-[#00D1B2] text-base"></iconify-icon>
+                            <span>ISO 27001 认证</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="mdi:check-circle" class="text-[#00D1B2] text-base"></iconify-icon>
+                            <span>98% 客户续约率</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧：试用流程卡片 -->
+                <div class="glass-card p-8 rounded-[32px] border-white/10 shadow-2xl shadow-[#00D1B2]/10">
+                    <div class="mb-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="step-badge flex items-center justify-center text-[#00D1B2] font-bold">1</span>
+                            <div>
+                                <h2 class="text-xl font-semibold">填写申请（2分钟）</h2>
+                                <p class="text-sm text-gray-400">告诉我们公司背景和试用目标</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="step-badge flex items-center justify-center text-[#00D1B2] font-bold">2</span>
+                            <div>
+                                <h2 class="text-xl font-semibold">顾问24小时内响应</h2>
+                                <p class="text-sm text-gray-400">电话沟通确认试用方案与数据准备</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="step-badge flex items-center justify-center text-[#00D1B2] font-bold">3</span>
+                            <div>
+                                <h2 class="text-xl font-semibold">7天试用 + 专属报告</h2>
+                                <p class="text-sm text-gray-400">体验真实业务模型，获取降本测算报告</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-3xl bg-[#021431] p-5 border border-white/5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <iconify-icon class="text-3xl text-[#00D1B2]" icon="mdi:rocket"></iconify-icon>
+                            <div>
+                                <p class="text-sm text-gray-400">已有 3,000+ 零售品牌选择</p>
+                                <p class="font-semibold text-white">平均降低库存积压 25%</p>
+                            </div>
+                        </div>
+                        <a href="#trialSection" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#00D1B2] text-white text-sm font-semibold hover:bg-[#00b59a] transition-all">
+                            立即申请试用 <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-[1320px] mx-auto px-6 lg:px-8 pb-24">
+        <section class="grid lg:grid-cols-3 gap-8">
+            <!-- 左侧：试用价值 + 准备清单 -->
+            <div class="lg:col-span-2 space-y-8">
+                <div class="glass-card p-8 rounded-[32px] border-white/10 shadow-xl shadow-[#00D1B2]/10">
+                    <h2 class="text-3xl font-bold mb-4">7天试用，你能获得什么？</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        RedGecko AI 的免费试用不是简单的功能体验，而是用您的真实数据验证AI决策的实际效果。
+                    </p>
+                    <div class="grid gap-4">
+                        <div class="flex gap-4 p-5 bg-white/5 rounded-3xl border border-white/10">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00D1B2]/15 text-[#00D1B2]">
+                                <iconify-icon icon="mdi:chart-bar"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">专属降本测算报告</h3>
+                                <p class="text-gray-400 text-sm">7天内出具针对您业务的降本测算报告，含预期ROI分析</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-5 bg-white/5 rounded-3xl border border-white/10">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00D1B2]/15 text-[#00D1B2]">
+                                <iconify-icon icon="mdi:shield-check"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">金融级数据安全保障</h3>
+                                <p class="text-gray-400 text-sm">ISO27001认证 + 等保三级，数据仅用于试用，试用结束可删除</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-5 bg-white/5 rounded-3xl border border-white/10">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00D1B2]/15 text-[#00D1B2]">
+                                <iconify-icon icon="mdi:account-check"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">1对1专属顾问服务</h3>
+                                <p class="text-gray-400 text-sm">资深零售顾问全程陪跑，解答业务与技术问题</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-[32px] border-white/10 shadow-xl shadow-[#00D1B2]/10">
+                    <div class="flex justify-between items-center flex-wrap gap-4 mb-6">
+                        <h2 class="text-2xl font-bold">📋 试用前准备清单</h2>
+                        <button id="downloadChecklistBtn" class="text-[#00D1B2] text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                            <iconify-icon icon="mdi:download"></iconify-icon> 下载清单模板
+                        </button>
+                    </div>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex gap-3 items-start">
+                            <span class="text-[#00D1B2] text-lg">✓</span>
+                            <span><strong class="text-white">近3个月销售/库存数据</strong>（支持CSV/Excel格式）</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-[#00D1B2] text-lg">✓</span>
+                            <span><strong class="text-white">门店数量与商品品类清单</strong>（帮助顾问快速了解业务规模）</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="text-[#00D1B2] text-lg">✓</span>
+                            <span><strong class="text-white">当前核心痛点</strong>（缺货率 / 库存周转 / 毛利率优化）</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-[#00D1B2]/5 rounded-xl border border-[#00D1B2]/20 text-sm text-gray-300">
+                        <iconify-icon icon="mdi:information-outline" class="inline text-[#00D1B2] mr-1"></iconify-icon>
+                        数据仅用于试用环境，不对外共享，试用结束后可选择删除或匿名化处理。
+                    </div>
+                </div>
+
+                <!-- FAQ 模块 -->
+                <div class="glass-card p-8 rounded-[32px] border-white/10 shadow-xl shadow-[#00D1B2]/10">
+                    <h2 class="text-2xl font-bold mb-6">❓ 常见问题</h2>
+                    <div class="space-y-4">
+                        <div class="faq-item pb-4">
+                            <div class="faq-question flex justify-between items-center py-2 font-medium text-white">
+                                <span>试用收费吗？有隐藏费用吗？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="text-gray-400 transition-transform"></iconify-icon>
+                            </div>
+                            <div class="faq-answer text-gray-400 text-sm">
+                                完全免费，无任何隐藏费用。试用结束后如需继续使用，我们会提供正式报价方案，由您自主决定。
+                            </div>
+                        </div>
+                        <div class="faq-item pb-4">
+                            <div class="faq-question flex justify-between items-center py-2 font-medium text-white">
+                                <span>数据安全如何保障？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="text-gray-400 transition-transform"></iconify-icon>
+                            </div>
+                            <div class="faq-answer text-gray-400 text-sm">
+                                我们持有ISO 27001认证及等保三级资质，数据采用AES-256加密存储，试用结束后可按您要求删除所有数据。
+                            </div>
+                        </div>
+                        <div class="faq-item pb-4">
+                            <div class="faq-question flex justify-between items-center py-2 font-medium text-white">
+                                <span>需要IT团队配合吗？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="text-gray-400 transition-transform"></iconify-icon>
+                            </div>
+                            <div class="faq-answer text-gray-400 text-sm">
+                                不需要。我们提供标准数据模板，您只需导出CSV/Excel即可。技术对接由我方顾问协助完成。
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question flex justify-between items-center py-2 font-medium text-white">
+                                <span>7天试用能看哪些功能？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="text-gray-400 transition-transform"></iconify-icon>
+                            </div>
+                            <div class="faq-answer text-gray-400 text-sm">
+                                根据您选择的模块，可体验销量预测、动态定价、库存补货建议或天气API。试用期内可随时与顾问沟通调整。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：试用表单（精简版） -->
+            <aside id="trialSection" class="glass-card p-8 rounded-[32px] border-white/10 shadow-xl shadow-[#00D1B2]/10">
+                <div class="mb-6">
+                    <span class="text-xs uppercase tracking-[0.2em] text-[#00D1B2]">预计3分钟完成</span>
+                    <h2 class="text-3xl font-bold mt-2">立即申请试用</h2>
+                    <p class="text-sm text-gray-400 mt-1">填写后24小时内顾问联系</p>
+                </div>
+
+                <!-- 客户Logo墙（简化版信任元素） -->
+                <div class="flex flex-wrap justify-center gap-4 mb-6 py-3 border-y border-white/5">
+                    <span class="text-xs text-gray-500">信任伙伴</span>
+                    <div class="flex gap-3 text-gray-400 text-xs">
+                        <span>🏪 连锁便利店</span>
+                        <span>🥬 生鲜零售</span>
+                        <span>👗 时尚品牌</span>
+                        <span>☕ 餐饮连锁</span>
+                    </div>
+                </div>
+
+                <form id="freeTrialForm" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">公司名称 *</label>
+                            <input type="text" id="freeCompanyName" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none transition" placeholder="请输入公司全称" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">行业类型 *</label>
+                            <select id="freeIndustry" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:border-[#00D1B2] outline-none transition" required>
+                                <option value="" class="text-gray-400">请选择行业</option>
+                                <option value="retail">零售/连锁</option>
+                                <option value="food">餐饮/生鲜</option>
+                                <option value="fashion">时尚/服饰</option>
+                                <option value="electronics">电子产品</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">联系人 *</label>
+                            <input type="text" id="freeContactName" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none transition" placeholder="您的姓名" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">手机号码 *</label>
+                            <input type="tel" id="freePhone" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none transition" placeholder="138-0000-0000" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">邮箱 *</label>
+                            <input type="email" id="freeEmail" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none transition" placeholder="your@company.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">门店数量</label>
+                            <select id="freeStoreCount" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:border-[#00D1B2] outline-none transition">
+                                <option value="">请选择</option>
+                                <option value="1-10">1-10家</option>
+                                <option value="10-100">10-100家</option>
+                                <option value="100+">100+家</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 标签式产品模块选择（更紧凑） -->
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-3">感兴趣的产品模块 *</label>
+                        <div class="flex flex-wrap gap-2" id="modulesContainer">
+                            <span data-module="prediction" class="tag-select px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 cursor-pointer hover:border-[#00D1B2]/50 transition-all">📊 销量预测</span>
+                            <span data-module="pricing" class="tag-select px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 cursor-pointer hover:border-[#00D1B2]/50 transition-all">🏷️ 动态定价</span>
+                            <span data-module="inventory" class="tag-select px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 cursor-pointer hover:border-[#00D1B2]/50 transition-all">📦 库存补货</span>
+                            <span data-module="weather" class="tag-select px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 cursor-pointer hover:border-[#00D1B2]/50 transition-all">🌤️ 天气API</span>
+                        </div>
+                        <input type="hidden" id="selectedModules" value="">
+                        <p class="text-xs text-gray-500 mt-2">可多选，至少选择一项</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">当前挑战（选填，帮助我们更好服务）</label>
+                        <textarea id="freeDescription" rows="3" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none transition resize-none" placeholder="例如：库存积压严重、缺货率高、毛利提升空间有限..."></textarea>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="freeAgree" class="accent-[#00D1B2] mt-1" required>
+                        <label for="freeAgree" class="text-sm text-gray-400">我同意接收 RedGecko AI 的免费试用服务，并授权处理我的信息。<a href="privacy.html" class="text-[#00D1B2] hover:underline">隐私政策</a></label>
+                    </div>
+
+                    <button id="freeTrialSubmit" type="submit" class="w-full py-4 rounded-2xl btn-primary text-white font-semibold text-base flex items-center justify-center gap-2">
+                        <iconify-icon icon="mdi:rocket-launch-outline"></iconify-icon> 立即获取试用资格
+                    </button>
+                </form>
+
+                <div id="freeTrialSuccess" class="mt-8 hidden rounded-3xl border border-green-500/20 bg-green-500/10 p-6 text-center">
+                    <iconify-icon class="text-4xl text-green-400 mb-4" icon="mdi:check-circle"></iconify-icon>
+                    <h3 class="text-2xl font-bold mb-2 text-white">申请已提交</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">感谢您的申请！我们的顾问将在 24 小时内与您联系，并发送《试用准备指南》至您的邮箱。</p>
+                    <p class="text-sm text-gray-400">如需加急，可拨打：<span class="text-white font-semibold">189-3867-0975</span></p>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+
+    <script>
+        // Logo 加载
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoContainer = document.getElementById('logo-container');
+            if (logoContainer && typeof createLogo === 'function') {
+                logoContainer.innerHTML = createLogo();
+            }
+        });
+
+        // 标签式产品模块选择
+        const modules = [];
+        const tagElements = document.querySelectorAll('.tag-select');
+        const selectedModulesInput = document.getElementById('selectedModules');
+
+        function updateModulesInput() {
+            selectedModulesInput.value = modules.join(',');
+            tagElements.forEach(tag => {
+                const module = tag.dataset.module;
+                if (modules.includes(module)) {
+                    tag.classList.add('active');
+                } else {
+                    tag.classList.remove('active');
+                }
+            });
+        }
+
+        tagElements.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const module = tag.dataset.module;
+                const index = modules.indexOf(module);
+                if (index === -1) {
+                    modules.push(module);
+                } else {
+                    modules.splice(index, 1);
+                }
+                updateModulesInput();
+            });
+        });
+
+        // FAQ 折叠功能
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const icon = question.querySelector('iconify-icon');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                faqItems.forEach(i => i.classList.remove('open'));
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+        // 默认展开第一个FAQ
+        if (faqItems.length) faqItems[0].classList.add('open');
+
+        // 表单提交
+        const freeTrialForm = document.getElementById('freeTrialForm');
+        const freeTrialSuccess = document.getElementById('freeTrialSuccess');
+
+        freeTrialForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const companyName = document.getElementById('freeCompanyName').value.trim();
+            const industry = document.getElementById('freeIndustry').value;
+            const contactName = document.getElementById('freeContactName').value.trim();
+            const phone = document.getElementById('freePhone').value.trim();
+            const email = document.getElementById('freeEmail').value.trim();
+            const agree = document.getElementById('freeAgree').checked;
+            const description = document.getElementById('freeDescription').value.trim();
+            const storeCount = document.getElementById('freeStoreCount').value;
+
+            if (!companyName || !industry || !contactName || !phone || !email || !agree) {
+                alert('请填写所有必填字段，并同意隐私政策。');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('请输入有效的邮箱地址。');
+                return;
+            }
+
+            if (modules.length === 0) {
+                alert('请至少选择一个感兴趣的产品模块。');
+                return;
+            }
+
+            const submissionData = {
+                companyName,
+                industry,
+                contactName,
+                phone,
+                email,
+                storeCount,
+                modules,
+                description,
+            };
+
+            console.log('免费试用申请数据：', submissionData);
+            // 实际项目中替换为API调用
+
+            freeTrialForm.classList.add('hidden');
+            freeTrialSuccess.classList.remove('hidden');
+            freeTrialSuccess.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 下载清单按钮提示
+        document.getElementById('downloadChecklistBtn')?.addEventListener('click', () => {
+            alert('《试用准备清单模板》将发送至您的邮箱。提交申请后顾问会同步发送。');
+        });
+    </script>
+</body>
+
+</html>

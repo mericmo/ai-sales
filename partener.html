@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>B2B合作 | AI零售决策专家 - 企业级销量预测与智能定价合作</title>
+    <!-- Tailwind + 图标库 + 字体 (统一科技风格) -->
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 209, 178, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 8px 20px -6px rgba(0, 209, 178, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 209, 178, 0.4);
+        }
+
+        .cooperation-badge {
+            background: rgba(0, 209, 178, 0.12);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #00D1B2;
+            width: fit-content;
+        }
+
+        .step-circle {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 209, 178, 0.15);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            border: 1px solid rgba(0, 209, 178, 0.5);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1a2f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00D1B2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- 导航栏 (统一风格，高亮B2B菜单) -->
+    <nav-component></nav-component>
+
+    <!-- Hero 区域：B2B 合作定位 -->
+    <section class="relative pt-44 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,#002B44,transparent_70%)] -z-10"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <iconify-icon class="text-[#00D1B2]" icon="mdi:handshake"></iconify-icon>
+                <span class="text-xs font-medium text-gray-300 tracking-wider">企业级合作 · 开放共赢</span>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                B2B 合作伙伴计划<br><span class="text-gradient">让 AI 决策赋能每一家零售企业</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+                无论您是零售品牌、系统集成商、技术咨询公司，均可通过 API 集成、SaaS 订阅或定制建模，快速接入销量预测、动态定价、天气数据服务，共同创造可持续的商业价值。
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="btn-primary px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 text-white">
+                    <iconify-icon icon="mdi:file-document-outline"></iconify-icon> 成为合作伙伴
+                </button>
+                <button
+                    class="px-8 py-3.5 rounded-xl bg-white/5 border border-white/15 font-semibold hover:bg-white/10 transition">
+                    <iconify-icon icon="mdi:download-box-outline"></iconify-icon> 下载合作手册
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作模式卡片 (API / SaaS / 定制建模) -->
+    <section class="py-20 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">灵活合作模式</h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">针对不同企业需求，提供标准接入、平台订阅与深度定制三种路径，快速落地 AI 能力</p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- 模式1：API 调用模式 -->
+            <div class="glass-card rounded-2xl p-8 transition-all hover:border-[#00D1B2]/40 flex flex-col h-full">
+                <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5">
+                    <iconify-icon class="text-3xl text-[#00D1B2]" icon="mdi:api"></iconify-icon>
+                </div>
+                <div class="cooperation-badge mb-4">适合有IT能力的零售/ISV</div>
+                <h3 class="text-2xl font-bold mb-3">API 调用模式</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-5">通过标准 RESTful API
+                    接入销量预测、智能定价、天气数据服务，与客户自有ERP/POS系统无缝集成，按调用量灵活计费。</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-grow">
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 实时预测 + 批量异步接口</li>
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 99.95% SLA，毫秒级响应</li>
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 独立控制台管理密钥与用量</li>
+                </ul>
+                <button
+                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">查看
+                    API 文档 →</button>
+            </div>
+
+            <!-- 模式2：SaaS 看板模式 -->
+            <div
+                class="glass-card rounded-2xl p-8 transition-all hover:border-[#00D1B2]/40 flex flex-col h-full bg-gradient-to-b from-[#00D1B2]/[0.02] to-transparent">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5">
+                    <iconify-icon class="text-3xl text-[#00D1B2]" icon="mdi:view-dashboard-outline"></iconify-icon>
+                </div>
+                <div class="cooperation-badge mb-4">适合中小连锁 / 运营团队</div>
+                <h3 class="text-2xl font-bold mb-3">SaaS 看板模式</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                    无需开发，登录云平台上传历史数据，即可获得单店/单SKU销量预测表、智能折扣建议及采购指导报告，按门店数订阅。</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-grow">
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 可视化看板 + 自动报告推送</li>
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 小时/天粒度预测导出</li>
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 阶梯折扣策略一键应用</li>
+                </ul>
+                <button
+                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">申请
+                    SaaS 试用 →</button>
+            </div>
+
+            <!-- 模式3：定制建模服务 -->
+            <div class="glass-card rounded-2xl p-8 transition-all hover:border-[#00D1B2]/40 flex flex-col h-full">
+                <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5">
+                    <iconify-icon class="text-3xl text-[#00D1B2]" icon="mdi:robot-expert"></iconify-icon>
+                </div>
+                <div class="cooperation-badge mb-4">适合特殊业态/大型集团</div>
+                <h3 class="text-2xl font-bold mb-3">定制建模服务</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-5">针对珠宝、大家电、医药等特殊品类，一对一特征工程 +
+                    模型训练，输出专属预测与定价策略，支持私有化部署。</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8 flex-grow">
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 深度特征挖掘与模型调优</li>
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 本地化/私有云部署</li>
+                    <li class="flex gap-2"><iconify-icon icon="mdi:check-circle"
+                            class="text-[#00D1B2] text-base"></iconify-icon> 联合创新与专属SLA</li>
+                </ul>
+                <button
+                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">联系解决方案架构师
+                    →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B 商务流程 (5 steps) 增强信任 -->
+    <section class="py-16 bg-[#0A1525] border-y border-white/5">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-3">合作流程 · 快速上线</h2>
+                <p class="text-gray-400">从需求提交到系统上线，平均仅需 15 个工作日</p>
+            </div>
+            <div class="grid md:grid-cols-5 gap-6 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="step-circle mb-3">1</div>
+                    <div class="font-semibold">提交需求</div>
+                    <div class="text-xs text-gray-500 mt-1">在线表单 / 商务咨询</div>
+                </div>
+                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
+                        icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle mb-3">2</div>
+                    <div class="font-semibold">需求对齐</div>
+                    <div class="text-xs text-gray-500 mt-1">数据评估 + 方案设计</div>
+                </div>
+                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
+                        icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle mb-3">3</div>
+                    <div class="font-semibold">免费试跑</div>
+                    <div class="text-xs text-gray-500 mt-1">3家门店2周回测</div>
+                </div>
+                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
+                        icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle mb-3">4</div>
+                    <div class="font-semibold">签署合同</div>
+                    <div class="text-xs text-gray-500 mt-1">线上签约/对公支付</div>
+                </div>
+                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
+                        icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle mb-3">5</div>
+                    <div class="font-semibold">上线交付</div>
+                    <div class="text-xs text-gray-500 mt-1">API对接/看板开通</div>
+                </div>
+            </div>
+            <div class="mt-12 glass-card p-5 rounded-xl text-center max-w-3xl mx-auto">
+                <p class="text-sm text-gray-300"><iconify-icon icon="mdi:clock-outline"
+                        class="inline text-[#00D1B2] mr-1"></iconify-icon> 从试跑到产出第一份预测报告，最快 72 小时完成 POC。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心B2B接单表单 (完整在线询价/需求提交) -->
+    <section class="py-20 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 lg:p-12 relative overflow-hidden border border-white/10">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-[#00D1B2]/10 rounded-full blur-[100px]"></div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="cooperation-badge mb-4">B2B 线上接单通道</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">立即开启您的<span class="text-gradient"> AI 零售决策升级</span>
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        填写企业信息，我们的资深零售顾问将在24小时内提供定制化方案、效果测算及报价。已服务3000+品牌，覆盖生鲜、便利店、时尚等多行业。</p>
+                    <div class="space-y-3">
+                        <div class="flex gap-3 items-center text-sm"><iconify-icon icon="mdi:check-decagram"
+                                class="text-[#00D1B2] text-xl"></iconify-icon> 免费获取《同行业标杆降本报告》</div>
+                        <div class="flex gap-3 items-center text-sm"><iconify-icon icon="mdi:check-decagram"
+                                class="text-[#00D1B2] text-xl"></iconify-icon> 一对一线上演示 + POC数据回测</div>
+                        <div class="flex gap-3 items-center text-sm"><iconify-icon icon="mdi:check-decagram"
+                                class="text-[#00D1B2] text-xl"></iconify-icon> 支持合同在线签署与对公支付</div>
+                    </div>
+                </div>
+                <div>
+                    <form id="b2bCooperationForm" class="space-y-5">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="联系人姓名"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none">
+                            <input type="text" placeholder="职位"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="公司全称"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none">
+                            <input type="text" placeholder="联系电话 / 工作邮箱"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <select
+                                class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:border-[#00D1B2] outline-none">
+                                <option>门店数量</option>
+                                <option>1-10家</option>
+                                <option>10-100家</option>
+                                <option>100-500家</option>
+                                <option>500+家</option>
+                            </select>
+                            <select
+                                class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:border-[#00D1B2] outline-none">
+                                <option>主营品类</option>
+                                <option>生鲜/食品</option>
+                                <option>便利店/标品</option>
+                                <option>服装/时尚</option>
+                                <option>家电/3C</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-2">核心诉求（可多选）</label>
+                            <div class="flex flex-wrap gap-3">
+                                <label
+                                    class="flex items-center gap-1 text-sm bg-white/5 px-3 py-1.5 rounded-full"><input
+                                        type="checkbox" class="accent-[#00D1B2]" value="减少断货"> 减少断货</label>
+                                <label
+                                    class="flex items-center gap-1 text-sm bg-white/5 px-3 py-1.5 rounded-full"><input
+                                        type="checkbox" class="accent-[#00D1B2]" value="降低损耗"> 降低损耗</label>
+                                <label
+                                    class="flex items-center gap-1 text-sm bg-white/5 px-3 py-1.5 rounded-full"><input
+                                        type="checkbox" class="accent-[#00D1B2]" value="提升毛利"> 提升毛利</label>
+                                <label
+                                    class="flex items-center gap-1 text-sm bg-white/5 px-3 py-1.5 rounded-full"><input
+                                        type="checkbox" class="accent-[#00D1B2]" value="自动化采购"> 自动化采购</label>
+                                <label
+                                    class="flex items-center gap-1 text-sm bg-white/5 px-3 py-1.5 rounded-full"><input
+                                        type="checkbox" class="accent-[#00D1B2]" value="API集成"> API集成</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-2">期望合作模式</label>
+                            <div class="flex flex-wrap gap-4">
+                                <label class="flex items-center gap-2 text-sm"><input type="radio" name="coopMode"
+                                        class="accent-[#00D1B2]" checked> API调用</label>
+                                <label class="flex items-center gap-2 text-sm"><input type="radio" name="coopMode"
+                                        class="accent-[#00D1B2]"> SaaS看板</label>
+                                <label class="flex items-center gap-2 text-sm"><input type="radio" name="coopMode"
+                                        class="accent-[#00D1B2]"> 定制建模</label>
+                            </div>
+                        </div>
+                        <button type="button" id="submitB2BForm"
+                            class="btn-primary w-full py-3.5 rounded-xl font-bold text-white flex items-center justify-center gap-2 text-base">
+                            <iconify-icon icon="mdi:send-outline"></iconify-icon> 提交合作申请 · 获取方案报价
+                        </button>
+                        <p class="text-[10px] text-gray-500 text-center mt-2">提交即视为同意《隐私政策》及《合作伙伴条款》，我们将严格保密信息</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作伙伴权益 / 生态赋能 -->
+    <section class="py-20 bg-[#001830]">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">加入合作伙伴生态，共享增长红利</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12">技术合作伙伴、咨询实施伙伴、渠道代理伙伴，获得培训、市场及技术权益支持</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-2xl">
+                    <iconify-icon icon="mdi:rocket-launch" class="text-4xl text-[#00D1B2] mx-auto mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold">技术集成支持</h3>
+                    <p class="text-gray-400 text-sm mt-2">专属API联调环境、沙箱测试账号、技术文档优先更新</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <iconify-icon icon="mdi:chart-line" class="text-4xl text-[#00D1B2] mx-auto mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold">联合市场活动</h3>
+                    <p class="text-gray-400 text-sm mt-2">线上研讨会、案例联合发布、行业展会资源互通</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <iconify-icon icon="mdi:cash-multiple" class="text-4xl text-[#00D1B2] mx-auto mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold">有竞争力分润</h3>
+                    <p class="text-gray-400 text-sm mt-2">SaaS订阅分成、API调用返佣、项目合作激励</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ (针对B2B客户关心) -->
+    <section class="py-20 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">B2B合作常见问题</h2>
+            <p class="text-gray-400">关于数据安全、部署方式、实施周期等疑问，一网打尽</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="font-bold flex items-center gap-2"><iconify-icon icon="mdi:shield-check"
+                        class="text-[#00D1B2]"></iconify-icon> 数据安全性如何保障？</div>
+                <p class="text-gray-400 text-sm mt-2">支持私有化部署，数据不出客户环境；SaaS版本采用AES-256加密，通过ISO27001认证，可签署数据保密协议。</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="font-bold flex items-center gap-2"><iconify-icon icon="mdi:timer-sand"
+                        class="text-[#00D1B2]"></iconify-icon> 实施周期一般多久？</div>
+                <p class="text-gray-400 text-sm mt-2">API模式1-2周完成对接；SaaS看板开通即用；定制建模根据数据复杂度4-6周上线，提供免费试跑验证效果。</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="font-bold flex items-center gap-2"><iconify-icon icon="mdi:cash-register"
+                        class="text-[#00D1B2]"></iconify-icon> 如何计费？是否支持按效果付费？</div>
+                <p class="text-gray-400 text-sm mt-2">支持按调用量/门店数/年度订阅等模式，部分POC阶段可按效果付费，详情可咨询商务经理。</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="font-bold flex items-center gap-2"><iconify-icon icon="mdi:api"
+                        class="text-[#00D1B2]"></iconify-icon> 是否提供免费测试环境？</div>
+                <p class="text-gray-400 text-sm mt-2">所有合作模式均提供免费沙箱环境或3家门店的2周历史数据回测，验证预测准确率后再签约。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系与增值服务区 -->
+    <section class="pb-24 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="glass-card p-8 rounded-3xl text-center bg-gradient-to-r from-[#001F3F] to-[#002845]">
+            <iconify-icon icon="mdi:headset" class="text-5xl text-[#00D1B2] mx-auto mb-4"></iconify-icon>
+            <h3 class="text-2xl font-bold">专属B2B顾问一对一咨询</h3>
+            <p class="text-gray-300 max-w-2xl mx-auto mt-2 mb-6">售前架构师、客户成功团队全程跟进，助您快速落地AI决策能力</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="flex items-center gap-2 bg-white/5 px-5 py-2 rounded-full"><iconify-icon icon="mdi:phone"
+                        class="text-[#00D1B2]"></iconify-icon> 18938670975</div>
+                <div class="flex items-center gap-2 bg-white/5 px-5 py-2 rounded-full"><iconify-icon icon="mdi:email"
+                        class="text-[#00D1B2]"></iconify-icon> customer-service@redhousegecko.com</div>
+                <button class="btn-primary px-6 py-2 rounded-full text-sm font-bold">预约在线会议 →</button>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+
+    <script>
+        // B2B 表单提交交互演示
+        document.getElementById('submitB2BForm')?.addEventListener('click', function (e) {
+            e.preventDefault();
+            alert('感谢您的合作申请！RedGecko AI B2B团队将在24小时内与您联系，发送定制化方案及试跑邀请。您也可以直接致电 18938670975 优先对接。');
+            // 真实项目中可收集表单数据并发送至后端
+        });
+        // 为所有合作卡片按钮增加交互提示
+        const allCooperateBtns = document.querySelectorAll('.glass-card button, .btn-primary');
+        allCooperateBtns.forEach(btn => {
+            if (btn.id === 'submitB2BForm') return;
+            btn.addEventListener('click', () => {
+                alert('演示版本：正式环境将跳转至合作申请表或API文档中心。立即联系商务获取专属方案 → 18938670975');
+            });
+        });
+    </script>
+</body>
+
+</html>

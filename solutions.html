@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>解决方案 | AI零售决策专家 - 销量预测与智能定价</title>
+    <!-- Tailwind + 外部库 (保持与首页一致的CDN) -->
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 209, 178, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 8px 20px -6px rgba(0, 209, 178, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 209, 178, 0.4);
+        }
+
+        .feature-card {
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1a2f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00D1B2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<!-- https://icon-sets.iconify.design/ -->
+<body class="overflow-x-hidden">
+
+    <!-- 导航栏 (与首页统一风格) -->
+    <nav-component></nav-component>
+
+    <!-- Hero 区：解决方案总览 -->
+    <section class="relative pt-44 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#003355_0%,_#001220_70%)] -z-10"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00D1B2] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00D1B2]"></span>
+                </span>
+                <span class="text-xs font-medium text-gray-300 tracking-wider">全栈式AI决策引擎</span>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                专为零售打造的<span class="text-gradient"> 智能决策中枢</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed mb-10">
+                从单店销量预测到全渠道动态定价，深度融合天气、节假日及微观市场特征，让每一次补货与定价都有数据支撑。
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="btn-primary px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 text-white">
+                    <iconify-icon icon="mdi:rocket-launch-outline"></iconify-icon> 免费获取方案
+                </button>
+                <button
+                    class="px-8 py-3.5 rounded-xl bg-white/5 border border-white/15 font-semibold flex items-center gap-2 hover:bg-white/10 transition">
+                    <iconify-icon icon="mdi:play-circle-outline" class="inline mr-1"></iconify-icon> 观看产品演示
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三大核心解决方案深度解析 (卡片升级) -->
+    <section class="py-20 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">深度解决方案，重塑零售利润曲线</h2>
+            <p class="text-gray-400 text-lg">覆盖销量预测、动态定价到开放数据服务，端到端赋能每一家门店</p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- 方案1: 销量预测 (按天/小时) -->
+            <div class="glass-card rounded-2xl p-7 feature-card flex flex-col h-full border border-white/5">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-6">
+                    <iconify-icon class="text-3xl text-cyan-400" icon="mdi:chart-timeline-variant"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">精准销量预测</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                    基于Transformer时序模型，融合门店历史交易、天气、节假日、促销日历等数百个特征，提供单店/单SKU级预测。</p>
+                <div class="space-y-4 mb-8 flex-grow">
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:clock-outline"></iconify-icon>
+                        <span class="text-gray-300 text-sm">颗粒度：支持按天 / 按小时滚动预测</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5"
+                            icon="mdi:weather-partly-snowy-rainy"></iconify-icon>
+                        <span class="text-gray-300 text-sm">自动注入实时天气、节假日、事件冲击因子</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:factory"></iconify-icon>
+                        <span class="text-gray-300 text-sm">指导生产采购，降低缺货率35%+，减少损耗</span>
+                    </div>
+                </div>
+                <button
+                    class="w-full py-3 rounded-xl border border-white/15 text-sm font-semibold hover:bg-white/5 hover:border-[#00D1B2]/50 transition flex items-center justify-center gap-2 mt-auto">
+                    申请预测试跑 <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+                </button>
+            </div>
+
+            <!-- 方案2: 智能动态定价 + 阶梯折扣 -->
+            <div
+                class="glass-card rounded-2xl p-7 feature-card flex flex-col h-full border border-[#00D1B2]/20 bg-gradient-to-b from-transparent to-[#00D1B2]/[0.02]">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-6">
+                    <iconify-icon class="text-3xl text-purple-400" icon="mdi:tag-multiple"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">智能动态定价<span
+                        class="text-xs bg-[#00D1B2]/20 text-[#00D1B2] ml-2 px-2 py-0.5 rounded-full">弹性最优</span></h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-5">基于价格弹性矩阵与库存周转压力，自动输出阶梯折扣策略，平衡销量与毛利，实现单店利润最大化。</p>
+                <div class="space-y-4 mb-8 flex-grow">
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:sale"></iconify-icon>
+                        <span class="text-gray-300 text-sm">阶梯折扣建议：9折 / 8.5折 / 7折，兼顾清货与毛利</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:math-compass"></iconify-icon>
+                        <span class="text-gray-300 text-sm">动态学习竞品价格、库存深度、商品生命周期</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:cash-multiple"></iconify-icon>
+                        <span class="text-gray-300 text-sm">实测毛利率提升5%-12%，避免盲目降价</span>
+                    </div>
+                </div>
+                <button
+                    class="w-full py-3 rounded-xl bg-[#00D1B2] text-white font-semibold text-sm hover:bg-[#00b59a] transition flex items-center justify-center gap-2 mt-auto shadow-lg shadow-[#00D1B2]/20">
+                    获取定价策略 <iconify-icon icon="mdi:arrow-right"></iconify-icon>
+                </button>
+            </div>
+
+            <!-- 方案3: 天气数据API + 第三方调用 -->
+            <div class="glass-card rounded-2xl p-7 feature-card flex flex-col h-full border border-white/5">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center mb-6">
+                    <iconify-icon class="text-3xl text-orange-400" icon="mdi:weather-cloudy-arrow-right"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">天气数据API</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-5">高精度零售气象指数服务，支持实时/预报数据调用，赋能门店销量归因，开放第三方商业授权。</p>
+                <div class="space-y-4 mb-8 flex-grow">
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:map-marker-radius"></iconify-icon>
+                        <span class="text-gray-300 text-sm">街道级网格天气 + 体感温度 / 降雨概率 / 风力指数</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:api"></iconify-icon>
+                        <span class="text-gray-300 text-sm">RESTful API，支持高并发付费调用，即买即用</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <iconify-icon class="text-[#00D1B2] mt-0.5" icon="mdi:cash-register"></iconify-icon>
+                        <span class="text-gray-300 text-sm">免费试用额度+企业订阅/按次计费，助力数据增值</span>
+                    </div>
+                </div>
+                <button
+                    class="w-full py-3 rounded-xl border border-white/15 text-sm font-semibold hover:bg-white/5 hover:border-[#00D1B2]/50 transition flex items-center justify-center gap-2 mt-auto">
+                    查看API文档 <iconify-icon icon="mdi:code-json"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术亮点 + 特征工程展示（彰显专业度） -->
+    <section class="py-16 bg-[#0A1A2F]/40 border-y border-white/5">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-[#00D1B2] text-sm font-semibold uppercase tracking-wider">特征工程 & AI 基石</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold mt-3 mb-6">超越传统时序模型，<br>融合<span
+                            class="text-gradient">多模态数据</span></h2>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        我们构建了200+零售特征库，将历史交易、天气、节假日、商圈热力、促销日历等深度融合。支持动态滑动窗口，自动清洗缺货/断码噪声数据，让预测MAPE低于行业基准30%。</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 glass-card p-3 rounded-xl">
+                            <iconify-icon class="text-2xl text-[#00D1B2]"
+                                icon="mdi:calendar-blank-multiple"></iconify-icon>
+                            <div>
+                                <div class="font-bold">72+</div>
+                                <div class="text-xs text-gray-500">节假日及事件特征</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 glass-card p-3 rounded-xl">
+                            <iconify-icon class="text-2xl text-[#00D1B2]" icon="mdi:weather-sunset-up"></iconify-icon>
+                            <div>
+                                <div class="font-bold">实时气象</div>
+                                <div class="text-xs text-gray-500">全国超2000区县</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 glass-card p-3 rounded-xl">
+                            <iconify-icon class="text-2xl text-[#00D1B2]" icon="mdi:store-clock"></iconify-icon>
+                            <div>
+                                <div class="font-bold">小时级粒度</div>
+                                <div class="text-xs text-gray-500">捕捉客流波动</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 glass-card p-3 rounded-xl">
+                            <iconify-icon class="text-2xl text-[#00D1B2]" icon="mdi:chart-bell-curve"></iconify-icon>
+                            <div>
+                                <div class="font-bold">弹性系数库</div>
+                                <div class="text-xs text-gray-500">百万级SKU定价基准</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden">
+                    <iconify-icon icon="mdi:chart-line-stacked"
+                        class="absolute text-8xl opacity-5 right-4 bottom-0"></iconify-icon>
+                    <h4 class="font-bold text-xl mb-4 flex items-center gap-2"><iconify-icon
+                            icon="mdi:brain"></iconify-icon> AI预测工作流演示</h4>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                            <span>历史交易数据+天气编码</span><span class="text-[#00D1B2]">→ 特征管道</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-white/10 pb-2"><span>LightGBM /
+                                Transformer 集成</span><span class="text-[#00D1B2]">→ 预测基线</span></div>
+                        <div class="flex justify-between items-center border-b border-white/10 pb-2"><span>价格弹性修正 +
+                                库存约束</span><span class="text-[#00D1B2]">→ 阶梯定价输出</span></div>
+                        <div class="flex justify-between items-center pt-2"><span class="font-semibold">最终结果: 单店/日销量区间 +
+                                建议折扣</span><iconify-icon icon="mdi:check-decagram"
+                                class="text-[#00D1B2] text-xl"></iconify-icon></div>
+                    </div>
+                    <div
+                        class="mt-6 bg-black/30 p-3 rounded-lg font-mono text-[11px] text-gray-400 overflow-x-auto whitespace-nowrap">
+                        > python predict.py --store_id=0231 --date=2026-04-20 --use_weather=true <br>
+                        >> 预测销量: 342件 (区间±23) | 建议折扣: 8.7折 | 预计毛利提升: +9.2%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行业效果对比 + 阶梯定价Demo卡片 (展示价格弹性示例) -->
+    <section class="py-24 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-3">利润最大化实战：价格弹性引擎</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">基于价格弹性系数与门店历史交易，实时模拟折扣对销量及毛利的综合影响，让每一分让利都有价值。</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- 左侧: 阶梯折扣 Demo -->
+            <div class="glass-card rounded-3xl p-8 border-white/10">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold">动态折扣沙盘 <span
+                                class="text-sm bg-white/10 rounded-full px-3 py-1 ml-2">零售生鲜Demo</span></h3>
+                        <p class="text-gray-400 text-sm mt-1">商品: 进口晴王葡萄 | 原价 ¥39.9</p>
+                    </div>
+                    <iconify-icon icon="mdi:cart-percent" class="text-3xl text-[#00D1B2]"></iconify-icon>
+                </div>
+                <div class="space-y-5">
+                    <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                        <div><span class="font-medium">9折 (¥35.9)</span>
+                            <div class="text-xs text-gray-500">弹性系数 -1.2</div>
+                        </div>
+                        <div class="text-right"><span class="text-[#00D1B2]">销量预测↑23%</span>
+                            <div class="text-xs">毛利 +11.6%</div>
+                        </div>
+                        <button
+                            class="text-xs border border-white/20 rounded-lg px-3 py-1 hover:bg-white/10">推荐</button>
+                    </div>
+                    <div
+                        class="flex justify-between items-center p-3 bg-[#00D1B2]/10 border border-[#00D1B2]/30 rounded-xl">
+                        <div><span class="font-bold text-white">8.5折 (¥33.9)</span>
+                            <div class="text-xs text-gray-300">最优弹性收益</div>
+                        </div>
+                        <div class="text-right"><span class="text-[#00D1B2] font-bold">销量预测↑41%</span>
+                            <div class="text-xs">毛利 +16.8%</div>
+                        </div>
+                        <button class="text-xs bg-[#00D1B2] text-black rounded-lg px-3 py-1 font-semibold">系统首选</button>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl">
+                        <div><span class="font-medium">7折 (¥27.9)</span>
+                            <div class="text-xs text-gray-500">去库存场景</div>
+                        </div>
+                        <div class="text-right"><span class="text-amber-400">销量预测↑89%</span>
+                            <div class="text-xs">毛利 +3.2%</div>
+                        </div>
+                        <button class="text-xs border border-white/20 rounded-lg px-3 py-1">清货建议</button>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 rounded-xl bg-black/20 text-center text-sm">
+                    <iconify-icon icon="mdi:lightbulb-on-outline" class="inline text-[#00D1B2] mr-1"></iconify-icon>
+                    AI建议：采用8.5折阶梯折扣，同步触达价格敏感客群，预计单店日利润增长216元。
+                </div>
+            </div>
+            <!-- 右侧: B2B接单表单 (核心转化) -->
+            <div class="glass-card rounded-3xl p-8 border-white/10 relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#00D1B2]/10 rounded-full blur-[60px]"></div>
+                <h3 class="text-2xl font-bold mb-2 flex items-center gap-2"><iconify-icon
+                        icon="mdi:handshake"></iconify-icon> 线上B2B业务对接</h3>
+                <p class="text-gray-400 text-sm mb-6">填写企业信息，获取定制化解决方案及报价，24h内资深顾问对接</p>
+                <form class="space-y-5" id="b2bForm">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><input type="text" placeholder="您的姓名"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2] transition">
+                        </div>
+                        <div><input type="text" placeholder="职位"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2]">
+                        </div>
+                    </div>
+                    <div><input type="text" placeholder="公司全称"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2]">
+                    </div>
+                    <div><input type="text" placeholder="联系电话 / 工作邮箱"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2]">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <select
+                            class="bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00D1B2] focus:ring-1 focus:ring-[#00D1B2]">
+                            <option value="" disabled selected style="background-color: #0A1A2F; color: #9CA3AF;">门店数量
+                            </option>
+                            <option value="1-10" style="background-color: #0A1A2F; color: white;">1-10家</option>
+                            <option value="10-100" style="background-color: #0A1A2F; color: white;">10-100家</option>
+                            <option value="100+" style="background-color: #0A1A2F; color: white;">100+家</option>
+                        </select>
+                        <select class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-gray-300 text-sm">
+                            <option value="" disabled selected class="text-gray-400">主营品类</option>
+                            <option value="生鲜/食品" class="text-white bg-[#001220]">生鲜/食品</option>
+                            <option value="标品/便利店" class="text-white bg-[#001220]">标品/便利店</option>
+                            <option value="服装/百货" class="text-white bg-[#001220]">服装/百货</option>
+                            <option value="其他" class="text-white bg-[#001220]">其他</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-2">核心诉求（多选）</label>
+                        <div class="flex flex-wrap gap-3">
+                            <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
+                                    type="checkbox" class="accent-[#00D1B2]"> 减少断货</label>
+                            <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
+                                    type="checkbox" class="accent-[#00D1B2]"> 降低损耗</label>
+                            <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
+                                    type="checkbox" class="accent-[#00D1B2]"> 提升毛利</label>
+                            <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
+                                    type="checkbox" class="accent-[#00D1B2]"> 自动化采购</label>
+                        </div>
+                    </div>
+                    <button type="button"
+                        class="btn-primary w-full py-3.5 rounded-xl font-bold text-white flex items-center justify-center gap-2 text-base"
+                        id="submitLead">
+                        <iconify-icon icon="mdi:send-outline"></iconify-icon> 提交需求，获取方案报价
+                    </button>
+                    <p class="text-[10px] text-gray-500 text-center mt-2">提交即视为同意《隐私政策》，我们承诺数据仅用于业务对接</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 天气API独立售卖区 (第三方付费调用) -->
+    <section class="py-20 bg-[#001A30] border-y border-white/5">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-end gap-8 mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold">天气数据API <span class="text-gradient">—— 零售专属气象服务</span></h2>
+                    <p class="text-gray-400 mt-2">高并发、实时精准，赋能预测模型与运营决策，支持第三方付费调用</p>
+                </div>
+                <button
+                    class="border border-[#00D1B2] text-[#00D1B2] px-6 py-2 rounded-full font-semibold hover:bg-[#00D1B2]/10">立即申请API密钥
+                    →</button>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-3"><iconify-icon icon="mdi:weather-partly-rainy"
+                            class="text-2xl text-[#00D1B2]"></iconify-icon>
+                        <h3 class="font-bold">免费试用版</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">1000次/日调用，实时天气+24h预报</p>
+                    <div class="text-xl font-bold">¥0<span class="text-sm font-normal text-gray-500">/月</span></div>
+                    <button class="mt-4 w-full py-2 rounded-lg border border-white/20 text-sm">开通试用</button>
+                </div>
+                <div
+                    class="glass-card p-6 rounded-2xl border-[#00D1B2]/30 bg-gradient-to-b from-[#00D1B2]/5 to-transparent">
+                    <div class="flex items-center gap-3 mb-3"><iconify-icon icon="mdi:chart-line"
+                            class="text-2xl text-[#00D1B2]"></iconify-icon>
+                        <h3 class="font-bold">专业版</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">10万次/月 + 历史天气 + 零售特征指数</p>
+                    <div class="text-xl font-bold">¥1,299<span class="text-sm font-normal text-gray-500">/月</span></div>
+                    <button class="mt-4 w-full py-2 rounded-lg bg-[#00D1B2] text-black font-semibold">订阅购买</button>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-3"><iconify-icon icon="mdi:server-network"
+                            class="text-2xl text-[#00D1B2]"></iconify-icon>
+                        <h3 class="font-bold">企业定制</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">高并发QPS保障 + 私有化气象网格部署</p>
+                    <div class="text-xl font-bold">按需报价</div><button
+                        class="mt-4 w-full py-2 rounded-lg border border-white/20 text-sm">联系销售</button>
+                </div>
+            </div>
+            <div class="mt-8 bg-black/30 p-4 rounded-xl text-center text-sm text-gray-300"><iconify-icon icon="mdi:api"
+                    class="inline mr-1"></iconify-icon> API接入文档 · Python/Java示例代码 · Swagger调试地址 <span
+                    class="text-[#00D1B2] ml-2 cursor-pointer">wea.redgecko.cn/weather</span></div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+    <!-- 简单表单交互提示 -->
+    <script>
+        document.getElementById('submitLead')?.addEventListener('click', function () {
+            alert('感谢您的关注！RedGecko AI顾问将在24小时内联系您，并发送专属降本增效报告。');
+            // 此处可增加埋点或真实提交逻辑
+        });
+    </script>
+</body>
+
+</html>

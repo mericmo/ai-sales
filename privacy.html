@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>隐私条款 | RedGecko AI - 零售智能决策专家</title>
+    <!-- Tailwind + 图标库 + 字体 (全站统一科技风格) -->
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap'); */
+        @import url('./static/css/inter.css');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 8px 20px -6px rgba(0, 209, 178, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 209, 178, 0.4);
+        }
+
+        .policy-section {
+            scroll-margin-top: 100px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1a2f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00D1B2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- 导航栏 (统一风格) -->
+    <nav-component></nav-component>
+    
+    <!-- Hero 区域 -->
+    <section class="relative pt-44 pb-16 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,#002B44,transparent_80%)] -z-10"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <iconify-icon class="text-[#00D1B2]" icon="mdi:shield-check"></iconify-icon>
+                <span class="text-xs font-medium text-gray-300 tracking-wider">您的隐私 · 我们的承诺</span>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                隐私条款
+            </h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                保护您的数据安全与隐私是 RedGecko AI 的核心责任。本条款说明我们如何收集、使用、存储及保护您的信息。
+            </p>
+            <div class="flex justify-center gap-6 mt-8 text-sm text-gray-500">
+                <span>📅 更新日期：2026年4月17日</span>
+                <span>⚖️ 生效日期：2026年4月17日</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 目录导航 (快速跳转) -->
+    <section class="py-6 sticky top-20 z-40 glass-card border-y border-white/10 backdrop-blur-md">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 flex flex-wrap justify-center gap-4 text-sm">
+            <a href="#collect" class="hover:text-[#00D1B2] transition-colors">信息收集</a>
+            <span class="text-gray-600">•</span>
+            <a href="#usage" class="hover:text-[#00D1B2] transition-colors">信息使用</a>
+            <span class="text-gray-600">•</span>
+            <a href="#storage" class="hover:text-[#00D1B2] transition-colors">存储与安全</a>
+            <span class="text-gray-600">•</span>
+            <a href="#sharing" class="hover:text-[#00D1B2] transition-colors">信息共享</a>
+            <span class="text-gray-600">•</span>
+            <a href="#rights" class="hover:text-[#00D1B2] transition-colors">您的权利</a>
+            <span class="text-gray-600">•</span>
+            <a href="#cookies" class="hover:text-[#00D1B2] transition-colors">Cookie政策</a>
+            <span class="text-gray-600">•</span>
+            <a href="#contact" class="hover:text-[#00D1B2] transition-colors">联系我们</a>
+        </div>
+    </section>
+
+    <!-- 主体内容 -->
+    <section class="py-16 max-w-[1280px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 lg:p-12">
+
+            <!-- 1. 信息收集 -->
+            <div id="collect" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:database" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">1. 我们收集的信息</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-6">RedGecko AI
+                    作为零售决策智能平台，仅在为您提供服务的必要范围内收集信息。根据您使用的服务类型，我们可能收集以下类别：</p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="text-left py-3 px-4 text-[#00D1B2] font-semibold">信息类型</th>
+                                <th class="text-left py-3 px-4 text-[#00D1B2] font-semibold">具体内容</th>
+                                <th class="text-left py-3 px-4 text-[#00D1B2] font-semibold">收集目的</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/5">
+                                <td class="py-3 px-4 font-medium">企业联系信息</td>
+                                <td class="py-3 px-4 text-gray-400">公司名称、联系人姓名、职位、联系电话、邮箱</td>
+                                <td class="py-3 px-4 text-gray-400">B2B业务对接、方案咨询、合同签署</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-3 px-4 font-medium">业务需求信息</td>
+                                <td class="py-3 px-4 text-gray-400">门店数量、主营品类、核心诉求（断货/损耗/毛利/自动化采购等）</td>
+                                <td class="py-3 px-4 text-gray-400">提供定制化解决方案及效果测算</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-3 px-4 font-medium">技术对接信息</td>
+                                <td class="py-3 px-4 text-gray-400">API调用日志、请求IP、调用频次、返回结果状态</td>
+                                <td class="py-3 px-4 text-gray-400">保障服务稳定性、用量统计、安全审计</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">试用/测试数据</td>
+                                <td class="py-3 px-4 text-gray-400">客户上传的历史交易数据（经脱敏处理后）</td>
+                                <td class="py-3 px-4 text-gray-400">免费试跑及预测效果验证，仅用于模型回测</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">* 我们不会主动收集与业务无关的个人敏感信息（如身份证号、银行账户等）。</p>
+            </div>
+
+            <!-- 2. 信息使用 -->
+            <div id="usage" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:cog" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">2. 我们如何使用信息</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white/5 rounded-xl p-5">
+                        <iconify-icon icon="mdi:chat-processing" class="text-2xl text-[#00D1B2] mb-3"></iconify-icon>
+                        <h3 class="font-bold mb-2">业务响应</h3>
+                        <p class="text-gray-400 text-sm">响应您的咨询、演示预约及合作申请，24小时内由专属顾问联系，提供《零售降本增效测算报告》。</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5">
+                        <iconify-icon icon="mdi:chart-line" class="text-2xl text-[#00D1B2] mb-3"></iconify-icon>
+                        <h3 class="font-bold mb-2">服务交付</h3>
+                        <p class="text-gray-400 text-sm">提供销量预测、智能定价、天气API等核心服务的计算、运维与结果输出。</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5">
+                        <iconify-icon icon="mdi:robot" class="text-2xl text-[#00D1B2] mb-3"></iconify-icon>
+                        <h3 class="font-bold mb-2">模型优化</h3>
+                        <p class="text-gray-400 text-sm">使用脱敏后的聚合数据改进算法模型，提升预测准确率（不涉及可识别具体企业的原始数据）。</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5">
+                        <iconify-icon icon="mdi:security" class="text-2xl text-[#00D1B2] mb-3"></iconify-icon>
+                        <h3 class="font-bold mb-2">安全合规</h3>
+                        <p class="text-gray-400 text-sm">履行法律合规义务，防止欺诈、滥用及安全事件，保障平台稳定运行。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 数据存储与安全 -->
+            <div id="storage" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:server-security" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">3. 数据存储与安全</h2>
+                </div>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p><span
+                            class="text-[#00D1B2] font-semibold">存储位置：</span>所有数据存储于中国境内的阿里云/腾讯云金融级数据中心，符合《个人信息保护法》及数据出境相关规定。
+                    </p>
+                    <p><span class="text-[#00D1B2] font-semibold">加密措施：</span>数据传输采用 TLS 1.3 加密协议；静态数据采用 AES-256
+                        加密存储；API密钥使用HSM硬件安全模块保护。</p>
+                    <p><span
+                            class="text-[#00D1B2] font-semibold">访问控制：</span>严格遵循最小权限原则，仅授权运维、客服及算法优化团队在必要时可接触数据，所有访问行为记录审计日志。
+                    </p>
+                    <p><span
+                            class="text-[#00D1B2] font-semibold">保留期限：</span>企业联系信息保留至合作关系终止后12个月；技术日志保留90天；试用数据在POC结束后30天内删除。
+                    </p>
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 mt-4">
+                        <div class="flex items-center gap-2 text-green-400">
+                            <iconify-icon icon="mdi:check-decagram"></iconify-icon>
+                            <span class="font-semibold">认证与合规</span>
+                        </div>
+                        <p class="text-sm text-gray-300 mt-1">RedGecko AI 已通过 ISO 27001
+                            信息安全管理体系认证，并完成等保三级备案，定期接受第三方安全审计。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. 信息共享与披露 -->
+            <div id="sharing" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:share-variant" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">4. 信息共享与披露</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-4">我们郑重承诺：<strong
+                        class="text-[#00D1B2]">不会出售、出租或以任何形式对外共享您的个人信息</strong>。仅在以下特定且必要的情况下，我们可能共享信息：</p>
+                <ul class="space-y-3 text-gray-400 list-disc list-inside ml-4">
+                    <li>经您<strong class="text-white">明确同意</strong>后共享（如：联合解决方案展示需经客户授权）</li>
+                    <li>法律法规要求或政府机关依法指令（如：法院传票、行政调查）</li>
+                    <li>为履行合同所必需的服务提供商（如：通过阿里云短信平台发送通知，该等供应商需签署同等保密协议）</li>
+                    <li>为保护 RedGecko AI、用户或公众的合法权益（如：检测及防范欺诈、安全攻击）</li>
+                </ul>
+            </div>
+
+            <!-- 5. 您的权利 -->
+            <div id="rights" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:account-check" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">5. 您的权利</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="border border-white/10 rounded-xl p-5">
+                        <iconify-icon icon="mdi:eye" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
+                        <h3 class="font-bold mb-1">访问与更正</h3>
+                        <p class="text-gray-400 text-sm">您可随时登录账户或联系我们的数据保护官，查看、修改您的企业信息及偏好设置。</p>
+                    </div>
+                    <div class="border border-white/10 rounded-xl p-5">
+                        <iconify-icon icon="mdi:delete" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
+                        <h3 class="font-bold mb-1">删除与注销</h3>
+                        <p class="text-gray-400 text-sm">发送邮件至 privacy@redgecko.ai 申请删除账户及关联数据，我们将在15个工作日内完成处理。</p>
+                    </div>
+                    <div class="border border-white/10 rounded-xl p-5">
+                        <iconify-icon icon="mdi:email-newsletter" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
+                        <h3 class="font-bold mb-1">拒绝营销</h3>
+                        <p class="text-gray-400 text-sm">每封营销邮件均设有退订链接，或直接回复“拒收”即可取消订阅。</p>
+                    </div>
+                    <div class="border border-white/10 rounded-xl p-5">
+                        <iconify-icon icon="mdi:file-download" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
+                        <h3 class="font-bold mb-1">数据可携权</h3>
+                        <p class="text-gray-400 text-sm">在技术可行范围内，您可要求将您提供的结构化数据以通用格式导出。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Cookie 政策 -->
+            <div id="cookies" class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:cookie" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">6. Cookie 及类似技术</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-4">我们的网站使用 Cookie 来提升您的浏览体验、分析流量及个性化内容。Cookie
+                    是存储在您设备上的小型文本文件。</p>
+                <div class="space-y-3 text-gray-400">
+                    <div class="flex justify-between items-center border-b border-white/10 py-2"><span
+                            class="font-medium text-white">必要型 Cookie</span><span>用于网站基础功能（如登录状态），不可关闭</span></div>
+                    <div class="flex justify-between items-center border-b border-white/10 py-2"><span
+                            class="font-medium text-white">分析型 Cookie</span><span>帮助我们统计访问量及页面热度，优化网站结构</span></div>
+                    <div class="flex justify-between items-center border-b border-white/10 py-2"><span
+                            class="font-medium text-white">营销型 Cookie</span><span>用于跟踪B2B广告效果，您可通过浏览器设置拒绝</span></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">您可以通过浏览器设置管理或删除 Cookie，但请注意，禁用某些 Cookie 可能影响网站功能体验。</p>
+            </div>
+
+            <!-- 7. 未成年人隐私 -->
+            <div class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:human-child" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">7. 未成年人隐私</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed">RedGecko AI
+                    的服务面向企业及商业用户，不直接面向14周岁以下未成年人。如发现未经监护人同意收集未成年人信息，我们将立即删除相关数据。</p>
+            </div>
+
+            <!-- 8. 国际数据传输 -->
+            <div class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:earth" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">8. 国际数据传输</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    我们的服务器位于中国大陆。如您的企业位于境外，您的信息可能被传输至中国境内。我们会依据适用法律采取充分的数据保护措施（如签订标准合同条款）。</p>
+            </div>
+
+            <!-- 9. 条款更新 -->
+            <div class="policy-section mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:update" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">9. 条款更新</h2>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    我们可能不时更新本隐私条款。重大变更（如数据处理目的变更、影响您的权利）将通过网站公告、邮件或站内信通知您。修订后的条款自发布之日起生效。</p>
+            </div>
+
+            <!-- 10. 联系我们 -->
+            <div id="contact" class="policy-section">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-[#00D1B2]/10 flex items-center justify-center">
+                        <iconify-icon icon="mdi:email-open" class="text-2xl text-[#00D1B2]"></iconify-icon>
+                    </div>
+                    <h2 class="text-2xl font-bold">10. 联系我们</h2>
+                </div>
+                <div class="bg-white/5 rounded-2xl p-6">
+                    <p class="text-gray-300 mb-4">如您对本隐私条款有任何疑问、建议或投诉，或希望行使您的数据权利，请通过以下方式联系我们：</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3"><iconify-icon icon="mdi:email"
+                                class="text-[#00D1B2] text-xl"></iconify-icon><span>数据保护官邮箱：<strong>privacy@redgecko.ai</strong></span>
+                        </div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="mdi:phone"
+                                class="text-[#00D1B2] text-xl"></iconify-icon><span>隐私热线：<strong>400-888-2026</strong>（转隐私合规专线）</span>
+                        </div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="mdi:map-marker"
+                                class="text-[#00D1B2] text-xl"></iconify-icon><span>地址：上海市浦东新区世纪大道100号 RedGecko AI
+                                法务部（邮编：200120）</span></div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 text-sm text-gray-400">
+                        <p>我们将在收到请求后的 <strong class="text-white">15个工作日内</strong> 予以答复。如您对我们的处理结果不满意，您有权向网信部门或当地监管机构投诉。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+    
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

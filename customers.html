@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>客户案例 | AI零售决策专家 - 3000+品牌信赖的销量预测与定价方案</title>
+    <!-- Tailwind + 图标库 + 字体 (与全站风格统一) -->
+    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
+    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/logo.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 209, 178, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(105deg, #00D1B2 0%, #009688 100%);
+            box-shadow: 0 8px 20px -6px rgba(0, 209, 178, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -8px rgba(0, 209, 178, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF 0%, #00D1B2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .case-tag {
+            background: rgba(0, 209, 178, 0.12);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 0.25rem 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #00D1B2;
+            width: fit-content;
+        }
+
+        .quote-mark {
+            font-family: serif;
+            font-size: 5rem;
+            line-height: 1;
+            opacity: 0.15;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1a2f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00D1B2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- 导航栏 (统一风格) -->
+    <nav-component></nav-component>
+
+    <!-- Hero 区域：案例见证 -->
+    <section class="relative pt-44 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,#002B44,transparent_80%)] -z-10"></div>
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00D1B2] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00D1B2]"></span>
+                </span>
+                <span class="text-xs font-medium text-gray-300 tracking-wider">真实数据 · 效果见证</span>
+            </div>
+            <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                全球<span class="text-gradient"> 3,000+ 零售品牌</span>的选择
+            </h1>
+            <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+                从生鲜连锁到便利店巨头，从时尚零售到社区商超，我们帮助客户降低库存损耗、提升毛利率，用AI重塑供应链决策。
+            </p>
+            <div class="flex flex-wrap justify-center gap-5 mt-4">
+                <div class="glass-card px-6 py-3 rounded-full flex items-center gap-2"><iconify-icon
+                        icon="mdi:chart-areaspline" class="text-[#00D1B2] text-xl"></iconify-icon> <span>平均预测准确率 <strong
+                            class="text-white">92%</strong></span></div>
+                <div class="glass-card px-6 py-3 rounded-full flex items-center gap-2"><iconify-icon
+                        icon="mdi:trending-up" class="text-[#00D1B2] text-xl"></iconify-icon> <span>毛利率提升 <strong
+                            class="text-white">8~15%</strong></span></div>
+                <div class="glass-card px-6 py-3 rounded-full flex items-center gap-2"><iconify-icon
+                        icon="mdi:package-variant" class="text-[#00D1B2] text-xl"></iconify-icon> <span>库存周转加快 <strong
+                            class="text-white">35%</strong></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行业分类导航 + 效果数字 -->
+    <section class="py-12 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-3 mb-20">
+            <button class="px-5 py-2 rounded-full bg-[#00D1B2] text-black font-semibold text-sm">全部案例</button>
+            <button
+                class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm transition">生鲜零售</button>
+            <button
+                class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm transition">便利店/社区超市</button>
+            <button
+                class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm transition">时尚/百货</button>
+            <button
+                class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 text-sm transition">餐饮/饮品</button>
+        </div>
+
+        <!-- 标杆数据卡片 (核心ROI) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="stat-number">-32%</div>
+                <div class="text-sm text-gray-400 mt-2">生鲜损耗率平均降低</div>
+                <div class="text-xs text-[#00D1B2] mt-1">基于小时级销量预测</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="stat-number">+23%</div>
+                <div class="text-sm text-gray-400 mt-2">促销期GMV增长</div>
+                <div class="text-xs text-[#00D1B2] mt-1">动态阶梯定价策略</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="stat-number">99.2%</div>
+                <div class="text-sm text-gray-400 mt-2">API服务可用性</div>
+                <div class="text-xs text-[#00D1B2] mt-1">天气数据+预测引擎</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="stat-number">2.4x</div>
+                <div class="text-sm text-gray-400 mt-2">采购ROI提升</div>
+                <div class="text-xs text-[#00D1B2] mt-1">智能补货+定价联动</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例深度展示 1: 生鲜连锁巨头 (左侧描述+右侧指标) -->
+    <section class="py-12 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10">
+            <div class="grid lg:grid-cols-5 gap-0">
+                <div class="lg:col-span-3 p-8 lg:p-12">
+                    <div class="case-tag mb-4">🥬 生鲜零售 · 全国200+门店</div>
+                    <h2 class="text-3xl font-bold mb-4">鲜丰果园 & RetailAI</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">鲜丰果园是国内头部生鲜连锁品牌，长期面临生鲜商品高损耗、天气敏感度强、节假日供需失衡等难题。通过接入
+                        RetailAI 销量预测+动态定价系统，实现单店单SKU小时级预测，并自动生成清货折扣阶梯。</p>
+                    <div class="grid grid-cols-2 gap-5 mb-6">
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">28%</span>
+                            <p class="text-xs text-gray-400">损耗率下降</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">+9.6%</span>
+                            <p class="text-xs text-gray-400">综合毛利率提升</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">92%</span>
+                            <p class="text-xs text-gray-400">短期销量预测准确率</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">2h</span>
+                            <p class="text-xs text-gray-400">定价策略更新周期</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-400">
+                        <iconify-icon icon="mdi:calendar-check" class="text-[#00D1B2]"></iconify-icon> 2025年Q4上线 · 6个月回本
+                        <span class="w-1 h-1 bg-gray-600 rounded-full"></span>
+                        <iconify-icon icon="mdi:store" class="text-[#00D1B2]"></iconify-icon> 全门店覆盖
+                    </div>
+                </div>
+                <div class="lg:col-span-2 bg-[#001a2a] p-8 flex flex-col justify-center border-l border-white/5">
+                    <iconify-icon icon="mdi:format-quote-open" class="text-5xl text-[#00D1B2]/30 mb-3"></iconify-icon>
+                    <p class="italic text-gray-200 text-lg leading-relaxed">
+                        “引入RetailAI后，我们第一次能够按小时预测叶菜类销量，晚间折扣建议让损耗几乎减半，门店利润得到真实改善。”</p>
+                    <div class="mt-6 flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-[#00D1B2] to-blue-500 flex items-center justify-center font-bold">
+                            李</div>
+                        <div>
+                            <div class="font-semibold">李蔚然 · 供应链总经理</div>
+                            <div class="text-xs text-gray-400">鲜丰果园集团</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例展示2: 便利店 + 智能定价 (卡片式左右结构) -->
+    <section class="py-12 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10">
+            <div class="grid lg:grid-cols-5 gap-0 flex-row-reverse">
+                <div class="lg:col-span-3 p-8 lg:p-12 order-2 lg:order-1">
+                    <div class="case-tag mb-4">🏪 连锁便利店 · 800+门店</div>
+                    <h2 class="text-3xl font-bold mb-4">邻家便利 × 动态定价引擎</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        邻家便利覆盖华东地区800家门店，商品种类多、价格调整滞缓。使用RetailAI价格弹性引擎后，系统根据库存深度、竞品价格、天气指数自动输出阶梯折扣（9折/8.5折/7折），同时接入小时级销量预测指导饭团、鲜食等鲜食SKU的补货。
+                    </p>
+                    <div class="grid grid-cols-2 gap-5 mb-6">
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">缺货率↓41%</span>
+                            <p class="text-xs text-gray-400">鲜食类目</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">滞销品周转↑56%</span>
+                            <p class="text-xs text-gray-400">智能清货折扣</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">+12%</span>
+                            <p class="text-xs text-gray-400">单店日均毛利</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">自动调价</span>
+                            <p class="text-xs text-gray-400">分钟级响应</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 text-sm"><iconify-icon icon="mdi:tag-multiple"
+                            class="text-[#00D1B2]"></iconify-icon> 阶梯折扣自动化 + 弹性系数库深度应用</div>
+                </div>
+                <div
+                    class="lg:col-span-2 bg-[#001a2a] p-8 flex flex-col justify-center border-l border-white/5 order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="quote-mark">“</div>
+                        <p class="italic text-gray-200 text-lg leading-relaxed relative z-10">
+                            AI定价让每个门店都能像优秀店长一样决策，而且更快更准。生鲜和饭团的损耗控制超出预期，我们计划全国推广。</p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center font-bold">
+                            王</div>
+                        <div>
+                            <div class="font-semibold">王景行 · 运营副总裁</div>
+                            <div class="text-xs text-gray-400">邻家便利控股</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例3: 天气API赋能快时尚 + 采购预测 -->
+    <section class="py-12 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10">
+            <div class="grid lg:grid-cols-5 gap-0">
+                <div class="lg:col-span-3 p-8 lg:p-12">
+                    <div class="case-tag mb-4">👗 时尚零售 · 跨境电商</div>
+                    <h2 class="text-3xl font-bold mb-4">MuseStyle 全球站点 + 天气数据API</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">MuseStyle 拥有欧美及东南亚多国线上+线下门店，季节性服装受天气影响极大。通过调用 RetailAI
+                        天气数据API（街道级降雨/体感温度/湿度指数），将其融入销量预测特征工程，实现按区域、按天气场景的动态配货，并利用价格弹性引擎调整季末折扣节奏。</p>
+                    <div class="grid grid-cols-2 gap-5 mb-6">
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">预测MAPE↓27%</span>
+                            <p class="text-xs text-gray-400">融合天气特征后</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">清货周期缩短34%</span>
+                            <p class="text-xs text-gray-400">动态定价+天气联动</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">API调用 200w+/月</span>
+                            <p class="text-xs text-gray-400">高并发稳定支持</p>
+                        </div>
+                        <div><span class="text-2xl font-bold text-[#00D1B2]">ROI 318%</span>
+                            <p class="text-xs text-gray-400">首年回报</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 text-sm"><iconify-icon icon="mdi:weather-partly-rainy"
+                            class="text-[#00D1B2]"></iconify-icon> “下雨指数”触发冲锋衣自动提价，晴热天气推送防晒服折扣</div>
+                </div>
+                <div class="lg:col-span-2 bg-[#001a2a] p-8 flex flex-col justify-center border-l border-white/5">
+                    <iconify-icon icon="mdi:api" class="text-4xl text-[#00D1B2]/40 mb-3"></iconify-icon>
+                    <p class="italic text-gray-200 text-lg leading-relaxed">
+                        “天气数据API的稳定性与精准度让我们惊艳，零售气象指数与内部销量模型结合后，欧洲门店的季末库存压力大幅缓解。”</p>
+                    <div class="mt-6 flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center font-bold">
+                            S</div>
+                        <div>
+                            <div class="font-semibold">Sophia Chen · 数据科学负责人</div>
+                            <div class="text-xs text-gray-400">MuseStyle Group</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例快速网格：更多标杆客户展示（轻量级） -->
+    <section class="py-20 max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">更多行业领先者正在使用</h2>
+            <p class="text-gray-400 mt-2">从区域龙头到国际品牌，信赖RetailAI的智能决策体系</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:scale-[1.01] transition-transform">
+                <iconify-icon icon="mdi:cup" class="text-3xl text-[#00D1B2]"></iconify-icon>
+                <div>
+                    <h4 class="font-bold text-lg">瑞幸咖啡 × 小时级预测</h4>
+                    <p class="text-sm text-gray-400 mt-1">基于天气&促销日历，单店单品预测准确率提升31%，鲜食损耗降低22%。</p>
+                    <div class="text-xs text-[#00D1B2] mt-2">2026 Q1上线</div>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:scale-[1.01] transition-transform">
+                <iconify-icon icon="mdi:shopping" class="text-3xl text-[#00D1B2]"></iconify-icon>
+                <div>
+                    <h4 class="font-bold text-lg">永旺超市 × 智能补货</h4>
+                    <p class="text-sm text-gray-400 mt-1">5000+SKU自动补货指令，库存周转天数从32天降至21天，缺货率下降44%。</p>
+                    <div class="text-xs text-[#00D1B2] mt-2">全国推广中</div>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:scale-[1.01] transition-transform">
+                <iconify-icon icon="mdi:bakery" class="text-3xl text-[#00D1B2]"></iconify-icon>
+                <div>
+                    <h4 class="font-bold text-lg">巴黎贝甜 × 阶梯折扣</h4>
+                    <p class="text-sm text-gray-400 mt-1">晚间时段自动生成折扣梯度，烘焙类损耗降低36%，单店毛利月增2.3w。</p>
+                    <div class="text-xs text-[#00D1B2] mt-2">动态定价标杆</div>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:scale-[1.01] transition-transform">
+                <iconify-icon icon="mdi:phone" class="text-3xl text-[#00D1B2]"></iconify-icon>
+                <div>
+                    <h4 class="font-bold text-lg">迪信通 × 区域定价</h4>
+                    <p class="text-sm text-gray-400 mt-1">价格弹性引擎指导手机配件调价，整体毛利率提升8%，促销ROI提高2倍。</p>
+                    <div class="text-xs text-[#00D1B2] mt-2">3C零售案例</div>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:scale-[1.01] transition-transform">
+                <iconify-icon icon="mdi:store-24-hour" class="text-3xl text-[#00D1B2]"></iconify-icon>
+                <div>
+                    <h4 class="font-bold text-lg">美宜佳 × 天气API集成</h4>
+                    <p class="text-sm text-gray-400 mt-1">全国15000家门店对接天气指数，矿泉水/雨具销量预测准确度提升26%。</p>
+                    <div class="text-xs text-[#00D1B2] mt-2">API高并发调用</div>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:scale-[1.01] transition-transform">
+                <iconify-icon icon="mdi:tshirt-crew" class="text-3xl text-[#00D1B2]"></iconify-icon>
+                <div>
+                    <h4 class="font-bold text-lg">优衣库 × 季节定价</h4>
+                    <p class="text-sm text-gray-400 mt-1">基于温度变化与历史弹性，自动调整羽绒服/防晒衣定价，清货效率提升42%。</p>
+                    <div class="text-xs text-[#00D1B2] mt-2">服装零售标杆</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例成果视频/白皮书下载区块 增强B2B信任 -->
+    <section class="py-20 bg-[#0A1525] border-y border-white/5">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
+            <div class="glass-card p-10 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#00D1B2]/5 rounded-full blur-[70px]"></div>
+                <iconify-icon icon="mdi:play-circle"
+                    class="text-6xl text-[#00D1B2] mb-5 cursor-pointer hover:scale-105 transition"></iconify-icon>
+                <h3 class="text-2xl font-bold mb-3">观看客户成功故事 · 10分钟深度分享</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-6">来自鲜丰果园、邻家便利高管的实战经验：如何用AI销量预测+动态定价实现利润增长</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                        class="btn-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2">下载《零售AI案例白皮书》</button>
+                    <button
+                        class="px-8 py-3 rounded-xl bg-white/5 border border-white/15 font-semibold hover:bg-white/10 transition">预约线上案例研讨会</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B 合作引导 (留资转化) 与整体风格一致 -->
+    <section class="py-20 max-w-[1200px] mx-auto px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#001F3F] to-[#002845] rounded-3xl p-8 lg:p-12 border border-white/10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">成为下一个成功案例</h2>
+                    <p class="text-gray-300 mb-6">提交信息，我们将为您提供同行业标杆客户的效果数据报告，并安排资深零售AI顾问一对一沟通。</p>
+                    <div class="flex items-center gap-4 text-sm text-gray-400">
+                        <div><iconify-icon icon="mdi:check-circle" class="inline text-[#00D1B2]"></iconify-icon>
+                            免费获取行业对标报告</div>
+                        <div><iconify-icon icon="mdi:check-circle" class="inline text-[#00D1B2]"></iconify-icon>
+                            7天无风险POC测试</div>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-4" id="caseForm">
+                        <input type="text" placeholder="公司名称"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="姓名"
+                                class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#00D1B2] outline-none">
+                            <input type="tel" placeholder="联系电话"
+                                class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#00D1B2] outline-none">
+                        </div>
+                        <select
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:border-[#00D1B2] outline-none">
+                            <option>感兴趣的产品 (可多选)</option>
+                            <option>销量预测</option>
+                            <option>动态定价</option>
+                            <option>天气API</option>
+                            <option>端到端供应链方案</option>
+                        </select>
+                        <button type="button"
+                            class="btn-primary w-full py-3 rounded-xl font-bold text-white flex items-center justify-center gap-2"
+                            id="submitCaseBtn">
+                            获取专属案例与报价
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('submitCaseBtn')?.addEventListener('click', () => {
+            alert('感谢关注！我们的零售AI顾问将在24小时内发送同行业标杆案例及详细方案至您预留的联系方式。');
+        });
+        // 模拟所有案例按钮简易交互（不强制跳转）
+        const caseButtons = document.querySelectorAll('.glass-card .case-tag, .glass-card button');
+        caseButtons.forEach(btn => {
+            if (btn.tagName !== 'BUTTON') return;
+            btn.addEventListener('click', () => alert('演示版：正式环境将跳转至案例详细PDF或预约演示页面。'));
+        });
+    </script>
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+</body>
+
+</html>
