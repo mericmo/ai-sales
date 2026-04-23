@@ -474,33 +474,33 @@
                     </div>
                 </div>
                 <div class="bg-white/5 rounded-3xl p-10 border border-white/10 shadow-2xl">
-                    <form class="space-y-6">
+                    <form id="getSolutions" class="space-y-6">
                         <div class="grid grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm text-gray-400 mb-2">姓名</label>
                                 <input
                                     class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00D1B2]"
-                                    placeholder="您的称呼" type="text" />
+                                    placeholder="您的称呼" type="text"  required/>
                             </div>
                             <div>
                                 <label class="block text-sm text-gray-400 mb-2">职位</label>
                                 <input
                                     class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00D1B2]"
-                                    placeholder="e.g. 运营总监" type="text" />
+                                    placeholder="e.g. 运营总监" type="text"  required/>
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm text-gray-400 mb-2">公司全称</label>
                             <input
                                 class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00D1B2]"
-                                placeholder="您的企业名称" type="text" />
+                                placeholder="您的企业名称" type="text"  required/>
                         </div>
                         <div>
                             <label class="block text-sm text-gray-400 mb-2">您的业务挑战 (多选)</label>
                             <div class="grid grid-cols-2 gap-3">
                                 <label
                                     class="flex items-center gap-2 p-3 bg-white/5 rounded-lg cursor-pointer border border-transparent hover:border-[#00D1B2]/50">
-                                    <input class="accent-[#00D1B2]" type="checkbox" />
+                                    <input class="accent-[#00D1B2]" type="checkbox"/>
                                     <span class="text-xs text-gray-300">库存积压严重</span>
                                 </label>
                                 <label
@@ -524,11 +524,11 @@
                             <label class="block text-sm text-gray-400 mb-2">手机号码 / 邮箱</label>
                             <input
                                 class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00D1B2]"
-                                placeholder="方便我们与您取得联系" type="text" />
+                                placeholder="方便我们与您取得联系" type="text" required />
                         </div>
                         <button
                             class="w-full py-4 rounded-xl bg-[#00D1B2] text-white font-bold text-lg hover:shadow-lg hover:shadow-[#00D1B2]/30 transition-all"
-                            type="button">
+                            type="submit">
                             立即获取专属方案
                         </button>
                         <p class="text-center text-[10px] text-gray-500">点击提交即表示您同意我们的《隐私政策》和《服务条款》</p>
@@ -677,61 +677,7 @@
             </div>
         </div>
     </div>
-    <!-- 模态框：申请 API 密钥 -->
-    <div id="apiKeyModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="glass-card rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-6">
-                <div>
-                    <h3 class="text-2xl font-bold">申请 API 密钥</h3>
-                    <p class="text-sm text-gray-400 mt-1">请输入公司基本信息，我们会立即生成您的专属 API Key。</p>
-                </div>
-                <button id="closeApiKeyModal" class="text-gray-400 hover:text-white">
-                    <iconify-icon icon="mdi:close" class="text-2xl"></iconify-icon>
-                </button>
-            </div>
-            <form id="apiKeyForm" class="space-y-4">
-                <div>
-                    <label class="block text-sm text-gray-400 mb-2">公司名称 *</label>
-                    <input type="text" id="apiCompanyName" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none" placeholder="请输入公司全称" required>
-                </div>
-                <div>
-                    <label class="block text-sm text-gray-400 mb-2">联系人姓名 *</label>
-                    <input type="text" id="apiContactName" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none" placeholder="请输入联系人姓名" required>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm text-gray-400 mb-2">手机号码 *</label>
-                        <input type="tel" id="apiPhone" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none" placeholder="138-0000-0000" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm text-gray-400 mb-2">邮箱地址 *</label>
-                        <input type="email" id="apiEmail" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-[#00D1B2] outline-none" placeholder="your@email.com" required>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm text-gray-400 mb-2">行业类型</label>
-                    <select id="apiIndustry" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#00D1B2] outline-none">
-                        <option value="">请选择行业</option>
-                        <option value="retail">零售/连锁</option>
-                        <option value="food">餐饮/生鲜</option>
-                        <option value="fashion">时尚/服饰</option>
-                        <option value="electronics">电子产品</option>
-                        <option value="other">其他</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full py-4 rounded-xl bg-[#00D1B2] text-white font-bold hover:bg-[#00b59a] transition-all">立即生成 API Key</button>
-            </form>
-            <div id="apiKeyResult" class="mt-6 hidden">
-                <div class="bg-[#00D1B2]/10 border border-[#00D1B2]/20 rounded-xl p-5">
-                    <h4 class="font-bold text-lg mb-3 text-[#00D1B2]">API Key 已生成</h4>
-                    <p class="text-gray-300 mb-4">请复制并保存该密钥，后续接入时使用。</p>
-                    <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-4 break-all text-sm text-[#00D1B2] font-mono" id="apiKeyValue"></div>
-                    <button id="copyApiKeyBtn" class="mt-4 w-full py-3 rounded-xl bg-white/5 text-white font-semibold hover:bg-white/10 transition-all">复制 API Key</button>
-                    <p id="apiCopyNotice" class="mt-3 text-sm text-green-300 hidden">API Key 已复制到剪贴板。</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <script>
         // 模态框交互逻辑
         const calcButton = document.getElementById('calcButton');
@@ -787,90 +733,6 @@
             `;
 
             calcResult.classList.remove('hidden');
-        });
-
-        // API Key 申请弹框交互逻辑
-        const apiKeyButton = document.getElementById('apiKeyButton');
-        const apiKeyModal = document.getElementById('apiKeyModal');
-        const closeApiKeyModal = document.getElementById('closeApiKeyModal');
-        const apiKeyForm = document.getElementById('apiKeyForm');
-        const apiKeyResult = document.getElementById('apiKeyResult');
-        const apiKeyValue = document.getElementById('apiKeyValue');
-        const copyApiKeyBtn = document.getElementById('copyApiKeyBtn');
-        const apiCopyNotice = document.getElementById('apiCopyNotice');
-
-        function generateApiKey() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            let key = 'RG-';
-            for (let i = 0; i < 4; i++) {
-                for (let j = 0; j < 8; j++) {
-                    key += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-                if (i < 3) key += '-';
-            }
-            return key;
-        }
-
-        apiKeyButton.addEventListener('click', () => {
-            apiKeyModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeApiKeyModal.addEventListener('click', () => {
-            apiKeyModal.classList.add('hidden');
-            apiKeyForm.classList.remove('hidden');
-            apiKeyResult.classList.add('hidden');
-            apiKeyForm.reset();
-            apiCopyNotice.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-
-        apiKeyModal.addEventListener('click', (e) => {
-            if (e.target === apiKeyModal) {
-                apiKeyModal.classList.add('hidden');
-                apiKeyForm.classList.remove('hidden');
-                apiKeyResult.classList.add('hidden');
-                apiKeyForm.reset();
-                apiCopyNotice.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        apiKeyForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const companyName = document.getElementById('apiCompanyName').value.trim();
-            const contactName = document.getElementById('apiContactName').value.trim();
-            const phone = document.getElementById('apiPhone').value.trim();
-            const email = document.getElementById('apiEmail').value.trim();
-
-            if (!companyName || !contactName || !phone || !email) {
-                alert('请填写所有必填字段。');
-                return;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('请输入有效的邮箱地址。');
-                return;
-            }
-
-            const newKey = generateApiKey();
-            apiKeyValue.textContent = newKey;
-            apiKeyResult.classList.remove('hidden');
-            apiKeyForm.classList.add('hidden');
-            apiCopyNotice.classList.add('hidden');
-        });
-
-        copyApiKeyBtn.addEventListener('click', async () => {
-            const apiKeyText = apiKeyValue.textContent.trim();
-            if (!apiKeyText) return;
-            try {
-                await navigator.clipboard.writeText(apiKeyText);
-                apiCopyNotice.classList.remove('hidden');
-            } catch (error) {
-                alert('复制失败，请手动复制 API Key。');
-            }
         });
     </script>
     <!-- 模态框：免费试用申请 -->
@@ -1071,6 +933,10 @@
             </div>
         </div>
     </div>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/api-key-component.js"></script>
+    <!-- 申请apikey组件交互 -->
+    <api-key-apply trigger-id="apiKeyButton"></api-key-apply>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             fetch('./static/footer_home.html?t=' + new Date().getTime())

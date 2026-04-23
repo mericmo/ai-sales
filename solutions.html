@@ -9,6 +9,7 @@
     <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
     <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
     <script src="./static/js/nav-component.js"></script>
+
     <style>
         @import url('./static/css/inter.css');
 
@@ -79,6 +80,7 @@
     </style>
 </head>
 <!-- https://icon-sets.iconify.design/ -->
+
 <body class="overflow-x-hidden">
 
     <!-- 导航栏 (与首页统一风格) -->
@@ -103,9 +105,10 @@
                 从单店销量预测到全渠道动态定价，深度融合天气、节假日及微观市场特征，让每一次补货与定价都有数据支撑。
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <button class="btn-primary px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 text-white">
+                <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank"
+                    class="btn-primary px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 text-white">
                     <iconify-icon icon="mdi:rocket-launch-outline"></iconify-icon> 免费获取方案
-                </button>
+                </a>
                 <button
                     class="px-8 py-3.5 rounded-xl bg-white/5 border border-white/15 font-semibold flex items-center gap-2 hover:bg-white/10 transition">
                     <iconify-icon icon="mdi:play-circle-outline" class="inline mr-1"></iconify-icon> 观看产品演示
@@ -145,10 +148,10 @@
                         <span class="text-gray-300 text-sm">指导生产采购，降低缺货率35%+，减少损耗</span>
                     </div>
                 </div>
-                <button
+                <a href="./freeuse.html"
                     class="w-full py-3 rounded-xl border border-white/15 text-sm font-semibold hover:bg-white/5 hover:border-[#00D1B2]/50 transition flex items-center justify-center gap-2 mt-auto">
                     申请预测试跑 <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-                </button>
+                </a>
             </div>
 
             <!-- 方案2: 智能动态定价 + 阶梯折扣 -->
@@ -175,10 +178,10 @@
                         <span class="text-gray-300 text-sm">实测毛利率提升5%-12%，避免盲目降价</span>
                     </div>
                 </div>
-                <button
+                <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank"
                     class="w-full py-3 rounded-xl bg-[#00D1B2] text-white font-semibold text-sm hover:bg-[#00b59a] transition flex items-center justify-center gap-2 mt-auto shadow-lg shadow-[#00D1B2]/20">
                     获取定价策略 <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-                </button>
+                </a>
             </div>
 
             <!-- 方案3: 天气数据API + 第三方调用 -->
@@ -203,10 +206,10 @@
                         <span class="text-gray-300 text-sm">免费试用额度+企业订阅/按次计费，助力数据增值</span>
                     </div>
                 </div>
-                <button
+                <a href="https://wea.redgecko.cn/docs#" target="_blank"
                     class="w-full py-3 rounded-xl border border-white/15 text-sm font-semibold hover:bg-white/5 hover:border-[#00D1B2]/50 transition flex items-center justify-center gap-2 mt-auto">
                     查看API文档 <iconify-icon icon="mdi:code-json"></iconify-icon>
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -260,7 +263,7 @@
                             icon="mdi:brain"></iconify-icon> AI预测工作流演示</h4>
                     <div class="space-y-4 text-sm">
                         <div class="flex justify-between items-center border-b border-white/10 pb-2">
-                            <span>历史交易数据+天气编码</span><span class="text-[#00D1B2]">→ 特征管道</span>
+                            <span>历史交易数据+天气编码+节假日特征+...</span><span class="text-[#00D1B2]">→ 特征管道</span>
                         </div>
                         <div class="flex justify-between items-center border-b border-white/10 pb-2"><span>LightGBM /
                                 Transformer 集成</span><span class="text-[#00D1B2]">→ 预测基线</span></div>
@@ -328,9 +331,9 @@
                         <button class="text-xs border border-white/20 rounded-lg px-3 py-1">清货建议</button>
                     </div>
                 </div>
-                <div class="mt-6 p-4 rounded-xl bg-black/20 text-center text-sm">
+                <div class="mt-6 p-4 rounded-xl bg-black/20 text-center text-sm flex align-middle justify-center gap-2">
                     <iconify-icon icon="mdi:lightbulb-on-outline" class="inline text-[#00D1B2] mr-1"></iconify-icon>
-                    AI建议：采用8.5折阶梯折扣，同步触达价格敏感客群，预计单店日利润增长216元。
+                    <span>AI建议：采用8.5折阶梯折扣，同步触达价格敏感客群，预计单店日利润增长216元。</span>
                 </div>
             </div>
             <!-- 右侧: B2B接单表单 (核心转化) -->
@@ -341,21 +344,21 @@
                 <p class="text-gray-400 text-sm mb-6">填写企业信息，获取定制化解决方案及报价，24h内资深顾问对接</p>
                 <form class="space-y-5" id="b2bForm">
                     <div class="grid grid-cols-2 gap-4">
-                        <div><input type="text" placeholder="您的姓名"
+                        <div><input id="leadName" type="text" placeholder="您的姓名"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2] transition">
                         </div>
-                        <div><input type="text" placeholder="职位"
+                        <div><input id="leadPosition" type="text" placeholder="职位"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2]">
                         </div>
                     </div>
-                    <div><input type="text" placeholder="公司全称"
+                    <div><input id="leadCompany" type="text" placeholder="公司全称"
                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2]">
                     </div>
-                    <div><input type="text" placeholder="联系电话 / 工作邮箱"
+                    <div><input id="leadContact" type="text" placeholder="联系电话 / 工作邮箱"
                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00D1B2]">
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <select
+                        <select id="freeStoreCount"
                             class="bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00D1B2] focus:ring-1 focus:ring-[#00D1B2]">
                             <option value="" disabled selected style="background-color: #0A1A2F; color: #9CA3AF;">门店数量
                             </option>
@@ -363,7 +366,8 @@
                             <option value="10-100" style="background-color: #0A1A2F; color: white;">10-100家</option>
                             <option value="100+" style="background-color: #0A1A2F; color: white;">100+家</option>
                         </select>
-                        <select class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-gray-300 text-sm">
+                        <select id="leadCategory"
+                            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-gray-300 text-sm">
                             <option value="" disabled selected class="text-gray-400">主营品类</option>
                             <option value="生鲜/食品" class="text-white bg-[#001220]">生鲜/食品</option>
                             <option value="标品/便利店" class="text-white bg-[#001220]">标品/便利店</option>
@@ -375,22 +379,34 @@
                         <label class="text-xs text-gray-400 block mb-2">核心诉求（多选）</label>
                         <div class="flex flex-wrap gap-3">
                             <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
-                                    type="checkbox" class="accent-[#00D1B2]"> 减少断货</label>
+                                    id="needStock" name="leadNeeds" type="checkbox" value="减少断货"
+                                    class="accent-[#00D1B2]"> 减少断货</label>
                             <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
-                                    type="checkbox" class="accent-[#00D1B2]"> 降低损耗</label>
+                                    id="needLoss" name="leadNeeds" type="checkbox" value="降低损耗"
+                                    class="accent-[#00D1B2]"> 降低损耗</label>
                             <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
-                                    type="checkbox" class="accent-[#00D1B2]"> 提升毛利</label>
+                                    id="needProfit" name="leadNeeds" type="checkbox" value="提升毛利"
+                                    class="accent-[#00D1B2]"> 提升毛利</label>
                             <label class="flex items-center gap-1 text-xs bg-white/5 px-3 py-1.5 rounded-full"><input
-                                    type="checkbox" class="accent-[#00D1B2]"> 自动化采购</label>
+                                    id="needAuto" name="leadNeeds" type="checkbox" value="自动化采购"
+                                    class="accent-[#00D1B2]"> 自动化采购</label>
                         </div>
                     </div>
-                    <button type="button"
+                    <button type="submit"
                         class="btn-primary w-full py-3.5 rounded-xl font-bold text-white flex items-center justify-center gap-2 text-base"
                         id="submitLead">
                         <iconify-icon icon="mdi:send-outline"></iconify-icon> 提交需求，获取方案报价
                     </button>
                     <p class="text-[10px] text-gray-500 text-center mt-2">提交即视为同意《隐私政策》，我们承诺数据仅用于业务对接</p>
                 </form>
+                <div id="b2bSuccess"
+                    class="hidden mt-6 rounded-3xl p-6 bg-[#00D1B2]/10 border border-[#00D1B2]/20 text-center">
+                    <iconify-icon class="text-4xl text-[#00D1B2] mb-4" icon="mdi:check-circle"></iconify-icon>
+                    <h3 class="text-2xl font-bold mb-2">需求已提交</h3>
+                    <p class="text-gray-300 mb-4">感谢您的信任！我们的顾问将在 24 小时内联系您，为您匹配专属解决方案与报价。</p>
+                    <button id="b2bBackButton"
+                        class="mt-2 px-6 py-3 rounded-full bg-white/10 text-white font-semibold hover:bg-white/15 transition">继续浏览</button>
+                </div>
             </div>
         </div>
     </section>
@@ -403,7 +419,7 @@
                     <h2 class="text-3xl font-bold">天气数据API <span class="text-gradient">—— 零售专属气象服务</span></h2>
                     <p class="text-gray-400 mt-2">高并发、实时精准，赋能预测模型与运营决策，支持第三方付费调用</p>
                 </div>
-                <button
+                <button id="applyBtn1"
                     class="border border-[#00D1B2] text-[#00D1B2] px-6 py-2 rounded-full font-semibold hover:bg-[#00D1B2]/10">立即申请API密钥
                     →</button>
             </div>
@@ -415,7 +431,8 @@
                     </div>
                     <p class="text-sm text-gray-400 mb-4">1000次/日调用，实时天气+24h预报</p>
                     <div class="text-xl font-bold">¥0<span class="text-sm font-normal text-gray-500">/月</span></div>
-                    <button class="mt-4 w-full py-2 rounded-lg border border-white/20 text-sm">开通试用</button>
+                    <button id="applyBtn2"
+                        class="mt-4 w-full py-2 rounded-lg border border-white/20 text-sm">开通试用</button>
                 </div>
                 <div
                     class="glass-card p-6 rounded-2xl border-[#00D1B2]/30 bg-gradient-to-b from-[#00D1B2]/5 to-transparent">
@@ -433,24 +450,84 @@
                         <h3 class="font-bold">企业定制</h3>
                     </div>
                     <p class="text-sm text-gray-400 mb-4">高并发QPS保障 + 私有化气象网格部署</p>
-                    <div class="text-xl font-bold">按需报价</div><button
-                        class="mt-4 w-full py-2 rounded-lg border border-white/20 text-sm">联系销售</button>
+                    <div class="text-xl font-bold">按需报价</div>
+                    <button class="mt-4 w-full py-2 rounded-lg border border-white/20 text-sm">
+                        <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank">
+                            联系销售
+                        </a>
+                    </button>
                 </div>
             </div>
             <div class="mt-8 bg-black/30 p-4 rounded-xl text-center text-sm text-gray-300"><iconify-icon icon="mdi:api"
-                    class="inline mr-1"></iconify-icon> API接入文档 · Python/Java示例代码 · Swagger调试地址 <span
-                    class="text-[#00D1B2] ml-2 cursor-pointer">wea.redgecko.cn/weather</span></div>
+                    class="inline mr-1"></iconify-icon> API接入文档 · Python/Java示例代码 · 调试地址 <span
+                    class="text-[#00D1B2] ml-2 cursor-pointer">https://wea.redgecko.cn/docs#</span></div>
         </div>
     </section>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/api-key-component.js"></script>
+    <script src="./static/js/footer-component.js"></script>
+
+
+    <!-- 申请apikey组件交互 -->
+    <api-key-apply trigger-id="applyBtn1"></api-key-apply>
+    <api-key-apply trigger-id="applyBtn2"></api-key-apply>
     <!-- 页脚 -->
     <footer-component></footer-component>
-    <!-- 统一加载组件 -->
-    <script src="./static/js/footer-component.js"></script>
+
+
     <!-- 简单表单交互提示 -->
     <script>
-        document.getElementById('submitLead')?.addEventListener('click', function () {
-            alert('感谢您的关注！RedGecko AI顾问将在24小时内联系您，并发送专属降本增效报告。');
-            // 此处可增加埋点或真实提交逻辑
+        const b2bForm = document.getElementById('b2bForm');
+        const b2bSuccess = document.getElementById('b2bSuccess');
+        const b2bBackButton = document.getElementById('b2bBackButton');
+
+        b2bForm?.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('leadName').value.trim();
+            const position = document.getElementById('leadPosition').value.trim();
+            const company = document.getElementById('leadCompany').value.trim();
+            const contact = document.getElementById('leadContact').value.trim();
+            const storeCount = document.getElementById('freeStoreCount').value;
+            const category = document.getElementById('leadCategory').value;
+            const needs = Array.from(document.querySelectorAll('input[name="leadNeeds"]:checked')).map(item => item.value);
+
+            if (!name || !company || !contact) {
+                alert('请填写姓名、公司全称和联系方式。');
+                return;
+            }
+
+            if (!storeCount) {
+                alert('请选择门店数量。');
+                return;
+            }
+
+            if (needs.length === 0) {
+                alert('请选择至少一个核心诉求。');
+                return;
+            }
+
+            const submissionData = {
+                name,
+                position,
+                company,
+                contact,
+                storeCount,
+                category,
+                needs,
+            };
+
+            console.log('B2B 需求提交数据：', submissionData);
+            // 实际项目中这里可替换为后端 API 调用
+
+            b2bForm.classList.add('hidden');
+            b2bSuccess.classList.remove('hidden');
+            b2bSuccess.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        b2bBackButton?.addEventListener('click', function () {
+            b2bSuccess.classList.add('hidden');
+            b2bForm.classList.remove('hidden');
         });
     </script>
 </body>
