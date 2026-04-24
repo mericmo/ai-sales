@@ -91,6 +91,12 @@
             background: #00D1B2;
             border-radius: 10px;
         }
+
+        .v-flex {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -108,19 +114,22 @@
                 <span class="text-xs font-medium text-gray-300 tracking-wider">企业级合作 · 开放共赢</span>
             </div>
             <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                B2B 合作伙伴计划<br><span class="text-gradient">让 AI 决策赋能每一家零售企业</span>
+                <div>B2B 合作伙伴计划</div>
+                <div class="text-gradient mt-4">让 AI 决策赋能每一家零售企业</div>
             </h1>
             <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
                 无论您是零售品牌、系统集成商、技术咨询公司，均可通过 API 集成、SaaS 订阅或定制建模，快速接入销量预测、动态定价、天气数据服务，共同创造可持续的商业价值。
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <button class="btn-primary px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 text-white">
-                    <iconify-icon icon="mdi:file-document-outline"></iconify-icon> 成为合作伙伴
+                    <iconify-icon icon="mdi:crowd"></iconify-icon>
+                    <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank"
+                        class="text-white">成为合作伙伴</a>
                 </button>
-                <button
+                <!-- <button
                     class="px-8 py-3.5 rounded-xl bg-white/5 border border-white/15 font-semibold hover:bg-white/10 transition">
                     <iconify-icon icon="mdi:download-box-outline"></iconify-icon> 下载合作手册
-                </button>
+                </button> -->
             </div>
         </div>
     </section>
@@ -150,8 +159,10 @@
                             class="text-[#00D1B2] text-base"></iconify-icon> 独立控制台管理密钥与用量</li>
                 </ul>
                 <button
-                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">查看
-                    API 文档 →</button>
+                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">
+                    <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank" class="text-white">
+                        查看 API 文档 →</a>
+                </button>
             </div>
 
             <!-- 模式2：SaaS 看板模式 -->
@@ -173,14 +184,16 @@
                             class="text-[#00D1B2] text-base"></iconify-icon> 阶梯折扣策略一键应用</li>
                 </ul>
                 <button
-                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">申请
-                    SaaS 试用 →</button>
+                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">
+                    <a href="./freeuse.html" target="_self" class="text-white">
+                        申请 SaaS 试用 →</a>
+                </button>
             </div>
 
             <!-- 模式3：定制建模服务 -->
             <div class="glass-card rounded-2xl p-8 transition-all hover:border-[#00D1B2]/40 flex flex-col h-full">
                 <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5">
-                    <iconify-icon class="text-3xl text-[#00D1B2]" icon="mdi:robot-expert"></iconify-icon>
+                    <iconify-icon class="text-3xl text-[#00D1B2]" icon="mdi:code-block-tags"></iconify-icon>
                 </div>
                 <div class="cooperation-badge mb-4">适合特殊业态/大型集团</div>
                 <h3 class="text-2xl font-bold mb-3">定制建模服务</h3>
@@ -195,8 +208,10 @@
                             class="text-[#00D1B2] text-base"></iconify-icon> 联合创新与专属SLA</li>
                 </ul>
                 <button
-                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">联系解决方案架构师
-                    →</button>
+                    class="w-full py-3 rounded-xl bg-white/5 border border-white/15 hover:bg-[#00D1B2]/10 hover:border-[#00D1B2] transition font-semibold text-sm mt-auto">
+                    <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank" class="text-white">
+                        联系解决方案架构师 →</a>
+                </button>
             </div>
         </div>
     </section>
@@ -214,29 +229,30 @@
                     <div class="font-semibold">提交需求</div>
                     <div class="text-xs text-gray-500 mt-1">在线表单 / 商务咨询</div>
                 </div>
-                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
+                <div class="flex justify-center items-center text-gray-600 hidden md:block v-flex"><iconify-icon
                         icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
                 <div class="flex flex-col items-center">
                     <div class="step-circle mb-3">2</div>
                     <div class="font-semibold">需求对齐</div>
                     <div class="text-xs text-gray-500 mt-1">数据评估 + 方案设计</div>
                 </div>
-                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
+                <div class="flex justify-center items-center text-gray-600 hidden md:block v-flex"><iconify-icon
                         icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
                 <div class="flex flex-col items-center">
                     <div class="step-circle mb-3">3</div>
                     <div class="font-semibold">免费试跑</div>
                     <div class="text-xs text-gray-500 mt-1">3家门店2周回测</div>
                 </div>
-                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
+                <div class="flex justify-center items-center text-gray-600 hidden md:block v-flex"><iconify-icon
                         icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
                 <div class="flex flex-col items-center">
                     <div class="step-circle mb-3">4</div>
                     <div class="font-semibold">签署合同</div>
                     <div class="text-xs text-gray-500 mt-1">线上签约/对公支付</div>
                 </div>
-                <div class="flex justify-center items-center text-gray-600 hidden md:block"><iconify-icon
-                        icon="mdi:chevron-right" class="text-2xl"></iconify-icon></div>
+                <div class="flex justify-center items-center text-gray-600 hidden md:block v-flex">
+                    <iconify-icon icon="mdi:chevron-right" class="text-2xl"></iconify-icon>
+                </div>
                 <div class="flex flex-col items-center">
                     <div class="step-circle mb-3">5</div>
                     <div class="font-semibold">上线交付</div>
@@ -244,14 +260,16 @@
                 </div>
             </div>
             <div class="mt-12 glass-card p-5 rounded-xl text-center max-w-3xl mx-auto">
-                <p class="text-sm text-gray-300"><iconify-icon icon="mdi:clock-outline"
-                        class="inline text-[#00D1B2] mr-1"></iconify-icon> 从试跑到产出第一份预测报告，最快 72 小时完成 POC。</p>
+                <p class="text-sm text-gray-300 v-flex">
+                    <iconify-icon icon="mdi:clock-outline" class="inline text-[#00D1B2] mr-1"></iconify-icon>
+                    <span>从试跑到产出第一份预测报告，最快 72 小时完成 POC。</span>
+                </p>
             </div>
         </div>
     </section>
 
     <!-- 核心B2B接单表单 (完整在线询价/需求提交) -->
-    <section class="py-20 max-w-[1280px] mx-auto px-6 lg:px-8">
+    <!-- <section class="py-20 max-w-[1280px] mx-auto px-6 lg:px-8">
         <div class="glass-card rounded-3xl p-8 lg:p-12 relative overflow-hidden border border-white/10">
             <div class="absolute -top-40 -right-40 w-80 h-80 bg-[#00D1B2]/10 rounded-full blur-[100px]"></div>
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -343,7 +361,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- 合作伙伴权益 / 生态赋能 -->
     <section class="py-20 bg-[#001830]">
@@ -411,7 +429,9 @@
                         class="text-[#00D1B2]"></iconify-icon> 18938670975</div>
                 <div class="flex items-center gap-2 bg-white/5 px-5 py-2 rounded-full"><iconify-icon icon="mdi:email"
                         class="text-[#00D1B2]"></iconify-icon> customer-service@redhousegecko.com</div>
-                <button class="btn-primary px-6 py-2 rounded-full text-sm font-bold">预约在线会议 →</button>
+                <button class="btn-primary px-6 py-2 rounded-full text-sm font-bold">
+                    <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank">预约在线会议 →</a>
+                </button>
             </div>
         </div>
     </section>
@@ -428,13 +448,13 @@
             // 真实项目中可收集表单数据并发送至后端
         });
         // 为所有合作卡片按钮增加交互提示
-        const allCooperateBtns = document.querySelectorAll('.glass-card button, .btn-primary');
-        allCooperateBtns.forEach(btn => {
-            if (btn.id === 'submitB2BForm') return;
-            btn.addEventListener('click', () => {
-                alert('演示版本：正式环境将跳转至合作申请表或API文档中心。立即联系商务获取专属方案 → 18938670975');
-            });
-        });
+        // const allCooperateBtns = document.querySelectorAll('.glass-card button, .btn-primary');
+        // allCooperateBtns.forEach(btn => {
+        //     if (btn.id === 'submitB2BForm') return;
+        //     btn.addEventListener('click', () => {
+        //         alert('演示版本：正式环境将跳转至合作申请表或API文档中心。立即联系商务获取专属方案 → 18938670975');
+        //     });
+        // });
     </script>
 </body>
 

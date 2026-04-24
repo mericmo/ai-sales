@@ -109,9 +109,9 @@
                     class="btn-primary px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 text-white">
                     <iconify-icon icon="mdi:rocket-launch-outline"></iconify-icon> 免费获取方案
                 </a>
-                <button
+                <button id="demoVideoBtn"
                     class="px-8 py-3.5 rounded-xl bg-white/5 border border-white/15 font-semibold flex items-center gap-2 hover:bg-white/10 transition">
-                    <iconify-icon icon="mdi:play-circle-outline" class="inline mr-1"></iconify-icon> 观看产品演示
+                    <iconify-icon icon="mdi:play-circle-outline" class="inline mr-1"></iconify-icon> 产品介绍视频
                 </button>
             </div>
         </div>
@@ -459,14 +459,18 @@
                 </div>
             </div>
             <div class="mt-8 bg-black/30 p-4 rounded-xl text-center text-sm text-gray-300"><iconify-icon icon="mdi:api"
-                    class="inline mr-1"></iconify-icon> API接入文档 · Python/Java示例代码 · 调试地址 <span
+                    class="inline mr-1"></iconify-icon> API接入文档  · 调试地址 <span
                     class="text-[#00D1B2] ml-2 cursor-pointer">https://wea.redgecko.cn/docs#</span></div>
         </div>
     </section>
     <!-- 统一加载组件 -->
     <script src="./static/js/api-key-component.js"></script>
     <script src="./static/js/footer-component.js"></script>
-
+    <script src="./static/js/video-player-component.js"></script>
+    <!-- 基础用法：播放 YouTube 视频 -->
+    <video-player trigger-id="demoVideoBtn" video-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        video-title="产品功能演示">
+    </video-player>
 
     <!-- 申请apikey组件交互 -->
     <api-key-apply trigger-id="applyBtn1"></api-key-apply>

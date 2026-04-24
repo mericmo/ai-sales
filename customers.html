@@ -98,6 +98,32 @@
             background: #00D1B2;
             border-radius: 10px;
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
     </style>
 </head>
 
@@ -384,10 +410,22 @@
                 <h3 class="text-2xl font-bold mb-3">观看客户成功故事 · 10分钟深度分享</h3>
                 <p class="text-gray-400 max-w-2xl mx-auto mb-6">来自鲜丰果园、邻家便利高管的实战经验：如何用AI销量预测+动态定价实现利润增长</p>
                 <div class="flex flex-wrap justify-center gap-4">
+                    <button class="btn-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2">
+                        <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank"
+                            class="flex items-center gap-2">
+                            <iconify-icon icon="mdi:file-document" class="text-xl"></iconify-icon>
+                            获取《零售AI案例白皮书》
+                        </a>
+                    </button>
                     <button
-                        class="btn-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2">下载《零售AI案例白皮书》</button>
-                    <button
-                        class="px-8 py-3 rounded-xl bg-white/5 border border-white/15 font-semibold hover:bg-white/10 transition">预约线上案例研讨会</button>
+                        class="px-8 py-3 rounded-xl bg-white/5 border border-white/15 font-semibold hover:bg-white/10 transition">
+
+                        <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank"
+                            class="flex items-center gap-2">
+                            <iconify-icon icon="mdi:domain" class="text-xl"></iconify-icon>
+                            预约沟通我司的需求
+                        </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -401,10 +439,14 @@
                     <h2 class="text-3xl font-bold mb-4">成为下一个成功案例</h2>
                     <p class="text-gray-300 mb-6">提交信息，我们将为您提供同行业标杆客户的效果数据报告，并安排资深零售AI顾问一对一沟通。</p>
                     <div class="flex items-center gap-4 text-sm text-gray-400">
-                        <div><iconify-icon icon="mdi:check-circle" class="inline text-[#00D1B2]"></iconify-icon>
-                            免费获取行业对标报告</div>
-                        <div><iconify-icon icon="mdi:check-circle" class="inline text-[#00D1B2]"></iconify-icon>
-                            7天无风险POC测试</div>
+                        <div class="flex items-center gap-1">
+                            <iconify-icon icon="mdi:check-circle" class="inline text-[#00D1B2]"></iconify-icon>
+                            <span>免费获取行业对标报告</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <iconify-icon icon="mdi:check-circle" class="inline text-[#00D1B2]"></iconify-icon>
+                            <span>7天无风险POC测试</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -417,14 +459,31 @@
                             <input type="tel" placeholder="联系电话"
                                 class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#00D1B2] outline-none">
                         </div>
-                        <select
-                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:border-[#00D1B2] outline-none">
-                            <option>感兴趣的产品 (可多选)</option>
-                            <option>销量预测</option>
-                            <option>动态定价</option>
-                            <option>天气API</option>
-                            <option>端到端供应链方案</option>
-                        </select>
+                        <div class="space-y-2">
+                            <label class="block text-sm text-gray-400 mb-2">感兴趣的产品（可多选）</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label
+                                    class="flex items-center gap-2 p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10 hover:border-[#00D1B2]/50 transition-all">
+                                    <input type="checkbox" class="product-checkbox accent-[#00D1B2]" value="销量预测">
+                                    <span class="text-sm text-gray-300">销量预测</span>
+                                </label>
+                                <label
+                                    class="flex items-center gap-2 p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10 hover:border-[#00D1B2]/50 transition-all">
+                                    <input type="checkbox" class="product-checkbox accent-[#00D1B2]" value="动态定价">
+                                    <span class="text-sm text-gray-300">动态定价</span>
+                                </label>
+                                <label
+                                    class="flex items-center gap-2 p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10 hover:border-[#00D1B2]/50 transition-all">
+                                    <input type="checkbox" class="product-checkbox accent-[#00D1B2]" value="天气API">
+                                    <span class="text-sm text-gray-300">天气API</span>
+                                </label>
+                                <label
+                                    class="flex items-center gap-2 p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10 hover:border-[#00D1B2]/50 transition-all">
+                                    <input type="checkbox" class="product-checkbox accent-[#00D1B2]" value="端到端供应链方案">
+                                    <span class="text-sm text-gray-300">端到端供应链方案</span>
+                                </label>
+                            </div>
+                        </div>
                         <button type="button"
                             class="btn-primary w-full py-3 rounded-xl font-bold text-white flex items-center justify-center gap-2"
                             id="submitCaseBtn">
@@ -437,15 +496,333 @@
     </section>
 
     <script>
-        document.getElementById('submitCaseBtn')?.addEventListener('click', () => {
-            alert('感谢关注！我们的零售AI顾问将在24小时内发送同行业标杆案例及详细方案至您预留的联系方式。');
-        });
+        // document.getElementById('submitCaseBtn')?.addEventListener('click', () => {
+        //     alert('感谢关注！我们的零售AI顾问将在24小时内发送同行业标杆案例及详细方案至您预留的联系方式。');
+        // });
         // 模拟所有案例按钮简易交互（不强制跳转）
-        const caseButtons = document.querySelectorAll('.glass-card .case-tag, .glass-card button');
-        caseButtons.forEach(btn => {
-            if (btn.tagName !== 'BUTTON') return;
-            btn.addEventListener('click', () => alert('演示版：正式环境将跳转至案例详细PDF或预约演示页面。'));
+        // const caseButtons = document.querySelectorAll('.glass-card .case-tag, .glass-card button');
+        // caseButtons.forEach(btn => {
+        //     if (btn.tagName !== 'BUTTON') return;
+        //     btn.addEventListener('click', () => alert('演示版：正式环境将跳转至案例详细PDF或预约演示页面。'));
+        // });
+        // 获取表单元素
+        const caseForm = document.getElementById('caseForm');
+        const submitCaseBtn = document.getElementById('submitCaseBtn');
+
+        // 获取表单字段
+        const companyNameInput = caseForm?.querySelector('input[placeholder="公司名称"]');
+        const contactNameInput = caseForm?.querySelector('input[placeholder="姓名"]');
+        const phoneInput = caseForm?.querySelector('input[placeholder="联系电话"]');
+        const productSelect = document.getElementById('productReqired');
+
+        // 创建成功提示元素
+        let successMessage = null;
+
+        /**
+         * 显示成功消息
+         */
+        function showCaseSuccessMessage() {
+            // 如果已存在成功消息，先移除
+            if (successMessage) {
+                successMessage.remove();
+            }
+
+            successMessage = document.createElement('div');
+            successMessage.className = 'mt-6 p-5 rounded-2xl bg-gradient-to-r from-[#00D1B2]/10 to-[#3B82F6]/10 border border-[#00D1B2]/30 text-center';
+            successMessage.style.animation = 'fadeIn 0.4s ease-out';
+            successMessage.innerHTML = `
+        <div class="flex items-center justify-center gap-3 mb-2">
+            <iconify-icon icon="mdi:check-circle" class="text-3xl text-[#00D1B2]"></iconify-icon>
+            <h4 class="text-xl font-bold text-white">申请已提交成功！</h4>
+        </div>
+        <p class="text-gray-300 text-sm mb-2">感谢您的关注，我们的资深零售AI顾问将在 <span class="text-[#00D1B2] font-semibold">24小时内</span> 与您联系。</p>
+        <p class="text-gray-400 text-xs">我们将为您准备同行业标杆客户的效果数据报告。</p>
+    `;
+
+            // 将成功消息插入到表单后面
+            caseForm.parentNode.appendChild(successMessage);
+
+            // 滚动到成功消息位置
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // 8秒后自动淡出移除
+            setTimeout(() => {
+                if (successMessage) {
+                    successMessage.style.transition = 'opacity 0.5s ease';
+                    successMessage.style.opacity = '0';
+                    setTimeout(() => {
+                        if (successMessage) successMessage.remove();
+                        successMessage = null;
+                    }, 500);
+                }
+            }, 8000);
+        }
+
+        /**
+         * 显示错误提示
+         */
+        function showCaseError(message, targetInput = null) {
+            // 移除已有的错误提示
+            const existingError = caseForm?.querySelector('.case-error-message');
+            if (existingError) existingError.remove();
+
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'case-error-message mt-2 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm flex items-center gap-2';
+            errorDiv.style.animation = 'fadeIn 0.3s ease-out';
+            errorDiv.innerHTML = `
+        <iconify-icon icon="mdi:alert-circle" class="text-lg"></iconify-icon>
+        <span>${message}</span>
+    `;
+
+            // 插入到按钮前面
+            if (targetInput && targetInput.parentNode) {
+                targetInput.parentNode.insertBefore(errorDiv, targetInput.nextSibling);
+            } else if (submitCaseBtn) {
+                submitCaseBtn.parentNode.insertBefore(errorDiv, submitCaseBtn);
+            } else {
+                caseForm?.appendChild(errorDiv);
+            }
+
+            // 高亮错误字段
+            if (targetInput) {
+                targetInput.style.borderColor = '#ef4444';
+                targetInput.addEventListener('focus', () => {
+                    targetInput.style.borderColor = '';
+                    const err = caseForm?.querySelector('.case-error-message');
+                    if (err) err.remove();
+                }, { once: true });
+            }
+
+            // 4秒后自动移除
+            setTimeout(() => {
+                if (errorDiv.parentNode) errorDiv.remove();
+            }, 4000);
+        }
+
+        /**
+         * 清除所有错误提示
+         */
+        function clearCaseErrors() {
+            const errors = caseForm?.querySelectorAll('.case-error-message');
+            errors?.forEach(error => error.remove());
+
+            // 恢复输入框边框
+            const inputs = [companyNameInput, contactNameInput, phoneInput, productSelect];
+            inputs.forEach(input => {
+                if (input) input.style.borderColor = '';
+            });
+        }
+
+        /**
+         * 验证表单字段
+         */
+        function validateCaseForm() {
+            clearCaseErrors();
+            const companyName = companyNameInput?.value.trim();
+            const contactName = contactNameInput?.value.trim();
+            const phone = phoneInput?.value.trim();
+            const selectedProducts = getSelectedProducts();
+
+            // 验证公司名称
+            if (!companyName) {
+                showCaseError('请输入公司名称', companyNameInput);
+                companyNameInput?.focus();
+                return false;
+            }
+
+            if (companyName.length < 2) {
+                showCaseError('公司名称至少需要2个字符', companyNameInput);
+                companyNameInput?.focus();
+                return false;
+            }
+
+            // 验证联系人姓名
+            if (!contactName) {
+                showCaseError('请输入联系人姓名', contactNameInput);
+                contactNameInput?.focus();
+                return false;
+            }
+
+            if (contactName.length < 2) {
+                showCaseError('联系人姓名至少需要2个字符', contactNameInput);
+                contactNameInput?.focus();
+                return false;
+            }
+
+            // 验证联系电话
+            if (!phone) {
+                showCaseError('请输入联系电话', phoneInput);
+                phoneInput?.focus();
+                return false;
+            }
+
+            // 手机号验证（中国大陆手机号）
+            const mobileRegex = /^1[3-9]\d{9}$/;
+            // 固定电话验证（带区号）
+            const landlineRegex = /^0\d{2,3}-?\d{7,8}$/;
+            // 通用电话号码验证
+            const phoneRegex = /^[\d\s-+()]{8,20}$/;
+
+            if (!mobileRegex.test(phone) && !landlineRegex.test(phone) && !phoneRegex.test(phone)) {
+                showCaseError('请输入有效的联系电话（手机号或固定电话）', phoneInput);
+                phoneInput?.focus();
+                return false;
+            }
+
+            // 验证产品选择（不能是默认的 disabled 选项）
+            if (selectedProducts.length === 0) {
+                showCaseError('请至少选择一个感兴趣的产品');
+                return false;
+            }
+
+            return true;
+        }
+        /**
+         * 获取选中的产品
+         */
+        function getSelectedProducts() {
+            const checkboxes = document.querySelectorAll('.product-checkbox:checked');
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+
+
+        /**
+         * 提交表单数据到后端
+         */
+        async function submitCaseFormData(formData) {
+            // 模拟 API 调用（实际项目中替换为真实的后端接口）
+            console.log('提交客户案例申请数据：', formData);
+
+            // 示例：如果需要实际发送到后端，取消下面的注释
+            /*
+            try {
+                const response = await fetch('/api/b2b/case-submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (!response.ok) {
+                    throw new Error('提交失败');
+                }
+                
+                const result = await response.json();
+                return { success: true, data: result };
+            } catch (error) {
+                console.error('提交失败：', error);
+                return { success: false, error: error.message };
+            }
+            */
+
+            // 模拟网络延迟
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({ success: true });
+                }, 600);
+            });
+        }
+
+        /**
+         * 重置表单
+         */
+        function resetCaseForm() {
+            if (companyNameInput) companyNameInput.value = '';
+            if (contactNameInput) contactNameInput.value = '';
+            if (phoneInput) phoneInput.value = '';
+            if (productSelect) productSelect.selectedIndex = 0;
+        }
+
+        /**
+         * 处理表单提交
+         */
+        async function handleCaseFormSubmit(event) {
+            event.preventDefault();
+
+            // 1. 验证表单
+            if (!validateCaseForm()) {
+                return;
+            }
+
+            // 2. 显示加载状态
+            const originalBtnText = submitCaseBtn.innerHTML;
+            submitCaseBtn.disabled = true;
+            submitCaseBtn.innerHTML = `
+        <iconify-icon icon="mdi:loading" class="animate-spin"></iconify-icon>
+        提交中...
+    `;
+            submitCaseBtn.style.opacity = '0.7';
+
+            // 3. 收集表单数据
+            const formData = {
+                companyName: companyNameInput?.value.trim(),
+                contactName: contactNameInput?.value.trim(),
+                phone: phoneInput?.value.trim(),
+                productName: getSelectedProducts(),
+                 productCount: getSelectedProducts().length,
+                submitTime: new Date().toISOString(),
+                source: 'customer_case_section',
+                userAgent: navigator.userAgent,
+                pageUrl: window.location.href
+            };
+
+            // 4. 提交数据
+            const result = await submitCaseFormData(formData);
+
+            // 5. 恢复按钮状态
+            submitCaseBtn.disabled = false;
+            submitCaseBtn.innerHTML = originalBtnText;
+            submitCaseBtn.style.opacity = '1';
+
+            // 6. 处理提交结果
+            if (result.success) {
+                // 显示成功消息
+                showCaseSuccessMessage();
+                // 重置表单
+                resetCaseForm();
+            } else {
+                showCaseError(result.error || '提交失败，请稍后重试或联系客服。');
+            }
+        }
+
+        // 绑定提交事件
+        if (submitCaseBtn) {
+            submitCaseBtn.addEventListener('click', handleCaseFormSubmit);
+        }
+
+        // 可选：表单字段实时清除错误边框（提升用户体验）
+        const caseInputs = [companyNameInput, contactNameInput, phoneInput, productSelect];
+        caseInputs.forEach(input => {
+            if (input) {
+                input.addEventListener('focus', () => {
+                    input.style.borderColor = '';
+                    const error = caseForm?.querySelector('.case-error-message');
+                    if (error && error.parentNode?.contains(input)) {
+                        error.remove();
+                    }
+                });
+
+                // 实时清除错误边框（输入时）
+                input.addEventListener('input', () => {
+                    input.style.borderColor = '';
+                });
+            }
         });
+
+        // 可选：支持回车键提交
+        if (caseForm) {
+            caseForm.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && e.target.tagName !== 'SELECT' && e.target.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    if (submitCaseBtn && !submitCaseBtn.disabled) {
+                        submitCaseBtn.click();
+                    }
+                }
+            });
+        }
+
+        console.log('客户案例表单已初始化，等待用户提交');
     </script>
     <!-- 页脚 -->
     <footer-component></footer-component>

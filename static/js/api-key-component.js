@@ -3,7 +3,7 @@ class ApiKeyApplyComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        this.modalId = 'apiKeyModal';
+        this.modalId = this.getAttribute('trigger-id') ||'apiKeyModal';
         // 不自动渲染，等待 connectedCallback
     }
 
@@ -67,12 +67,12 @@ class ApiKeyApplyComponent extends HTMLElement {
             <div>
                 <label class="block text-sm text-gray-400 mb-2">行业类型</label>
                 <select id="apiIndustryModal" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#00D1B2] outline-none">
-                    <option value="">请选择行业</option>
-                    <option value="retail">零售/连锁</option>
-                    <option value="food">餐饮/生鲜</option>
-                    <option value="fashion">时尚/服饰</option>
-                    <option value="electronics">电子产品</option>
-                    <option value="other">其他</option>
+                    <option value="" disabled selected style="background-color: #0A1A2F; color: #9CA3AF;">请选择行业</option>
+                    <option value="retail" style="background-color: #0A1A2F; color: white;">零售/连锁</option>
+                    <option value="food" style="background-color: #0A1A2F; color: white;">餐饮/生鲜</option>
+                    <option value="fashion" style="background-color: #0A1A2F; color: white;">时尚/服饰</option>
+                    <option value="electronics" style="background-color: #0A1A2F; color: white;">电子产品</option>
+                    <option value="other" style="background-color: #0A1A2F; color: white;">其他</option>
                 </select>
             </div>
             <button type="submit" class="w-full py-4 rounded-xl bg-[#00D1B2] text-white font-bold hover:bg-[#00b59a] transition-all">立即生成 API Key</button>
@@ -89,9 +89,9 @@ class ApiKeyApplyComponent extends HTMLElement {
     </div>
 </div>
         `;
-        
+
         document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
+
         // 绑定模态框事件
         this.modal = document.getElementById(this.modalId);
         this.closeBtn = document.getElementById('closeApiKeyModalBtn');
@@ -100,7 +100,7 @@ class ApiKeyApplyComponent extends HTMLElement {
         this.keyValueDisplay = document.getElementById('apiKeyValueModal');
         this.copyBtn = document.getElementById('copyApiKeyBtnModal');
         this.copyNotice = document.getElementById('apiCopyNoticeModal');
-        
+
         if (this.closeBtn) {
             this.closeBtn.addEventListener('click', this.closeModal.bind(this));
         }
@@ -130,7 +130,7 @@ class ApiKeyApplyComponent extends HTMLElement {
         if (modal) {
             modal.classList.add('hidden');
             document.body.style.overflow = '';
-            
+
             // 重置表单
             setTimeout(() => {
                 if (this.form) this.form.reset();
@@ -143,22 +143,46 @@ class ApiKeyApplyComponent extends HTMLElement {
 
     handleSubmit(e) {
         e.preventDefault();
-        
+
         const companyName = document.getElementById('apiCompanyNameModal')?.value.trim();
         const contactName = document.getElementById('apiContactNameModal')?.value.trim();
         const phone = document.getElementById('apiPhoneModal')?.value.trim();
         const email = document.getElementById('apiEmailModal')?.value.trim();
+        const selectedValue = document.getElementById('apiIndustryModal')?.value.trim();
+        const phoneRegex = /^1[3-9]\d{9}$/;
+        const isPhone = phoneRegex.test(phone);
 
-        if (!companyName || !contactName || !phone || !email) {
+        if (!isPhone) {
+            alert('请输入有效的手机号码（11位)。');
+            return;
+        }
+        if (!companyName || !contactName || !phone || !email || !selectedValue) {
             alert('请填写所有必填字段。');
             return;
         }
 
         const newKey = this.generateApiKey();
         if (this.keyValueDisplay) this.keyValueDisplay.textContent = newKey;
-        
+
         if (this.form) this.form.classList.add('hidden');
         if (this.resultDiv) this.resultDiv.classList.remove('hidden');
+        // 构建提交数据
+        const submissionData = {
+            name:contactName,
+            company:companyName,
+            phone,
+            industry:selectedValue,
+            apikey:newKey,
+            submitTime: new Date().toISOString(),
+            source: this.modalId
+        };
+        console.log('申请apikey信息：', submissionData);
+        // TODO: 实际项目中替换为后端 API 调用
+        fetch('/api/b2b/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(submissionData)
+        });
     }
 
     handleCopy() {
