@@ -16,7 +16,7 @@ class ApiKeyApplyComponent extends HTMLElement {
 
         this.triggerElement = document.getElementById(triggerId);
         if (!this.triggerElement) {
-            console.error(`ApiKeyApplyComponent: 未找到 ID 为 '${triggerId}' 的触发元素`);
+            console.log(`ApiKeyApplyComponent: 未找到 ID 为 '${triggerId}' 的触发元素`);
             return;
         }
 
@@ -197,7 +197,7 @@ class ApiKeyApplyComponent extends HTMLElement {
                 }, 2000);
             }
         }).catch(err => {
-            console.error('复制失败:', err);
+            console.log('复制失败:', err);
             alert('复制失败，请手动复制。');
         });
     }

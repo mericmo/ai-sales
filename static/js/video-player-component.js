@@ -182,7 +182,7 @@ class VideoPlayerComponent extends HTMLElement {
             this.handleTriggerClick = this.openModal.bind(this);
             this.triggerElement.addEventListener('click', this.handleTriggerClick);
         } else {
-            console.error(`VideoPlayerComponent: 未找到 ID 为 '${this.triggerId}' 的触发元素`);
+            console.log(`VideoPlayerComponent: 未找到 ID 为 '${this.triggerId}' 的触发元素`);
         }
     }
 

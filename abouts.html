@@ -265,12 +265,12 @@
                     <div
                         class="w-28 h-28 rounded-full bg-gradient-to-br from-amber-500/30 to-orange-500/30 mx-auto flex items-center justify-center text-3xl font-bold">
                         Lin</div>
-                    <h3 class="text-xl font-bold mt-4">Lcuy</h3>
+                    <h3 class="text-xl font-bold mt-4">Lucy</h3>
                     <p class="text-[#00D1B2] text-sm">CPO</p>
                     <p class="text-gray-400 text-xs mt-3">多家头部电商品类管理负责人，深谙零售供应链与定价策略，驱动产品与业务深度融合。</p>
                 </div>
             </div>
-            <div class="mt-12 text-center"><button
+            <div class="mt-12 text-center"><button id="viewTeam"
                     class="text-sm text-[#00D1B2] border border-[#00D1B2]/30 px-6 py-2 rounded-full hover:bg-[#00D1B2]/10 transition">查看完整管理团队
                     →</button></div>
         </div>
@@ -359,10 +359,14 @@
             <p class="text-gray-400 max-w-xl mx-auto mb-6">期待与您共同探索零售智能决策的无限可能</p>
             <div class="flex flex-wrap justify-center gap-6">
                 <div class="flex items-center gap-2 bg-white/5 px-5 py-2 rounded-full"><iconify-icon icon="mdi:email"
-                        class="text-[#00D1B2]"></iconify-icon> partner@retailai.com</div>
+                        class="text-[#00D1B2]"></iconify-icon> customer-service@redhousegecko.com</div>
                 <div class="flex items-center gap-2 bg-white/5 px-5 py-2 rounded-full"><iconify-icon icon="mdi:phone"
-                        class="text-[#00D1B2]"></iconify-icon> 400-888-2026</div>
-                <button class="btn-primary px-6 py-2 rounded-full text-sm font-bold">预约高层会谈 →</button>
+                        class="text-[#00D1B2]"></iconify-icon> 189-3867-0975</div>
+                <button class="btn-primary px-6 py-2 rounded-full text-sm font-bold">
+                    <a href="https://work.weixin.qq.com/kfid/kfc36660a841a55a8d7" target="_blank">
+                        预约高层会谈 →
+                    </a>
+                </button>
             </div>
         </div>
     </section>
@@ -375,8 +379,13 @@
             './assets/office1.jpg',
             './assets/office2.jpg'  // 可继续添加
         ];
+        
         const randomImage = images[Math.floor(Math.random() * images.length)];
         document.getElementById('randomOfficeImg').src = randomImage;
+        // viewTeam
+        document.getElementById('viewTeam')?.addEventListener('click', () => {
+            alert('感谢关注！暂无查看权限。');
+        });
     </script>
 </body>
 

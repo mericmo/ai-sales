@@ -12,6 +12,7 @@
     <style>
         /* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap'); */
         @import url('./static/css/inter.css');
+
         * {
             margin: 0;
             padding: 0;
@@ -73,7 +74,7 @@
 
     <!-- 导航栏 (统一风格) -->
     <nav-component></nav-component>
-    
+
     <!-- Hero 区域 -->
     <section class="relative pt-44 pb-16 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,#002B44,transparent_80%)] -z-10"></div>
@@ -256,23 +257,31 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-5">
                     <div class="border border-white/10 rounded-xl p-5">
-                        <iconify-icon icon="mdi:eye" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
-                        <h3 class="font-bold mb-1">访问与更正</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <iconify-icon icon="mdi:eye" class="text-xl text-[#00D1B2]"></iconify-icon>
+                            <h3 class="font-bold">访问与更正</h3>
+                        </div>
                         <p class="text-gray-400 text-sm">您可随时登录账户或联系我们的数据保护官，查看、修改您的企业信息及偏好设置。</p>
                     </div>
                     <div class="border border-white/10 rounded-xl p-5">
-                        <iconify-icon icon="mdi:delete" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
-                        <h3 class="font-bold mb-1">删除与注销</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <iconify-icon icon="mdi:delete" class="text-xl text-[#00D1B2]"></iconify-icon>
+                            <h3 class="font-bold">删除与注销</h3>
+                        </div>
                         <p class="text-gray-400 text-sm">发送邮件至 privacy@redgecko.ai 申请删除账户及关联数据，我们将在15个工作日内完成处理。</p>
                     </div>
                     <div class="border border-white/10 rounded-xl p-5">
-                        <iconify-icon icon="mdi:email-newsletter" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
-                        <h3 class="font-bold mb-1">拒绝营销</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <iconify-icon icon="mdi:email-newsletter" class="text-xl text-[#00D1B2]"></iconify-icon>
+                            <h3 class="font-bold">拒绝营销</h3>
+                        </div>
                         <p class="text-gray-400 text-sm">每封营销邮件均设有退订链接，或直接回复“拒收”即可取消订阅。</p>
                     </div>
                     <div class="border border-white/10 rounded-xl p-5">
-                        <iconify-icon icon="mdi:file-download" class="text-xl text-[#00D1B2] mb-2"></iconify-icon>
-                        <h3 class="font-bold mb-1">数据可携权</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <iconify-icon icon="mdi:file-download" class="text-xl text-[#00D1B2]"></iconify-icon>
+                            <h3 class="font-bold">数据可携权</h3>
+                        </div>
                         <p class="text-gray-400 text-sm">在技术可行范围内，您可要求将您提供的结构化数据以通用格式导出。</p>
                     </div>
                 </div>
@@ -347,14 +356,14 @@
                     <p class="text-gray-300 mb-4">如您对本隐私条款有任何疑问、建议或投诉，或希望行使您的数据权利，请通过以下方式联系我们：</p>
                     <div class="space-y-3">
                         <div class="flex items-center gap-3"><iconify-icon icon="mdi:email"
-                                class="text-[#00D1B2] text-xl"></iconify-icon><span>数据保护官邮箱：<strong>privacy@redgecko.ai</strong></span>
+                                class="text-[#00D1B2] text-xl"></iconify-icon><span>数据保护官邮箱：<strong>service@redhousegecko.com</strong></span>
                         </div>
                         <div class="flex items-center gap-3"><iconify-icon icon="mdi:phone"
-                                class="text-[#00D1B2] text-xl"></iconify-icon><span>隐私热线：<strong>400-888-2026</strong>（转隐私合规专线）</span>
+                                class="text-[#00D1B2] text-xl"></iconify-icon><span>隐私热线：<strong>189-3867-0975</strong>（转隐私合规专线）</span>
                         </div>
                         <div class="flex items-center gap-3"><iconify-icon icon="mdi:map-marker"
-                                class="text-[#00D1B2] text-xl"></iconify-icon><span>地址：上海市浦东新区世纪大道100号 RedGecko AI
-                                法务部（邮编：200120）</span></div>
+                                class="text-[#00D1B2] text-xl"></iconify-icon><span>地址：深圳市宝安区兴业路广兴源创意园 RedGecko AI
+                                法务部</span></div>
                     </div>
                     <div class="mt-6 pt-4 border-t border-white/10 text-sm text-gray-400">
                         <p>我们将在收到请求后的 <strong class="text-white">15个工作日内</strong> 予以答复。如您对我们的处理结果不满意，您有权向网信部门或当地监管机构投诉。
@@ -368,7 +377,7 @@
     <footer-component></footer-component>
     <!-- 统一加载组件 -->
     <script src="./static/js/footer-component.js"></script>
-    
+
     <script>
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

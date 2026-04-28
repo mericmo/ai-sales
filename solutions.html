@@ -459,7 +459,7 @@
                 </div>
             </div>
             <div class="mt-8 bg-black/30 p-4 rounded-xl text-center text-sm text-gray-300"><iconify-icon icon="mdi:api"
-                    class="inline mr-1"></iconify-icon> API接入文档  · 调试地址 <span
+                    class="inline mr-1"></iconify-icon> API接入文档 · 调试地址 <span
                     class="text-[#00D1B2] ml-2 cursor-pointer">https://wea.redgecko.cn/docs#</span></div>
         </div>
     </section>
@@ -467,6 +467,7 @@
     <script src="./static/js/api-key-component.js"></script>
     <script src="./static/js/footer-component.js"></script>
     <script src="./static/js/video-player-component.js"></script>
+    <script src="./static/js/common.js"></script>
     <!-- 基础用法：播放 YouTube 视频 -->
     <video-player trigger-id="demoVideoBtn" video-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         video-title="产品功能演示">
@@ -500,7 +501,23 @@
                 alert('请填写姓名、公司全称和联系方式。');
                 return;
             }
+            // 验证联系方式格式（手机号或邮箱）
+            const phoneRegex = /^1[3-9]\d{9}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isPhone = phoneRegex.test(contact);
+            const isEmail = emailRegex.test(contact);
 
+            if (!isPhone && !isEmail) {
+                alert('请输入有效的手机号码（11位）或邮箱地址。');
+                return;
+            }
+            phone = "";
+            email = "";
+            if (isPhone) {
+                phone = contact;
+            } else {
+                email = contact;
+            }
             if (!storeCount) {
                 alert('请选择门店数量。');
                 return;
@@ -510,23 +527,35 @@
                 alert('请选择至少一个核心诉求。');
                 return;
             }
-
+            if (!category) {
+                alert('请选择主营品类。');
+                return;
+            }
             const submissionData = {
                 name,
                 position,
                 company,
-                contact,
-                storeCount,
+                phone,
+                email,
+                store_num: storeCount,
                 category,
-                needs,
+                require: needs,
+                message: "",
+                submitTime: new Date().toISOString(),
+                source: 'solutions_page'
             };
 
             console.log('B2B 需求提交数据：', submissionData);
             // 实际项目中这里可替换为后端 API 调用
+            submitData(submissionData, () => {
+                // 显示成功状态，隐藏表单
+                b2bForm.classList.add('hidden');
+                b2bSuccess.classList.remove('hidden');
+                b2bSuccess.scrollIntoView({ behavior: 'smooth' });
+            }, (error) => {
+                console.log('提交错误：', error.message);
+            });
 
-            b2bForm.classList.add('hidden');
-            b2bSuccess.classList.remove('hidden');
-            b2bSuccess.scrollIntoView({ behavior: 'smooth' });
         });
 
         b2bBackButton?.addEventListener('click', function () {
