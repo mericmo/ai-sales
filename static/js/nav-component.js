@@ -6,7 +6,7 @@ class NavComponent extends HTMLElement {
         this.innerHTML = `
             <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/10">
                 <div class="max-w-[1440px] mx-auto px-8 h-20 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
+                    <a href="./home.html" class="flex items-center gap-2" style="cursor: pointer;">
                         <div class="logo-slot">
                         <div class="w-12 h-12 rounded-full bg-white p-1 object-contain filter saturate-150 brightness-110">
                                 <svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.83 115.83">
@@ -33,7 +33,7 @@ class NavComponent extends HTMLElement {
                             </div>
                         </div>
                         <span class="text-2xl font-bold tracking-tight">RedGecko<span class="text-[#00D1B2]"> AI</span></span>
-                    </div>
+                    </a>
                     <div class="hidden lg:flex items-center gap-10 text-sm font-medium">
                         <a href="home.html" class="hover:text-[#00D1B2] transition-colors ${currentPage === 'home' ? 'text-white border-b-2 border-[#00D1B2] pb-0.5' : 'text-gray-300'}">首页</a>
                         <a href="solutions.html" class="hover:text-[#00D1B2] transition-colors ${currentPage === 'solutions' ? 'text-white border-b-2 border-[#00D1B2] pb-0.5' : 'text-gray-300'}">解决方案</a>
