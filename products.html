@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>数据产品 | AI零售决策专家 - 天气API & 智能数据服务</title>
     <!-- Tailwind + 图标库 + 字体 (与之前风格完全统一) -->
-    <script src="https://modao.cc/agent-py/static/source/js/tailwindcss.3.4.3.js"></script>
-    <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/tailwindcss.3.4.3.js"></script>
+    <script src="./static/js/iconify-icon.min.1.0.7.js"></script>
     <script src="./static/js/nav-component.js"></script>
     <style>
         @import url('./static/css/inter.css');
@@ -31,6 +31,7 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
+            /* transition: border-color 0.3s ease, background 0.3s ease; */
         }
 
         .glass-card:hover {
@@ -113,6 +114,36 @@
             animation: spin 1s linear infinite;
         }
     </style>
+
+    <script>
+        // 在 products.html 底部添加
+        document.addEventListener('DOMContentLoaded', function () {
+            // 强制确保移动端样式生效
+            const style = document.createElement('style');
+            style.textContent = `
+            @media (max-width: 1023px) {
+                nav-component .nav-component-mobile-toggle {
+                    display: flex !important;
+                }
+                nav-component .nav-component-desktop-links {
+                    display: none !important;
+                }
+                nav-component .flex.items-center.gap-4:last-child {
+                    display: flex !important;
+                }
+            }
+        `;
+            document.head.appendChild(style);
+
+            // 强制重新渲染组件
+            const nav = document.querySelector('nav-component');
+            if (nav && nav.connectedCallback) {
+                // 重新触发组件更新
+                const currentPage = nav.getAttribute('current-page');
+                nav.setAttribute('current-page', currentPage || 'products');
+            }
+        });
+    </script>
 </head>
 
 <body class="overflow-x-hidden">
@@ -476,15 +507,15 @@
             </div>
         </div>
     </section>
-    <!-- 页脚 -->
-    <footer-component></footer-component>
+    
     <!-- 统一加载组件 -->
     <script src="./static/js/footer-component.js"></script>
     <script src="./static/js/api-key-component.js"></script>
     <script src="./static/js/common.js"></script>
     <!-- 申请apikey组件交互 -->
     <api-key-apply trigger-id="apiKeyButton"></api-key-apply>
-    <script src="./static/js/common.js"></script>
+    <!-- 页脚 -->
+    <footer-component></footer-component>
     <script>
         //表单提交实现代码
         // 获取表单元素
@@ -706,7 +737,7 @@
                 store_num: 0,
                 category: "",
                 message: "",
-                position:"",
+                position: "",
                 submitTime: new Date().toISOString(),
             };
 

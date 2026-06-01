@@ -3,7 +3,43 @@ class NavComponent extends HTMLElement {
         const currentPage = this.getAttribute('current-page') ||
             window.location.pathname.split('/').pop().replace('.html', '') || 'home';
         this.innerHTML = `
-            <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/10">
+            <style>
+                 .nav-component-mobile-toggle { 
+                    display: none; 
+                }
+                .nav-component-mobile-menu { 
+                    display: none; 
+                    opacity: 0; 
+                    transform: scaleY(0); 
+                    transition: transform 0.2s ease, opacity 0.2s ease; 
+                }
+                @media (max-width: 1023px) {
+                    .nav-component-mobile-toggle { 
+                        display: flex !important; 
+                    }
+                    .nav-component-desktop-links { 
+                        display: none !important; 
+                    }
+                }
+                /* 确保按钮始终可点击，不受外部样式影响 */
+                .mobile-menu-toggle {
+                    cursor: pointer;
+                    background: transparent;
+                    border: none;
+                }
+                .nav-card {
+                    background: rgba(255, 255, 255, 0.03);
+                    backdrop-filter: blur(12px);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    transition: all 0.3s ease;
+                }
+
+                .nav-card:hover {
+                    border-color: rgba(0, 209, 178, 0.4);
+                    background: rgba(255, 255, 255, 0.06);
+                }
+            </style>
+            <nav class="fixed top-0 w-full z-50 nav-card border-b border-white/10">
                 <div class="max-w-[1440px] mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
                     <a href="./home.html" class="flex items-center gap-2" style="cursor: pointer;">
                         <div class="logo-slot">
@@ -33,7 +69,7 @@ class NavComponent extends HTMLElement {
                         </div>
                         <span class="text-2xl font-bold tracking-tight">RedGecko<span class="text-[#00D1B2]"> AI</span></span>
                     </a>
-                    <div class="hidden lg:flex items-center gap-10 text-sm font-medium">
+                    <div class="hidden lg:flex items-center gap-10 text-sm font-medium nav-component-desktop-links">
                         <a href="home.html" class="hover:text-[#00D1B2] transition-colors ${currentPage === 'home' ? 'text-white border-b-2 border-[#00D1B2] pb-0.5' : 'text-gray-300'}">首页</a>
                         <a href="solutions.html" class="hover:text-[#00D1B2] transition-colors ${currentPage === 'solutions' ? 'text-white border-b-2 border-[#00D1B2] pb-0.5' : 'text-gray-300'}">解决方案</a>
                         <a href="products.html" class="hover:text-[#00D1B2] transition-colors ${currentPage === 'products' ? 'text-white border-b-2 border-[#00D1B2] pb-0.5' : 'text-gray-300'}">数据产品</a>
@@ -41,7 +77,7 @@ class NavComponent extends HTMLElement {
                         <a href="partener.html" class="hover:text-[#00D1B2] transition-colors ${currentPage === 'partener' ? 'text-white border-b-2 border-[#00D1B2] pb-0.5' : 'text-gray-300'}">B2B合作</a>
                         <a href="abouts.html" class="hover:text-[#00D1B2] transition-colors ${currentPage === 'abouts' ? 'text-white border-b-2 border-[#00D1B2] pb-0.5' : 'text-gray-300'}">关于我们</a>
                     </div>
-                    <div class="lg:hidden flex items-center gap-4">
+                    <div class="lg:hidden flex items-center gap-4 nav-component-mobile-toggle">
                         <button class="mobile-menu-toggle p-2 rounded-md text-gray-300 hover:text-white focus:outline-none" aria-expanded="false" aria-label="打开菜单">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </button>
@@ -53,7 +89,7 @@ class NavComponent extends HTMLElement {
                     </div>
                 </div>
                 <!-- Mobile menu panel -->
-                <div class="mobile-menu fixed inset-x-4 top-20 bg-[#001220]/95 rounded-xl p-4 shadow-lg transform scale-y-0 origin-top transition-all duration-200 lg:hidden" style="z-index:49;">
+                <div class="mobile-menu nav-component-mobile-menu fixed inset-x-4 top-20 bg-[#001220]/95 rounded-xl p-4 shadow-lg transform origin-top transition-all duration-200 lg:hidden" style="z-index:60; display:none; opacity:0; transform: scaleY(0);">
                     <div class="flex flex-col gap-2 text-sm">
                         <a href="home.html" class="block px-3 py-2 rounded-md text-gray-300 hover:bg-white/3">首页</a>
                         <a href="solutions.html" class="block px-3 py-2 rounded-md text-gray-300 hover:bg-white/3">解决方案</a>
@@ -79,10 +115,18 @@ class NavComponent extends HTMLElement {
             btn.setAttribute('aria-label', expanded ? '打开菜单' : '关闭菜单');
             if (expanded) {
                 panel.style.transform = 'scaleY(0)';
-                panel.classList.remove('opacity-100');
+                panel.style.opacity = '0';
+                setTimeout(() => {
+                    if (btn.getAttribute('aria-expanded') === 'false') {
+                        panel.style.display = 'none';
+                    }
+                }, 200);
             } else {
-                panel.style.transform = 'scaleY(1)';
-                panel.classList.add('opacity-100');
+                panel.style.display = 'block';
+                requestAnimationFrame(() => {
+                    panel.style.transform = 'scaleY(1)';
+                    panel.style.opacity = '1';
+                });
             }
         };
 

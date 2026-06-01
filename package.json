@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build:css": "tailwind -i ./static/css/inter_source.css -o ./static/css/inter.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}
