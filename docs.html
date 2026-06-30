@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>销量预测服务 API 文档 | AI零售决策专家</title>
+    <script src="./static/js/tailwindcss.3.4.3.js"></script>
+    <script src="./static/js/iconify-icon.min.1.0.7.js"></script>
+    <script src="./static/js/nav-component.js"></script>
+    <style>
+        @import url('./static/css/inter.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #001220;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.25s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 209, 178, 0.35);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00D1B2 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .code-block {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            overflow-x: auto;
+            color: #e5e7eb;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.95rem;
+            line-height: 1.75;
+            white-space: pre-wrap;
+            word-break: break-word;
+            tab-size: 4;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.85rem 1rem;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.04);
+            color: #ffffff;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: #94a3b8;
+            margin-top: 0.75rem;
+            margin-bottom: 1.5rem;
+            max-width: 62rem;
+            line-height: 1.8;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 9999px;
+            background: rgba(0, 209, 178, 0.12);
+            color: #a5f3fc;
+            font-size: 0.85rem;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+            margin: 4rem 0;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <nav-component></nav-component>
+    <main class="max-w-[1280px] mx-auto px-6 lg:px-8 pb-20">
+        <section class="relative pt-28 pb-16">
+            <div class="glass-card rounded-[2rem] p-10 shadow-2xl shadow-[#00D1B2]/10">
+                <div class="flex flex-col gap-6">
+                    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 w-fit text-sm text-[#A5F3FC]">
+                        <iconify-icon icon="mdi:api" class="text-lg text-[#00D1B2]"></iconify-icon>
+                        API 文档
+                    </div>
+                    <div>
+                        <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight">销量预测服务 API 调用文档</h1>
+                        <p class="section-subtitle">本文档介绍销量预测服务的核心接口、请求方式、响应结构以及 Python 和 cURL 调用示例。</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-300">
+                        <div class="glass-card p-5 rounded-3xl">
+                            <div class="font-semibold text-white">Base URL</div>
+                            <div class="mt-2 text-[#A5F3FC]">https://open.redgecko.cn</div>
+                        </div>
+                        <div class="glass-card p-5 rounded-3xl">
+                            <div class="font-semibold text-white">API 版本</div>
+                            <div class="mt-2 text-[#A5F3FC]">/api/v1</div>
+                        </div>
+                        <div class="glass-card p-5 rounded-3xl">
+                            <div class="font-semibold text-white">认证方式</div>
+                            <div class="mt-2 text-[#A5F3FC]">API Key（Header: X-API-Key）</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">1. 销量预测接口</h2>
+            <p class="section-subtitle">`daily_predict` 接口用于根据历史交易数据预测指定门店和商品未来若干天的销量。</p>
+            <div class="glass-card rounded-[1.5rem] p-8">
+                <h3 class="text-2xl font-semibold mb-4">接口信息</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                        <tr>
+                            <td><strong>接口路径</strong></td>
+                            <td><code>POST /api/v1/店铺tag/daily_predict</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>功能说明</strong></td>
+                            <td>根据历史交易数据预测指定门店和商品未来指定天数的销量</td>
+                        </tr>
+                        <tr>
+                            <td><strong>认证要求</strong></td>
+                            <td>需要 API Key</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">请求 Headers</h4>
+                    <div class="code-block">X-API-Key: {your_api_key}<br />Content-Type: application/json</div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">请求体参数</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>类型</th>
+                                <th>必填</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>store_code</code></td>
+                                <td>string</td>
+                                <td>是</td>
+                                <td>门店编码</td>
+                            </tr>
+                            <tr>
+                                <td><code>product_code</code></td>
+                                <td>string</td>
+                                <td>是</td>
+                                <td>商品编码</td>
+                            </tr>
+                            <tr>
+                                <td><code>last_data</code></td>
+                                <td>array[object]</td>
+                                <td>是</td>
+                                <td>历史交易数据列表</td>
+                            </tr>
+                            <tr>
+                                <td><code>predict_days</code></td>
+                                <td>integer</td>
+                                <td>否</td>
+                                <td>预测天数，默认 1 天，最大 7 天</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">`last_data` 数据项字段说明</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>字段名</th>
+                                <th>类型</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>日期</td><td>string</td><td>交易日期，格式 <code>YYYY.MM.DD</code></td></tr>
+                            <tr><td>门店</td><td>string</td><td>门店名称</td></tr>
+                            <tr><td>门店编号</td><td>string</td><td>门店编码</td></tr>
+                            <tr><td>商品编码</td><td>string</td><td>商品编码</td></tr>
+                            <tr><td>商品名称</td><td>string</td><td>商品名称</td></tr>
+                            <tr><td>商品状态</td><td>string</td><td>商品状态</td></tr>
+                            <tr><td>经营方式</td><td>string</td><td>经营方式</td></tr>
+                            <tr><td>库存单位</td><td>string</td><td>库存单位</td></tr>
+                            <tr><td>实销数量</td><td>number</td><td>实际销售数量</td></tr>
+                            <!-- <tr><td>实销金额</td><td>number</td><td>实际销售金额</td></tr>
+                            <tr><td>未税实销金额</td><td>number</td><td>未税实际销售金额</td></tr> -->
+                            <tr><td>销售成本</td><td>number</td><td>销售成本</td></tr>
+                            <!-- <tr><td>未税销售成本</td><td>number</td><td>未税销售成本</td></tr>
+                            <tr><td>未税基础毛利</td><td>number</td><td>未税基础毛利</td></tr>
+                            <tr><td>毛利补偿</td><td>number</td><td>毛利补偿</td></tr>
+                            <tr><td>未税毛利补偿</td><td>number</td><td>未税毛利补偿</td></tr>
+                            <tr><td>未税净毛利</td><td>number</td><td>未税净毛利</td></tr>
+                            <tr><td>未税净毛利率</td><td>number</td><td>未税净毛利率</td></tr>
+                            <tr><td>未税商损金额</td><td>number</td><td>未税商损金额</td></tr> -->
+                            <tr><td>...</td><td>...</td><td>...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">请求示例</h4>
+                    <div class="code-block">
+{
+  "store_code": "2495",
+  "product_code": "920896",
+  "predict_days": 3,
+  "last_data": [
+    {
+      "日期": "2026.06.30",
+      "门店": "***",
+      "门店编号": "***",
+      "商品编码": "***",
+      "商品名称": "***",
+      "商品状态": "***",
+      "经营方式": "***",
+      "库存单位": "EA",
+      "实销数量": 1,
+      "实销金额": 3.72,
+      "未税实销金额": 3.72,
+      "销售成本": 3.2714,
+      "未税销售成本": 3.2714,
+      "未税基础毛利": 0.4486,
+      "毛利补偿": 0.0,
+      "未税毛利补偿": 0.0,
+      "未税净毛利": -2.8228,
+      "未税净毛利率": -0.758817204301,
+      "未税商损金额": -3.2714
+    }
+  ]
+}
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">响应参数</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>类型</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>request_id</td><td>string</td><td>请求唯一标识</td></tr>
+                            <tr><td>status</td><td>string</td><td>处理状态（success/failed）</td></tr>
+                            <tr><td>message</td><td>string</td><td>处理消息</td></tr>
+                            <tr><td>data</td><td>object</td><td>预测结果数据</td></tr>
+                            <tr><td>data.store_code</td><td>string</td><td>门店编码</td></tr>
+                            <tr><td>data.product_code</td><td>string</td><td>商品编码</td></tr>
+                            <tr><td>data.predict_days</td><td>integer</td><td>预测天数</td></tr>
+                            <tr><td>data.current_date</td><td>string</td><td>当前日期</td></tr>
+                            <tr><td>data.predictions</td><td>array</td><td>预测结果列表</td></tr>
+                            <tr><td>data.predictions[].predict_date</td><td>string</td><td>预测日期</td></tr>
+                            <tr><td>data.predictions[].predict_sales</td><td>float</td><td>预测销量</td></tr>
+                            <tr><td>data.predictions[].lower_bound</td><td>float</td><td>预测下限</td></tr>
+                            <tr><td>data.predictions[].upper_bound</td><td>float</td><td>预测上限</td></tr>
+                            <tr><td>processing_time</td><td>float</td><td>处理耗时（秒）</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">响应示例</h4>
+                    <div class="code-block">
+{
+  "request_id": "abc123def4567890",
+  "status": "success",
+  "message": "销量预测完成，预测未来3天数据",
+  "data": {
+    "store_code": "2495",
+    "product_code": "920896",
+    "predict_days": 3,
+    "current_date": "2026-07-01",
+    "predictions": [
+      {
+        "predict_date": "2026-07-01",
+        "predict_sales": 1.2,
+        "lower_bound": 0.8,
+        "upper_bound": 1.6
+      },
+      {
+        "predict_date": "2026-07-02",
+        "predict_sales": 1.5,
+        "lower_bound": 1.0,
+        "upper_bound": 2.0
+      },
+      {
+        "predict_date": "2026-07-03",
+        "predict_sales": 1.8,
+        "lower_bound": 1.2,
+        "upper_bound": 2.4
+      }
+    ]
+  },
+  "processing_time": 2.34
+}
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">cURL 调用示例</h4>
+                    <div class="code-block">
+curl -X POST "http://127.0.0.1:8000/api/v1/wm/daily_predict" \
+  -H "X-API-Key: your_api_key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "store_code": "2495",
+    "product_code": "920896",
+    "predict_days": 3,
+    "last_data": [...]
+  }'
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section>
+            <h2 class="section-title">2. 数据强化训练</h2>
+            <p class="section-subtitle">`daily_learn` 接口用于向指定门店添加新的历史交易数据，以便模型持续学习和迭代，如果通过该接口按照门店更新模型的训练数据，则调用预测接口时可以不传递历史数据。</p>
+            <div class="glass-card rounded-[1.5rem] p-8">
+                <h3 class="text-2xl font-semibold mb-4">接口信息</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                        <tr>
+                            <td><strong>接口路径</strong></td>
+                            <td><code>POST /api/v1/wm/daily_learn</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>功能说明</strong></td>
+                            <td>向指定门店添加新的历史交易数据，用于模型学习</td>
+                        </tr>
+                        <tr>
+                            <td><strong>认证要求</strong></td>
+                            <td>需要 API Key</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">请求 Headers</h4>
+                    <div class="code-block">X-API-Key: {your_api_key}<br />Content-Type: application/json</div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">请求体参数</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>类型</th>
+                                <th>必填</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>store_code</code></td><td>string</td><td>是</td><td>门店编码</td></tr>
+                            <tr><td><code>data_list</code></td><td>array[object]</td><td>是</td><td>新交易数据列表（字段同 <code>last_data</code>）</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">请求示例</h4>
+                    <div class="code-block">
+{
+  "store_code": "2495",
+  "data_list": [
+    {
+      "日期": "2026.07.03",
+      "门店": "盒*马**店",
+      "门店编号": "****",
+      "商品编码": "****",
+      "商品名称": "***",
+      "商品状态": "正常商品",
+      "经营方式": "自营",
+      "库存单位": "EA",
+      "实销数量": 1,
+      "实销金额": 3.72,
+      "未税实销金额": 3.72,
+      "销售成本": 3.2714,
+      "未税销售成本": 3.2714,
+      "未税基础毛利": 0.4486,
+      "毛利补偿": 0.0,
+      "未税毛利补偿": 0.0,
+      "未税净毛利": -2.8228,
+      "未税净毛利率": -0.758817204301,
+      "未税商损金额": -3.2714
+    }
+  ]
+}
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">响应参数</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>类型</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>request_id</td><td>string</td><td>请求唯一标识</td></tr>
+                            <tr><td>status</td><td>string</td><td>处理状态（success/failed）</td></tr>
+                            <tr><td>message</td><td>string</td><td>处理消息</td></tr>
+                            <tr><td>data</td><td>object</td><td>处理结果</td></tr>
+                            <tr><td>data.store_code</td><td>string</td><td>门店编码</td></tr>
+                            <tr><td>data.result</td><td>string</td><td>写入结果</td></tr>
+                            <tr><td>processing_time</td><td>float</td><td>处理耗时（秒）</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">响应示例</h4>
+                    <div class="code-block">
+{
+  "request_id": "abc123def4567890",
+  "status": "success",
+  "message": "数据添加完成",
+  "data": {
+    "store_code": "2495",
+    "result": "写入成功"
+  },
+  "processing_time": 0.15
+}
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">cURL 调用示例</h4>
+                    <div class="code-block">
+curl -X POST "http://127.0.0.1:8000/api/v1/wm/daily_learn" \
+  -H "X-API-Key: your_api_key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "store_code": "2495",
+    "data_list": [...]
+  }'
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section>
+            <h2 class="section-title">Python 调用示例</h2>
+            <p class="section-subtitle">使用 Python `requests` 库快速调用预测与数据添加接口。</p>
+            <div class="glass-card rounded-[1.5rem] p-8">
+                <div class="code-block">
+import requests
+
+BASE_URL = "http://127.0.0.1:8000"
+API_KEY = "your_api_key"
+
+
+def predict_sales():
+    """销量预测"""
+    url = f"{BASE_URL}/api/v1/wm/daily_predict"
+    payload = {
+        "store_code": "2495",
+        "product_code": "920896",
+        "predict_days": 3,
+        "last_data": [
+            {
+                "日期": "2026.06.30",
+                "门店": "****",
+                "门店编号": "****",
+                "商品编码": "****",
+                "商品名称": "****",
+                "商品状态": "正常商品",
+                "经营方式": "自营",
+                "库存单位": "EA",
+                "实销数量": 1,
+                "实销金额": 3.72,
+                "未税实销金额": 3.72,
+                "销售成本": 3.2714,
+                "未税销售成本": 3.2714,
+                "未税基础毛利": 0.4486,
+                "毛利补偿": 0.0,
+                "未税毛利补偿": 0.0,
+                "未税净毛利": -2.8228,
+                "未税净毛利率": -0.758817204301,
+                "未税商损金额": -3.2714
+            }
+        ]
+    }
+    headers = {
+        "Content-Type": "application/json",
+        "X-API-Key": API_KEY
+    }
+    response = requests.post(url, json=payload, headers=headers)
+    print(response.json())
+
+
+def add_data():
+    """添加交易数据"""
+    url = f"{BASE_URL}/api/v1/wm/daily_learn"
+    payload = {
+        "store_code": "2495",
+        "data_list": [
+            {
+                "日期": "2026.07.03",
+                "门店": "***",
+                "门店编号": "***",
+                "商品编码": "***",
+                "商品名称": "***",
+                "商品状态": "正常商品",
+                "经营方式": "自营",
+                "库存单位": "EA",
+                "实销数量": 1,
+                "实销金额": 3.72,
+                "未税实销金额": 3.72,
+                "销售成本": 3.2714,
+                "未税销售成本": 3.2714,
+                "未税基础毛利": 0.4486,
+                "毛利补偿": 0.0,
+                "未税毛利补偿": 0.0,
+                "未税净毛利": -2.8228,
+                "未税净毛利率": -0.758817204301,
+                "未税商损金额": -3.2714
+            }
+        ]
+    }
+    headers = {
+        "Content-Type": "application/json",
+        "X-API-Key": API_KEY
+    }
+    response = requests.post(url, json=payload, headers=headers)
+    print(response.json())
+
+
+if __name__ == "__main__":
+    add_data()
+    predict_sales()
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section>
+            <h2 class="section-title">错误码说明</h2>
+            <p class="section-subtitle">接口返回状态码与常见错误响应示例。</p>
+            <div class="glass-card rounded-[1.5rem] p-8">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>状态码</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>200</td><td>请求成功</td></tr>
+                        <tr><td>400</td><td>请求参数错误</td></tr>
+                        <tr><td>401</td><td>API Key 无效或缺失</td></tr>
+                        <tr><td>413</td><td>文件过大</td></tr>
+                        <tr><td>500</td><td>服务器内部错误</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-semibold mb-3">错误响应示例</h4>
+                    <div class="code-block">
+{
+  "detail": "预测天数不能超过7天"
+}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 页脚 -->
+    <footer-component></footer-component>
+    <!-- 统一加载组件 -->
+    <script src="./static/js/footer-component.js"></script>
+</body>
+
+</html>
